@@ -1,0 +1,2428 @@
+<html><head>
+        <title>Quiz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+              }
+              
+              /* Set full height to the html and body elements */
+              html, body {
+                height: 100%;
+              }
+              
+              /* Set font family for the entire page */
+              body {
+                font-family: 'Montserrat', serif;
+                background-color: #f2f2f2
+              }
+              
+              /* Set styles for the main container */
+              main {
+                width: 100%;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              }
+
+              /* Set styles for the game container */
+              .game-quiz-container {
+                width: 60rem;
+                height: 50rem;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                border-radius: 30px;
+              }
+
+              /* Set styles for the game details container */
+              .game-details-container {
+                width: 80%;
+                height: 4rem;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+              }
+
+              .game-details-container h1 {
+                font-size: 1.2rem;
+              }
+              
+              /* Set styles for the game question container */
+              .game-question-container {
+                width: 80%;
+                min-height: 10rem; /* Tăng kích thước tối thiểu lên 10rem */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid darkgray;
+                border-radius: 25px;
+                background-color: #f2f2f2;
+              }
+              
+              .game-question-container h1 {
+                font-size: 1.5rem;
+                text-align: center;
+                padding: 3px;
+                font-weight: bold;
+                overflow: auto; /* Bật chế độ cuộn nội dung khi vượt quá kích thước tối thiểu */
+              }
+              
+              /* Set styles for the game options container */
+              .game-options-container {
+                text-align: center;
+                width: 80%;
+                min-height: 10rem; /* Tăng kích thước tối thiểu lên 10rem */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+              }
+              
+              .game-options-container span {
+                width: 100%;
+                margin: 10px 0;
+                border: 2px solid darkgray;
+                border-radius: 10px;
+                overflow: auto;
+              }
+              
+              .game-options-container span label {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: transform 0.3s;
+                font-weight: 1000;
+                color: #222;
+                font-size: 1.2rem;
+              }
+              
+              .game-options-container span label:hover {
+                color: RGBA( 60, 179, 113, 1 );
+              }
+              
+              /* Hide the radio button */
+              input[type="radio"] {
+                position: relative;
+                display: none;
+              }
+              
+              /* Set styles for the selected option */
+              input[type=radio]:checked ~ .option {
+                background: paleturquoise;
+                color: #fff;
+              }
+              
+              /* Set styles for the next button container */
+              .next-button-container {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+              }
+              
+              .next-button-container button {
+                width: 8rem;
+                height: 2.5rem;
+                border-radius: 10px;
+                background: paleturquoise;
+                color: #fff;
+                font-weight: 600;
+                border: none;
+                cursor: pointer;
+                outline: none;
+                margin-top: 20px;
+              }
+              
+              .next-button-container button:hover {
+                background-color: #999;;
+              }
+
+              .modal-container {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                animation: fadeIn 1.2s ease-in-out;
+                background-color: rgba(0,0,0,0.5);
+                }
+                
+                .modal-content-container {
+                height: 25rem;
+                width: 25rem;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 25px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                }
+                
+                .modal-content-container h1 {
+                font-size: 1.5rem;
+                height: 5rem;
+                color: #333;
+                text-align: center;
+                margin-bottom: 2rem;
+                }
+                
+                .grade-details {
+                width: 15rem;
+                height: 10rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                }
+                
+                .grade-details p {
+                color: #333;
+                text-align: center;
+                }
+                
+                .modal-button-container {
+                height: 3rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 2rem;
+                }
+                
+                .modal-button-container button {
+                width: 10rem;
+                height: 3rem;
+                background-color: #333;
+                outline: none;
+                border: none;
+                color: #fff;
+                font-size: 1.1rem;
+                cursor: pointer;
+                border-radius: 20px;
+                }
+                
+                .modal-button-container button:hover {
+                background-color: #555; /* Dark gray */
+                }
+                
+                @media (min-width: 300px) and (max-width: 350px) {
+                .game-quiz-container {
+                width: 90%;
+                height: 30rem;
+                }
+                .game-details-container h1 {
+                font-size: 0.8rem;
+                }
+                .game-question-container {
+                height: 6rem;
+                }
+                .game-question-container h1 {
+                font-size: 0.9rem;
+                }
+                .game-options-container span {
+                width: 90%;
+                height: 2.5rem;
+                }
+                .game-options-container span label {
+                font-size: 0.8rem;
+                }
+                .modal-content-container {
+                width: 90%;
+                height: 25rem;
+                }
+                .modal-content-container h1 {
+                font-size: 1.2rem;
+                }
+                }
+                
+                @media (min-width: 350px) and (max-width: 700px) {
+                .game-quiz-container {
+                width: 90%;
+                height: 80vh;
+                }
+                .game-details-container h1 {
+                font-size: 1rem;
+                }
+                .game-question-container {
+                height: 8rem;
+                }
+                .game-question-container h1 {
+                font-size: 0.9rem;
+                }
+                .game-options-container span {
+                width: 90%;
+                }
+                .modal-content-container {
+                width: 90%;
+                height: 25rem;
+                }
+                .modal-content-container h1 {
+                font-size: 1.2rem;
+                }
+                }
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+        </style>
+    </head>
+<body onload="NextQuestion(0)">
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+          
+            <div class="modal-content-container">
+              
+                <h1>Congratulations, Quiz Completed.</h1>
+              
+                <div class="grade-details">
+                    <p>Attempts : 10</p>
+                    <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                    <p>Right Answers : <span id="right-answers"></span></p>
+                    <p>Grade : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+              
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                </div>
+              
+            </div>
+        </div>
+
+        <div class="game-quiz-container">
+          
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / 25</h1>
+                <h1> Question : <span id="question-number"></span> / 25</h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+              
+               <div class="modal-container" id="option-modal">
+                 
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+                      
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+                      
+                    </div>
+                 
+               </div>
+              
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+              
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+    <script>
+        const questions = [
+    {
+        question: "Formal groups are used to ",
+        optionA: "organize and distribute work",
+        optionB: "work independently",
+        optionC: "make things more clearly",
+        optionD: "feel like family ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Team characteristics should include one of following factors ",
+        optionA: "Interaction",
+        optionB: "Short-term relation",
+        optionC: "Act independently",
+        optionD: "Unreacted members",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "When do you need to work alone? ",
+        optionA: "Highly complex tasks or problems ",
+        optionB: "Minimum discretion is required ",
+        optionC: "High level of choice and uncertainty ",
+        optionD: "Decisions by consensus are essential ",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "How many people does “a span of control” structure averagely have in their team?  ",
+        optionA: "3",
+        optionB: "5",
+        optionC: "7",
+        optionD: "10",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Who do staffs report to in a matrix team? ",
+        optionA: "Single manager ",
+        optionB: "Different managers",
+        optionC: "General manager",
+        optionD: "CEO of the organization",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "A team is called contract team if ",
+        optionA: "Team members have other duties to perform in their normal functional units",
+        optionB: "Team retains their responsibility for both their daily work and project work",
+        optionC: "Team members report to different managers",
+        optionD: "Team is brought in from outside in order to do project work",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What is Social Value Orientation (SVO)?  ",
+        optionA: "People prefer to organize and distribute work between themselves",
+        optionB: "Peoples preferences when dividing resources between themselves and others",
+        optionC: "APeople dislike others work and try to prove their outcome is much better",
+        optionD: "People are not cooperative and tend to work alone",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Andrew is a good listener and he always tries to understand what people think and why people feel in their own way. Andrew has ability of  ",
+        optionA: "empathy",
+        optionB: "considerable skills",
+        optionC: "caring ",
+        optionD: "interdependence",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which one is the key component in cooperation?  ",
+        optionA: "Honesty",
+        optionB: "Hard working ",
+        optionC: "Generosity  ",
+        optionD: "Trust ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: `What is one of disadvantages having large group?  `,
+        optionA: "Overestimate their abilities",
+        optionB: "Rank themselves above average ",
+        optionC: "More involvement",
+        optionD: "Reduce communication ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Janet does not want to get involved in any disputes, discussion or conversations with her colleagues. She gets to work late and fails to show up at meetings as she wants to avoid any tasks may be assigned to her. However, she always wants to be apart of any success her team made. Economists call this kind of person is:   ",
+        optionA: "Pretending",
+        optionB: "Untrustworthy",
+        optionC: "Dishonest ",
+        optionD: "Free rider problem",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "The need for self-evaluation experiment has shown that people come to know about themselves by ",
+        optionA: "having positive attitude in life ",
+        optionB: "comparing with others ",
+        optionC: "seeking happiness",
+        optionD: "feeling complete  ",
+        correctOption: "optionB"
+    },
+
+
+    {
+        question: "Some people consider social norms and the opinions of others to help justify their own positions in life, some others consider_____to perform better.    ",
+        optionA: "opinions and values",
+        optionB: "performance and abilities ",
+        optionC: "opinions and values  ",
+        optionD: "similarity and friendliness",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "What are the two main factors in social comparison?  ",
+        optionA: "Similarity and friendliness ",
+        optionB: "Openness and independence   ",
+        optionC: "Relevance and similarity",
+        optionD: "Self-esteem and trustworthy   ",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "When people can boost their own self-evaluations by comparing themselves to others ranked lower in a company, they are having  ",
+        optionA: "life side effect",
+        optionB: "bad behaviour",
+        optionC: "self-enhanced effect",
+        optionD: "self-evaluation maintenance ",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "What are the positive effects of upward comparison? ",
+        optionA: "Hope and inspiration",
+        optionB: "Happy and gratitude   ",
+        optionC: "Gratitude and scorn  ",
+        optionD: "Dissatisfaction ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "What is the negative effect of downward comparison? ",
+        optionA: "Envy",
+        optionB: "Dissatisfaction",
+        optionC: "Scorn  ",
+        optionD: "Pessimistic",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Social comparison can lead to  ",
+        optionA: "impacts on self-esteem, feeling of victory, feeling of humbleness   ",
+        optionB: "impacts on self-esteem, feeling of envy, feeling of regret  ",
+        optionC: "impacts on self-esteem, feeling of love, feeling of being superior  ",
+        optionD: "Impacts on self-satisfaction, self-esteem, feeling of loser",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "The SEM model suggests that managers may prefer sub optimal candidates because these candidates are not likely to  ",
+        optionA: "a.be more competitive  ",
+        optionB: "b.seek for opinions ",
+        optionC: "c.compare themselves to others",
+        optionD: "d.threaten the managers position   ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What is groupthink?  ",
+        optionA: "Group members are incapable of making a rational decision",
+        optionB: "Group members share same thought in a specific topic",
+        optionC: "Group members want to be alike in everything",
+        optionD: "Group members decide to support each other",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "People who consider upward comparison as a threat, have ",
+        optionA: "negative mindset",
+        optionB: "growth mindset",
+        optionC: "fixed mindset",
+        optionD: "jealous feelings",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "When the number of comparison targets increase, social comparison tends to",
+        optionA: "increase  ",
+        optionB: "remain the same ",
+        optionC: "be distorted  ",
+        optionD: "decrease ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "People usually compare with friends or co-workers than they are to industry or national averages, what is this comparison called in situational factors? ",
+        optionA: "Number",
+        optionB: "Local  ",
+        optionC: "Proximity to a standard ",
+        optionD: "Self-relevant    ",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "One of the key findings in the Dunning-Kruger effect experiments is  unskilled people are  ",
+        optionA: "always satisfied with results",
+        optionB: "often jealous with others   ",
+        optionC: "unrewarded and biased ",
+        optionD: "overconfident with results   ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "One of the key findings in the Dunning-Kruger effect experiments is top performers tend to ",
+        optionA: "overestimate their skills ",
+        optionB: "rank themselves above average ",
+        optionC: "underestimate their skills ",
+        optionD: "always satisfied with results",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "In group decision making process, if there are more people agree on certain point of view, we may consider the fact that the group has  ",
+        optionA: "complete agreement ",
+        optionB: "group polarization ",
+        optionC: "group sharing knowledge ",
+        optionD: "All resources are mobilized ",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "People can claim that they can live independently and separately but they actually have  ",
+        optionA: "a need to belong",
+        optionB: "a need to be included ",
+        optionC: "a need to talk to someone",
+        optionD: "None of these correct",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Groups not only satisfy need to belong, but also provide information, assistance and  ",
+        optionA: "developed Skills  ",
+        optionB: "better Communication  ",
+        optionC: "social support ",
+        optionD: "motivation",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "The psychological significance of groups include the need to belong, identity and membership, evolutionary advantages of group living and   ",
+        optionA: "respect in groups",
+        optionB: "affiliation in groups  ",
+        optionC: "trust in groups  ",
+        optionD: "interdependence in groups",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "What is the main advantage of social facilitation?  ",
+        optionA: "Feel better ",
+        optionB: "Perform tasks improved ",
+        optionC: "Work more independently ",
+        optionD: "Have high chance of promotion",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "Which situation below is considered social loafing?  ",
+        optionA: "A single student works alone on a paper  ",
+        optionB: "A student does all the group homework ",
+        optionC: "Three students work on homework together ",
+        optionD: "The whole group equally work hard on group assignment",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Four group level factors that combine to cause groupthink are  ",
+        optionA: "cohesion, isolation, biased leadership, decisional stress ",
+        optionB: "cohesion, isolation, discouragement, biased leadership",
+        optionC: "cohesion, isolation, decisional stress, aggressiveness ",
+        optionD: "isolation, biased leadership, aggressiveness, discouragement",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Why is making group decision better than making individual decision? ",
+        optionA: "More objective evaluation",
+        optionB: "Team members feel encouraged to do so",
+        optionC: "No one left behind the process ",
+        optionD: "Group decision is inferior to an individual decision",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "You start planning a proposal by",
+        optionA: "determining the factors.",
+        optionB: "determining the solutions.",
+        optionC: "scheduling the study.",
+        optionD: "stating the problem.",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "The most important section of a proposal is the",
+        optionA: "cost",
+        optionB: "solution ",
+        optionC: "purpose statement",
+        optionD: "background ",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Which of the following is NOT a strategy to avoid the occurrence of Groupthink",
+        optionA: "Appointing devils' advocates in discussions",
+        optionB: "Using outside experts",
+        optionC: "Having a charismatic leader of the group",
+        optionD: "Allocating different groups for different tasks",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "Which of the following is NOT a negative outcomes of Groupthink occurring?",
+        optionA: "Not examining alternatives",
+        optionB: "No contingency plans",
+        optionC: "Not seeking expert opinion",
+        optionD: "Needing to seek outside expertise",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which age group is often characterized by the tendency to rethink decisions and lean toward more permanent choices?",
+        optionA: "12-17",
+        optionB: "18-26",
+        optionC: "27-31",
+        optionD: "32-42",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "What kind of students has been shown by research to stay in college longer, be more goal focused and motivated, and have a more satisfying and fulfilling college experience?",
+        optionA: "Students who have good social relationships",
+        optionB: "Students who have excellent leadership skills",
+        optionC: "Students who show great passion for the subjects they are studying",
+        optionD: "Students who get involved in career-planning activities early",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "One of the three categories of social value orientation (SVO) is?  ",
+        optionA: "Incompetent",
+        optionB: "Cooperative ",
+        optionC: "Obsessive  ",
+        optionD: "Generous  ",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "Strategy (ies) to develop yourself as a critical thinker",
+        optionA: "Redefine the way you see things",
+        optionB: "Reflect and practice",
+        optionC: "Express yourself",
+        optionD: "All are correct",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What is thinking?",
+        optionA: "Is the mental process you use to form associations and models of the world",
+        optionB: "Is the mark of an educated mind to be able to entertain a thought without accepting it",
+        optionC: "Is the act of thinking that produces thoughts, which arise as ideas, images, sounds, or even emotions",
+        optionD: "All of these are correct",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "What is pattern of thought?",
+        optionA: "Is the mental process you use to form associations and models of the world",
+        optionB: "Is the mark of an educated mind to be able to entertain a thought without accepting it",
+        optionC: "Is the act of thinking that produces thoughts, which arise as ideas, images, sounds, or even emotions",
+        optionD: "Is the manipulation of information to form concepts, to engage in problem-solving, to reason, and to make decisions",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Learning objectives are ____ that specify what someone will know, care about, or be able to do as a result of a learning experience.",
+        optionA: "goals",
+        optionB: "purposes",
+        optionC: "targets",
+        optionD: "plans",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "What are three main categories or “domains” of the learning skills?",
+        optionA: "Cognitive domain, Affective domain, Reflective domain",
+        optionB: "Cognitive domain, Affective domain, Proactive domain",
+        optionC: "Cognitive domain, Affective domain, Psychomotor domain",
+        optionD: "Cognitive domain, Reflective domain, Psychomotor domain",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "The “Psychomotor Domain” of learning skills means",
+        optionA: "What you should know",
+        optionB: "What you should care about",
+        optionC: "What you should be able to do",
+        optionD: "None of these is correct",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "Which of the following domains of learning skills means “What you should care about”?",
+        optionA: "Cognitive domain",
+        optionB: "Affective domain",
+        optionC: "Psychomotor domain",
+        optionD: "Reflective domain",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "All of the followings are the ways to use critical thinking to evaluate information, EXCEPT",
+        optionA: "Being receptive to having your opinions changed",
+        optionB: "Having an inquiring mind",
+        optionC: "Accepting something without asking for evidence",
+        optionD: "Questioning your own conclusions",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "Which is the highest learning-skill level of Bloom's Taxonomy?",
+        optionA: "Analyze",
+        optionB: "Apply",
+        optionC: "Evaluate",
+        optionD: "Create",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which is the lowest learning-skill level of Bloom's Taxonomy?",
+        optionA: "Remember",
+        optionB: "Understand",
+        optionC: "Analyze",
+        optionD: "Analyze",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "_____ is “the ability to judge, check, and even critique the value of material for a given purpose”.",
+        optionA: "Applying",
+        optionB: "Evaluating",
+        optionC: "Analyzing",
+        optionD: "Creating",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "_____ is “the ability to grasp or construct meaning from oral, written, and graphic messages”.",
+        optionA: "Remembering",
+        optionB: "Understanding",
+        optionC: "Analyzing",
+        optionD: "Applying",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "The “Applying” skill of Bloom's Taxonomy is: ",
+        optionA: "Ability to recognize or recall gained knowledge",
+        optionB: "Ability to use learned material (or implement the material) in new and concrete situations",
+        optionC: "Ability to judge, check, and even critique the value of material for a given purpose",
+        optionD: "Ability to grasp or construct meaning from oral, written, and graphic messages",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Thought and thinking can be understood as _____within the mind.",
+        optionA: "Patterns - Systems and Schemes",
+        optionB: "Order and Structure",
+        optionC: "Act and Control",
+        optionD: "Analyze and Evaluate",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Creative thinking is",
+        optionA: "a way of employing strategies to clear your mind so that your thoughts and ideas can transcend what appear to be the limitations of a problem",
+        optionB: "important because it helps you look at problems and situations from a fresh perspective",
+        optionC: "a way to develop novel or unorthodox solutions that do not depend wholly on past or current solutions",
+        optionD: "All of these are correct",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which statement is NOT true about creativity?",
+        optionA: "All humans are innately creative, especially if creativity is understood as a problem-solving skill",
+        optionB: "As a creative thinker, you are curious, optimistic, and imaginative",
+        optionC: "Creativity is inspired when there is a problem to solve",
+        optionD: "Human is not innately creative",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which of the following statements is NOT correct about a creative thinker?",
+        optionA: "Be curious, optimistic",
+        optionB: "See problems as limits of development",
+        optionC: "Always challenge assumptions and suspend judgment",
+        optionD: "Be imaginative",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "College is great ground for enhancing creative thinking skills as in the below examples, EXCEPT",
+        optionA: "Design sample exam questions to test your knowledge as you study for a final",
+        optionB: "Devise a social media strategy for a club on campus",
+        optionC: "Create plan for better communication with your colleagues",
+        optionD: "Propose an education plan for a major you are designing for yourself",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "Strategies to stimulate your creative thinking include",
+        optionA: "Sleep on it",
+        optionB: "Put yourself in nerve-racking situations once in a while to fire up your brain.",
+        optionC: "Keep a notebook with you so you always have a way to record fleeting thoughts.",
+        optionD: "All of these are correct",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Key strategy (ies) for success in evaluating information",
+        optionA: "Examine arguments",
+        optionB: "Clarify thinking",
+        optionC: "Cultivate “habits of mind”",
+        optionD: "All of these are correct",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Among the tips for creative thinking, What does “Sensing” mean?",
+        optionA: "Be a good observer of people, nature, and events around you",
+        optionB: "Be empathetic with other people",
+        optionC: "Be empathetic with other people",
+        optionD: "Be open to insight as ideas pop into your mind",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Be open to insight as ideas pop into your mind",
+        optionA: "Develop ideas and expand their possibilities",
+        optionB: "Use mind-mapping to capture ideas",
+        optionC: "Explain how your ideas move beyond the status quo and contribute to a discussion",
+        optionD: "Take notes",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "Which action does belong to the strategy “Identify available solutions”?",
+        optionA: "Identify the problem",
+        optionB: "Organize the information logically",
+        optionC: "Compare and contrast possible solutions",
+        optionD: "Defend your solution",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which is a fact about Creative Thinking?",
+        optionA: "Every problem has only one solution or one right answer",
+        optionB: "Ideas either come or they don’t. Nothing will help – certainly not structure",
+        optionC: "The best answer or solution or method has already been discovered",
+        optionD: "Only few problems require complex technological solutions",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which is NOT a fiction about Creative Thinking?",
+        optionA: "Every problem has only one solution or one right answer",
+        optionB: "The best answer or solution or method has already been discovered",
+        optionC: "Creative answers are technologically complex",
+        optionD: "Creative solution should be answer for all problems",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which technology can help students establish a sense of community with their class and engage in ongoing threaded conversations on assigned readings and topics highlighting diverse points of view?",
+        optionA: "Interactive whiteboards",
+        optionB: "Discussion boards",
+        optionC: "Student-response systems",
+        optionD: "Digital camcorders",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "In which way does “Wikis” contribute to our ability to be critical and creative thinkers?",
+        optionA: "Wikis can help students coordinate, compile, synthesize, and present individual or group projects or research.",
+        optionB: "Wikis can help students build and share group resources and knowledge.",
+        optionC: "Wikis can help students provide peer review, feedback, and critiques",
+        optionD: "All of these are correct",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What is Critical thinking?",
+        optionA: "Is clear, reasonable, reflective thinking focused on deciding what to believe or do",
+        optionB: "Is a way of thinking to criticize what other people say",
+        optionC: "Is reflective thinking focused on claiming and proving other people your ideas or opinions",
+        optionD: "Is simple thinking that memorizing facts or blindly accepting what you hear or read",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "What are the characteristics of Critical thinking?",
+        optionA: "Examining assumptions",
+        optionB: "Challenging reasoning",
+        optionC: "Uncovering biases",
+        optionD: "All of these are correct",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which is NOT a characteristic of Critical thinking?",
+        optionA: "Skepticism",
+        optionB: "Group thinking",
+        optionC: "Examining assumptions",
+        optionD: "Uncovering biases",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "What is the meaning of the word “Logic” in the Ancient Greek logike?",
+        optionA: "A process of questioning information and data",
+        optionB: "It means asking probing questions",
+        optionC: "The science or art of reasoning",
+        optionD: "It refers to using knowledge, facts, and data to solve problems",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which of the following statements is NOT correct?",
+        optionA: "The word “Logic” comes from the Ancient Greek logike",
+        optionB: "“Logic” refers to the science or art of reasoning",
+        optionC: "“Logic” allows a person to evaluate arguments and reasoning",
+        optionD: "“Logic” cannot help to distinguish between good and bad reasoning",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "What is the purpose of the critical thinker when asking “What is happening?”?",
+        optionA: "To gather the basic information and begin to think of questions",
+        optionB: "To see where the information come from and how it was constructed",
+        optionC: "To check if any information is missing",
+        optionD: "To know if other ideas or possibilities exist",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "What is the similarity of Critical thinking and Problem-solving?",
+        optionA: "They both focus on identifying, selecting, defending solution",
+        optionB: "They both refer to using knowledge, facts, and data to solve problems effectively",
+        optionC: "They are efficient and rewarding process",
+        optionD: "They are fundamentally process of questioning information and data",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "In order to “Define the problem”, which actions should we take? ",
+        optionA: "Identify the problem, Identify facts, Provide examples, Organize the information logically",
+        optionB: "Identify the problem, Identify facts, Identify your most important goals",
+        optionC: "Identify the problem, Provide as many supporting details as possible, Provide examples, Organize the information logically",
+        optionD: "Identify the problem, Provide as many supporting details as possible, Identify your most important goals, Gather information and facts",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which is TRUE about long-term orientation culture",
+        optionA: "United States has a more long-term approach to life and results",
+        optionB: "If  you  work  within  a  culture  that  has  a long-term  orientation,  you  may  need  to  place  greater  emphasis  on reciprocation of greetings, gifts, and rewards.",
+        optionC: "Long-term orientation is often marked by persistence, thrift and frugality",
+        optionD: "All of these",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which is TRUE about short-term orientation culture",
+        optionA: "Many countries in Asia value a short-term orientation",
+        optionB: "If  you  work  within  a  culture  that  has  a  short-term  orientation,  you  may  need  to  place  greater  emphasis  on reciprocation of greetings, gifts, and rewards",
+        optionC: "Short-term orientation is often marked by persistence, thrift and frugality, and an order to relationships based on age and status",
+        optionD: "All of these",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "“_______enables one individual or group to make the decisions that affect others, and to enforce control”",
+        optionA: "Power-from-within",
+        optionB: "Power-with",
+        optionC: "Power-over",
+        optionD: "Power-from-outside",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which type of power can manifest itself when we stand, walk, and speak.",
+        optionA: "Power-from-within",
+        optionB: "Power-with",
+        optionC: "Power-over",
+        optionD: "None of these answers",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "“Arises from our sense of connection, our bonding with other human beings, and with the environment” can be used to describe which type of power.",
+        optionA: "Power-from-within",
+        optionB: "Power-with",
+        optionC: "Power-over",
+        optionD: "None of these answers",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "“The power of a strong individual in a group of equals, the power not to command, but to suggest and be listened to, to begin something and see it happen”  can be used to describe which type of power.",
+        optionA: "Power-from-within",
+        optionB: "Power-with",
+        optionC: "Power-over",
+        optionD: "None of these answers",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Which of the following idioms can be used to describe the relationship between power and oppression.",
+        optionA: "A blessing in disguise  ",
+        optionB: "The best of both worlds",
+        optionC: "Get out of hand",
+        optionD: "Two sides of the same coin",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "When does a person obtain the expert power?",
+        optionA: "Person A has higher status than person B",
+        optionB: "Person A has more expertise knowledge than person B",
+        optionC: "Person A group is bigger than person B",
+        optionD: "Person A has more friend than person B",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "What are the possible behavior responses in the consequences of power?",
+        optionA: "Trustworthiness and betrayal",
+        optionB: "Complaint and compliance",
+        optionC: "Commitment and compliance",
+        optionD: "Trustworthiness and resistance",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Why being socially connected is an important way of dealing with stress?",
+        optionA: "Because it's easy to isolate yourself when you feel stressed",
+        optionB: "Because it helps you to maintain a normal routine",
+        optionC: "Because other people can give you good advices about your problems",
+        optionD: "Because it can help distract you from your problems for a while",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "When subordinates are under conditions of coercive power, which following behavior responses are likely to be used?",
+        optionA: "Tolerance",
+        optionB: "Enthusiasm",
+        optionC: "Acceptance",
+        optionD: "Resistance",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "According to the research on diversity, what makes diverse groups/teams are better at decision-making and problem-solving?",
+        optionA: "Tend to focus more on facts",
+        optionB: "Less additional idea",
+        optionC: "More variety of personality",
+        optionD: "Has different belief",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "What is the final best practice for boosting multicultural skills?",
+        optionA: "Developing cultural intelligence",
+        optionB: "Developing cognitive complexity",
+        optionC: "Developing cultural competence",
+        optionD: "Developing cross-cultural skills",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "The common story that can be used to reflect individualistic cultures is?",
+        optionA: "Tom and Jerry",
+        optionB: "Spider-man",
+        optionC: "Superman",
+        optionD: "Mickey mouse",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which of the following countries represent individualistic cultures?",
+        optionA: "Japan",
+        optionB: "Cuba",
+        optionC: "Vietnam",
+        optionD: "The United States",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which of the following can be seen as positive sides of conflict?",
+        optionA: "Help individuals and group members grow and develop self-identities",
+        optionB: "Affect the social climate of the group and inhibit group cohesiveness",
+        optionC: "Making people divert energies away from the performance",
+        optionD: "Influence on stress and the psychophysical consequences of stress",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Which conflict-handling mode can be used when opponents with equal power are committed to mutually exclusive goals ",
+        optionA: "Avoiding ",
+        optionB: "Competing",
+        optionC: "Compromising ",
+        optionD: "Accommodating ",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which of the following are the five modes for conflict resolution developed by Kenneth Thomas (1976)?",
+        optionA: "(1) competing, (2) collaborating, (3) compromising, (4) avoiding, and (5) accommodating",
+        optionB: "(1) competing, (2) combination, (3) aggravating,  (4) resistance, and (5) ignore",
+        optionC: "(1) competing, (2) combination, (3) compromising,  (4) avoiding, and (5) accommodating",
+        optionD: "(1) competing, (2) collaborating, (3) aggravating, (4) resistance, and (5) ignore",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "What is the quickest and easiest solution to reduce conflict?",
+        optionA: "Physical separation",
+        optionB: "Use of rules and regulations",
+        optionC: "Third-party consultation",
+        optionD: "Confrontation and negotiation",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "In the Leader Trait Research which trait includes strong analytical abilities?",
+        optionA: "Self-confidence",
+        optionB: "Leadership motivation",
+        optionC: "Drive",
+        optionD: "Cognitive ability",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which conflict-handling mode can be used when an issue is trivial, or when more important issues are pressing ",
+        optionA: "Avoiding ",
+        optionB: "Competing",
+        optionC: "Compromising ",
+        optionD: "Accommodating ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which conflict-handling mode can be used when issues are more important to others than yourself—to satisfy others and maintain cooperation",
+        optionA: "Avoiding ",
+        optionB: "Competing",
+        optionC: "Compromising ",
+        optionD: "Accommodating ",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Status can be defined as:",
+        optionA: "A persons perceived level of importance or significance within aparticular context.",
+        optionB: "A result of power, with its roots in global colonialism and conquests",
+        optionC: "An action can deny certain groups jobs that pay living wages, can establish unequal. can deny affordable housing, and the list goes on",
+        optionD: "None of these above",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which power of the following exists when person B submits to person A because B feels that A has a right to exert power in a certain domain?",
+        optionA: "Expert Power",
+        optionB: "Legitimate Power",
+        optionC: "Reward Power",
+        optionD: "Coercive Power",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Authority is another name of:",
+        optionA: "Expert Power",
+        optionB: "Legitimate Power",
+        optionC: "Reward Power",
+        optionD: "Coercive Power",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "Coercive power is also referred to as:",
+        optionA: "Respect power",
+        optionB: "Discipline power",
+        optionC: "Team power",
+        optionD: "Punish power",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What is an example of  Expert Power?",
+        optionA: "Professors presumably have power in the classroom because of their mastery of a particular subject matter.",
+        optionB: "A supervisor has a right to assign work.",
+        optionC: "Salary and promotion among most blue-collar workers is based on a labor contract, not a performance appraisal.",
+        optionD: "In many organizations, supervisors and managers really do not control very many rewards.",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Reward Power exists when:",
+        optionA: "person A has power over person B because A can administer some form of punishment to B",
+        optionB: "person A gains power because A has knowledge or expertise relevant to B. ",
+        optionC: "when person B submits to person A because B feels that A has a right to exert power in a certain domain",
+        optionD: "when person A has power over person B because A controls rewards that B wants.",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Last stage in the model of the Conflict Process ",
+        optionA: "Frustration ",
+        optionB: "Conceptualization ",
+        optionC: "Behavior ",
+        optionD: "Outcome",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Of all the bases of power available to man, the power to hurt others is possibly the most often used, most often condemned and most difficult to control.",
+        optionA: "Reward Power",
+        optionB: "Coercive power",
+        optionC: "Referent Power",
+        optionD: "Legitimate Power",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Which of the four key cultural differences could be considered offensive by some?",
+        optionA: "Direct versus indirect communication",
+        optionB: "Accents and fluency",
+        optionC: "Differing attitudes toward hierarchy",
+        optionD: "Conflicting decision-making norms",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "When one language is dominated in the group, what could happen to the person who can't speak it?",
+        optionA: "Less competent in a group",
+        optionB: "Feel left out",
+        optionC: "Be seen as contributing less",
+        optionD: "All the above",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which of the following provides a great advantage to the leader in their relationships with teammates?",
+        optionA: "Authority to control teammates",
+        optionB: "Superior status",
+        optionC: "Cultural intelligence",
+        optionD: "Explicit in communication",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which of the following intervention technique should be used sparingly?",
+        optionA: "Adaptation",
+        optionB: "Structural",
+        optionC: "Managerial",
+        optionD: "Voluntary or involuntary removal ",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "When conflicts arise, what intervention technique should be used as a last resort?",
+        optionA: "Adaptation",
+        optionB: "Structural",
+        optionC: "Managerial",
+        optionD: "Voluntary or involuntary removal ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which traits are taking on increasing importance in the business world today?",
+        optionA: "Multiculturalism and cultural intelligence",
+        optionB: "Verbal and nonverbal communication",
+        optionC: "Cultural intelligence and language",
+        optionD: "Style, pace, language and nonverbal communication",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "When do the Conflicts of misperceived differences arise?",
+        optionA: "Reinforcing or weakening each other's impact",
+        optionB: "Interpret each other's actions or emotions erroneously",
+        optionC: "Differ over how to reach goals or pursue values",
+        optionD: "Hold totally different values or rank the same values in a significantly different order",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "What makes Relationship conflicts become hard to cope with?",
+        optionA: "Intimidate personal ego",
+        optionB: "Increased sense of self-worth",
+        optionC: "Misconception",
+        optionD: "People frequently aren't admitted for what they are",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which behavior people often DON'T display when they are being deceptive",
+        optionA: "Reduction in eye contact while engaged in a conversation",
+        optionB: "Awkward pauses in conversation",
+        optionC: "Decreased rate of speech",
+        optionD: "Increased smiling",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "The word “power” literally means:",
+        optionA: "'To be able to'",
+        optionB: "'The influence'",
+        optionC: "'The strength'",
+        optionD: "None of these answers",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Pay raises, promotions, desirable job assignments, more responsibility, new equipment are example of:",
+        optionA: "Reward power",
+        optionB: "Legitimate",
+        optionC: "Expert Power",
+        optionD: "Coercive Power ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "To use THIS power: Punish in private , Inform subordinates of rules and penalties or this power can be used without jeopardizing personal integrity",
+        optionA: "Reward power ",
+        optionB: "Legitimate power ",
+        optionC: "Evaluation criteria",
+        optionD: "Coercive power ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "____cultures focus on the needs of the nation, community, family, or group of workers",
+        optionA: "Collectivist ",
+        optionB: "Individualistic",
+        optionC: "Low-Power Distance",
+        optionD: "High-Power Distance",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "These conflicts, which relate to questions about what choices to make in a given situation, rest on differing views of the facts",
+        optionA: "conflicts of substance",
+        optionB: "Conflicts of process",
+        optionC: "Conflicts of misperceived differences",
+        optionD: "None of these",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "First stage in the model of the Conflict Process ",
+        optionA: "Frustration ",
+        optionB: "Conceptualization ",
+        optionC: "Behavior ",
+        optionD: "Outcome",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of the following reasons is sound justification for scheduling or attending a group meeting?",
+        optionA: "You hate to write reports and memos",
+        optionB: "You prefer not to do the research yourself",
+        optionC: "You feel lost without colleagues",
+        optionD: "Group input and interaction are critical",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which of the following answers depicts the 3 main elements of a meeting?",
+        optionA: "structure, schedule, chairperson",
+        optionB: "conflict, cohesion, engagement",
+        optionC: "members, leaders, engagement",
+        optionD: "chairperson, agenda, minutes",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of the following criteria should NOT be considered when determining who to invite to a meeting?",
+        optionA: "individuals who will be affected directly by the outcome",
+        optionB: "individuals who disagree or represent minority viewpoints",
+        optionC: "individuals who have the power to implement decisions",
+        optionD: "individuals who are uninvolved in the issues for discussion",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "At what point in a business meeting should group members approve the agenda and minutes?",
+        optionA: "right after the call to order",
+        optionB: "right after routine reports are shared",
+        optionC: "before the discussion of new business",
+        optionD: "right before final announcements by members",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "The person in charge of conducting a meeting is the……….",
+        optionA: "group leader",
+        optionB: "dominator",
+        optionC: "chairperson",
+        optionD: "recorder",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "All of the following strategies are for keeping a meeting moving at a comfortable pace EXCEPT",
+        optionA: "Only begin the meeting until all important group members are present",
+        optionB: "Place a time limit on each agenda item",
+        optionC: "Stay focused on the meeting's goal",
+        optionD: "Schedule another meeting to discuss unfinished business",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of the following labels does NOT represent how member behavior can disrupt a meeting?",
+        optionA: "loudmouth",
+        optionB: "whisperer",
+        optionC: "latecomer",
+        optionD: "summarizer",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Who is the meeting contributor? ",
+        optionA: "sleeper",
+        optionB: "whisperer",
+        optionC: "latecomer",
+        optionD: "reporter",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "The sentence 'Let Nemo finish her point first, and then we'll hear other’s opinions' can help a group deal with a member who is…….",
+        optionA: "loudmouth",
+        optionB: "whisperer",
+        optionC: "interrupter ",
+        optionD: "quieter",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "The written record of a group's discussion and activities is _____",
+        optionA: "a meeting minute ",
+        optionB: "a report",
+        optionC: "an agenda",
+        optionD: "a note ",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Which of the following is bad advice for group meeting? ",
+        optionA: "The group should always use a 2/3 vote to ensure the majority rules",
+        optionB: "The group accepts the will of the majority even though some members do not like that decision",
+        optionC: "The group follows an approved agenda that promotes orderly business",
+        optionD: "The group protects the rights of all members by guaranteeing everyone the right to speak",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Meetings give members a ___________ that boosts their motivation to implement group ideas and actions",
+        optionA: "real voice in decisions",
+        optionB: "chance to argue ",
+        optionC: "time to relax",
+        optionD: "time to chat",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of the following is the best example of constructive feedback?",
+        optionA: "Not giving full attention to a customer gives the image that we don't think he or she is important.",
+        optionB: "I believe that using mobile phone for personal purpose during working hours is not allowed in this company, but it seems like you do not see the real benefit of this policy.",
+        optionC: "You are not paying attention to the customer when you are having a conversation with someone else at the same time.",
+        optionD: "You were trained that you'll make a more positive corporate impression if you give the customer your complete attention.",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Which words below show emphasis?",
+        optionA: "Significantly, primarily, especially ",
+        optionB: "But, however, by contrast",
+        optionC: "For example, to illustrate, like",
+        optionD: "First, second, last",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which words should you use to when you want to give contrast ideas?",
+        optionA: "Significantly, primarily, especially ",
+        optionB: "Nevertheless, however, by contrast",
+        optionC: "For example, to illustrate, like",
+        optionD: "First, second, last",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Which words should you use to when you want to add more ideas?",
+        optionA: "Furthermore, also, similarly",
+        optionB: "Nevertheless, however, by contrast",
+        optionC: "For example, to illustrate, like",
+        optionD: "Therefore, as a result, hence",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "What are good advice for a meeting participants?",
+        optionA: "become angry for no good reason",
+        optionB: "demand much more information than is needed",
+        optionC: "offer much more information than is needed",
+        optionD: "demonstrate professionalism in your verbal and nonverbal interactions",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which is TRUE about persuasion? ",
+        optionA: "Persuasion is an act or process of presenting arguments to move, motivate, or change your audience",
+        optionB: "Persuasion can be implicit or explicit and only have positive effects",
+        optionC: "Persuasion is forcing people to do as your request ",
+        optionD: "Persuasion is an act of leader giving order to followers without considering their will",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of Maslow's Hierarchy of Needs is primarily met when someone joins an exclusive club or is elected as leader of a prestigious group?",
+        optionA: "Physiological ",
+        optionB: "Esteem",
+        optionC: "Love and belonging",
+        optionD: "Safety ",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "Which of Maslow's Hierarchy of Needs is primarily met when a neighborhood watch group forms to deter crime in the community? ",
+        optionA: "Physiological ",
+        optionB: "Esteem",
+        optionC: "Love and belonging",
+        optionD: "Safety ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which is FALSE about Maslow hierarchy of needs?",
+        optionA: "Maslow's basic need is safety need. ",
+        optionB: "Maslow's Hierarchy of Needs ranks critical needs in the following order: physiological, safety, belongingness, esteem, and self-actualization",
+        optionC: "Maslow's basic need is physiological need.",
+        optionD: "Maslow's Hierarchy of Needs includes control, inclusion, and affection needs.",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Reasons for us to engage in communication are all below EXCEPT",
+        optionA: "Dominate people for personal benefits  ",
+        optionB: "Understand communication context ",
+        optionC: "Understand our identity ",
+        optionD: "Meets our need",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Laura has an important meeting tomorrow to present her solution to the city People Committee about improving students’ life. Which of the following is good advice for her to prepare herself for the presentation? ",
+        optionA: "Use emotional appeals",
+        optionB: "Simplify the students' problems to make the solution look easy",
+        optionC: "Hide numbers and facts if the committee do not ask ",
+        optionD: "Prepare the presentation with relevant data and rehearsal the speech carefully",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "To produce a good opening in a persuasive message, you should keep it",
+        optionA: "Neutral ",
+        optionB: "Negative and impersonal",
+        optionC: "Impersonal",
+        optionD: "Positive and personal",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "When conducting a meeting, you should",
+        optionA: "Be bold and honest, not afraid to hurt people's feeling",
+        optionB: "Get every team member to voice out their feeling and opinions",
+        optionC: "Make it as short as possible because time is gold",
+        optionD: "Favor relationships",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "At the end of a meeting, you should",
+        optionA: "Ask a lot of questions to test the team members' understanding of the discussion",
+        optionB: "Be brief and recapture the key points",
+        optionC: "Be the first to leave the meeting room",
+        optionD: "Take group photo and have conversation with members to build personal relationships with them ",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Eye contact with your team members can be maintained by",
+        optionA: "always looking at a few people",
+        optionB: "always looking at your favourite people",
+        optionC: "always looking at the nearest people",
+        optionD: "looking at every individual in a regular pattern",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "You may maintain less eye contact with audiences who are…",
+        optionA: "very interested in your presentation",
+        optionB: "not showing interest in your presentation",
+        optionC: "want to ask questions",
+        optionD: "new to your team",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "In a communication transaction, feedback represents",
+        optionA: "a group's physical and psychological environment.",
+        optionB: "anything that interferes with or inhibits effective communication.",
+        optionC: "the media through which group members share messages.",
+        optionD: "the response or reaction to a message.",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "On her way to an important Friday morning meeting, Susan observes one of the people she supervises speaking harshly to a customer. Susan knows she must offer constructive feedback to the employee, so she decides to",
+        optionA: "concentrate more on her verbal than on her nonverbal message",
+        optionB: "minimize the impact of her criticism by speaking in general terms",
+        optionC: "speak to the employee early Monday morning",
+        optionD: "stress the benefits the receiver will gain by modifying his/her behavior",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which type of feedback requests confirmation or clarification of a message, and is often expressed in the form of a question?",
+        optionA: "Evaluative",
+        optionB: "Interpretive",
+        optionC: "Supportive",
+        optionD: "Probing",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Which type of feedback communicates encouragement in response to a message?",
+        optionA: "Evaluative",
+        optionB: "Interpretive",
+        optionC: "Supportive",
+        optionD: "Probing",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which type of feedback communicates sympathy and empathy for the source of the message?",
+        optionA: "Evaluative",
+        optionB: "Interpretive",
+        optionC: "Supportive",
+        optionD: "Understanding ",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "The best way to convey friendliness is to……",
+        optionA: "smile",
+        optionB: "speak slowly ",
+        optionC: "tell a joke",
+        optionD: "use a tone of importance",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "David has just been given the task of delivering an oral presentation to the marketing department of the organization he joined two months ago. The first thing David should do is……….",
+        optionA: "analyze the audience",
+        optionB: "determine the purpose of the presentation",
+        optionC: "draft an outline",
+        optionD: "gather supporting data",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Michelle is new staff of Marketing department in FPT Software company. Her manager told her to prepare a report to review activity of the department in the last 3 months. Which type of report is that? ",
+        optionA: "Progress ",
+        optionB: "Financial",
+        optionC: "Feasibility ",
+        optionD: "Needs assessment ",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "Susan is a new staff of IT team 3 in FPT Software company. Her senior told her to prepare a report to instruct their Japanese customer how the new app works. Which type of report is that?",
+        optionA: "Technical  ",
+        optionB: "Financial",
+        optionC: "Feasibility ",
+        optionD: "Needs assessment ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "When preparing report content, you should ask all of the questions below except",
+        optionA: "Whom the report is about and/or prepared for? ",
+        optionB: "What was done, what problems were addressed, and the results, including conclusions and/or recommendations?",
+        optionC: "Where the subject studied occurred?",
+        optionD: "How much do your manager pay you to write the report?",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What is abstract in a report? ",
+        optionA: "Title fly",
+        optionB: "Key words to introduce the research topic",
+        optionC: "Introduction part ",
+        optionD: "Include aims and outcome of the research",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "What are included in a report abstract?",
+        optionA: "Highlight topic, methods, data, and results ",
+        optionB: "A list of the main parts of the report",
+        optionC: "Label, report, features title, author",
+        optionD: "Methodology ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "The solution to a research problem is presented in the report as a part of the",
+        optionA: "appendix",
+        optionB: "conclusion",
+        optionC: "recommendation",
+        optionD: "findings",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which of the following is the best example of constructive feedback?",
+        optionA: "Your proposal is disorganized, contains computational errors, and is a writing disaster. ",
+        optionB: "You aren't paying attention to the customer when you are having a conversation with someone else at the same time. ",
+        optionC: "Why can't you stay focus? It is only 10 o'clock in the morning.",
+        optionD: "All the elements of a good proposal are here; they just need to be reordered. By placing the strongest element first, we can capture and hold the reader’s attention. ",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which of the following statements is NOT true of performance appraisals?",
+        optionA: "They may be written directly or indirectly, depending on the situation.",
+        optionB: "They may include humor if audience analysis dictates it will be well received.",
+        optionC: "They should be brief.",
+        optionD: "They should include factual evidence of strong or weak performance.",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "The disadvantage of written messages is that they",
+        optionA: "Can have legal value.",
+        optionB: "Can be revised and edited to ensure they adhere to the principles of business communication.",
+        optionC: "Can be reread and studied, which is important if a message is long, is complex, or has been written in anger.",
+        optionD: "Can be viewed as being more formal, in part because they are permanent.",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which of the following should be a consideration in determining the formality of a goodwill message?",
+        optionA: "Cost",
+        optionB: "Timeliness in sending the message",
+        optionC: "Length of message",
+        optionD: "Familiarity with the receiver",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "How should the saying 'your understanding was wrong' can be paraphrased into a more positive way?",
+        optionA: "I already explained the case for you more than 3 times.",
+        optionB: "Are you sure about the fact?",
+        optionC: "I can only see mistakes in this. ",
+        optionD: "Let us review the facts.",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "When writing an email, you should consider your receiver’s educational level and knowledge of the message topic. If your receivers do not work in the same industry with you, you are recommended to use ….",
+        optionA: "technical words",
+        optionB: "nontechnical words",
+        optionC: "words that you know ",
+        optionD: "English ",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Which sentence below effectively conveys a positive attitude?",
+        optionA: "Our professional staff will repair your laptop.",
+        optionB: "The store will not open until 10am.",
+        optionC: "I regret to advise that we must the refund request for your keyboard.",
+        optionD: "You cannot be enrolled in your courser course. ",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "How can you demonstrate sensitivity to a partner's culture?",
+        optionA: "Avoid discussing any cultural differences",
+        optionB: "Mimic the partner's mannerisms perfectly",
+        optionC: "Start formally before becoming informal",
+        optionD: "Begin informally to help establish rapport",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "In order to make good impression to achieve the message goals, positive words convey optimism and confidence are",
+        optionA: "Disapprove, impossible, obnoxious",
+        optionB: "Deny, hateful, not",
+        optionC: "Contradict, fault, unable",
+        optionD: "Favorable, compliment, answerable",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "The most important part of an application letter is the",
+        optionA: "action-promoting close",
+        optionB: "attention-getting opening",
+        optionC: "logical explanation",
+        optionD: "summary of qualifications",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "How should you best respond to interview questions?",
+        optionA: "Be enthusiastic, honest, sincere, and state your accomplishments in a specific and positive manner.",
+        optionB: "Embellish your achievements and accomplishments to make sure the employer remembers them.",
+        optionC: "Say that your achievements and accomplishments are detailed on your resume.",
+        optionD: "Use caution when describing what you have accomplished so you will not appear to be bragging on yourself.",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of the following interview questions is a behavioral question?",
+        optionA: "Where do you want to be in the next five years? ",
+        optionB: "What type of work environment, structured or unstructured, is your most productive work setting?",
+        optionC: "You are younger than most people you will supervise. Do you think that is a problem?",
+        optionD: "Tell an experience of a time when you faced a major problem in group projects and how have you dealt with it?",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "When developing an application letter, which of the following should not be added in the opening of the letter?",
+        optionA: "The name of your referee who introduced this job to you",
+        optionB: "Your knowledge about the position or the company",
+        optionC: "Reasons why you find this position interesting",
+        optionD: "Your most significant accomplishments",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which questions below that a job applicant should prepare to ask during an interview?",
+        optionA: "Please describe the normal routine of this position in a typical day?",
+        optionB: "How can I gain promotion?",
+        optionC: "When do you expect to make a hiring decision as it is said in the recruitment advertisement that this position is in urgent need? ",
+        optionD: "How much is the salary?",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "“I am the first person in my family to complete a Bachelor degree; and now that I have finished my education, I want to give something back to my family by getting a good job with a company like yours. I worked part time while attending school, so I have work experience at food stores. I am a hard worker; I grew up on the farm and could drive any kind of machinery.” This part of an application letter to software developer position is not effective because_______",
+        optionA: "It uses impersonal salutation.",
+        optionB: "It does not relate to the company needs.",
+        optionC: "It conveys negative tones.",
+        optionD: "It provides the family background of the applicant.",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "In a job interview, which of the following answers is most appropriate to answer the question “Are you planning a family in the near future?”",
+        optionA: "I suppose everyone has a family plan in their own way. What will be will be!",
+        optionB: "May I not answer this over personal question?",
+        optionC: "As an active person in the young generation, I am quite open to this issue, I am working hard to support my parents first, and then I gaining a high social status for my future children. ",
+        optionD: "Currently I am focused on my career. Although having a family is always a possibility, it is not a priority at the moment.",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Examples of communication challenges in a global environment are",
+        optionA: "Not understanding cultural differences",
+        optionB: "Differences in time",
+        optionC: "Words that have different meanings and connotations and different language",
+        optionD: "Differences in calling each other by first name or family name",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "Which of the following is NOT a requirement of a valid contract?",
+        optionA: "Written on a contract form",
+        optionB: "Competency of parties",
+        optionC: "Offer and acceptance",
+        optionD: "Legal subject matter",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "When being asked “please tell us your strengths?” in a job interview, what should you focus on in your answer?",
+        optionA: "Tell about your academic awards, your successful school projects.",
+        optionB: "Tell about your two key personal qualifications.",
+        optionC: "Tell your work-related accomplishments, mention how your previous supervisor or manager have pleased with your work performance.",
+        optionD: "Tell about your skills and knowledge and explain how they satisfy the job requirements.",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which of the following is NOT the reason for leaders to enable a broader social-connectedness between employees in the workplace?",
+        optionA: "Psychological wellbeing is at risk, as is cognitive performance, if people can't socialise at work",
+        optionB: "People with broad organisational knowledge that people like collaborating with seem to add the most value",
+        optionC: "The act of socialising with other people on a regular basis is increasingly being seen as necessary for maintaining and increasing the information highways within the brain. It helps people think better.",
+        optionD: "People with friends at work tend to be happier and more productive",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "When doing business in a diverse global environment, you will want to adopt an open, respectful attitude toward cultural differences of others by doing all of the following except_____",
+        optionA: "accept other people's needs for indirectness in communicating as in Asia.",
+        optionB: "open to understanding and be respectful of the different ways people of other cultures think and feel. ",
+        optionC: "sense that your own culture represents one way—and not the only way—to believe and to do things. ",
+        optionD: "rush to an early judgment about the way a business deal is going. ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "In order to make good impression, positive words convey optimism and confidence are",
+        optionA: "regret, sorry, terror",
+        optionB: "trouble, unable, happy",
+        optionC: "wrong, obnoxious, yes",
+        optionD: "willing, thank, appreciate",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Nonverbal behavior that reflects positive attitude is _____",
+        optionA: "moving your knees and your feet toward to door ",
+        optionB: "looking at your watch",
+        optionC: "playing with your jewelry",
+        optionD: "leaning your body toward the person with whom you are conversing",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "When you conduct a job campaign to obtain employment. After analyzing your qualifications and job preferences, you will _____",
+        optionA: "start an interview for a job ",
+        optionB: "obtain information about employment opportunities ",
+        optionC: "email cover letter to potential companies",
+        optionD: "go to gym to prepare good health and appearance for the job interview",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "When analyzing your qualifications and job preferences, you will look into your most positive attributes including",
+        optionA: "your achievements, background, soft skills, professional referees ",
+        optionB: "your strengths, weaknesses, interests, skills",
+        optionC: "your accomplishments, education, experience, and personal traits",
+        optionD: "your awards, education, qualifications, hobbies",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "When analyzing job preferences, which of the following questions is not necessary to consider? ",
+        optionA: "Do you like working indoors, outside an office environment, or in varied work environments? ",
+        optionB: "Do you want to work in a large company with a structured work environment, or do you prefer a small or less-structured company?",
+        optionC: "Do you want to work alone, working with other people or being in charge?",
+        optionD: "Do you want to work in a comfortable and open environment with people who share the same hobbies and personal life with you?",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "The resume opening should include a",
+        optionA: "heading, job or career objective, and a summary of your qualifications.",
+        optionB: "section with information for contacting your references.",
+        optionC: "summary of education.",
+        optionD: "list of special skills, honors, and activities.",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "The primary purpose of networking contacts is to",
+        optionA: "ask for their help in finding a job.",
+        optionB: "ask them to serve as a reference for your resume.",
+        optionC: "leave a resume with them.",
+        optionD: "seek their guidance and advice.",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "For new college graduates with limited experience, the preferred number of pages for a resume is",
+        optionA: "one",
+        optionB: "two",
+        optionC: "three",
+        optionD: "four",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of the following interview questions is a behavioral question?",
+        optionA: "Do you like to work alone or with other people?",
+        optionB: "Give me an example of a situation in which you were successful (or unsuccessful) in motivating someone.",
+        optionC: "What does teamwork mean to you?",
+        optionD: "What is your greatest weakness?",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "An interview question that asks about one of your weaknesses would be answered best by",
+        optionA: "admitting the weakness.",
+        optionB: "asking if it is necessary to talk about weaknesses.",
+        optionC: "naming a weakness and turning it into a strength.",
+        optionD: "saying that you do not have any weaknesses.",
+        correctOption: "optionC"
+    },
+    
+    {
+        question: "Which sentence below is unbiased?",
+        optionA: "Our white boss is going to deliver a speech.",
+        optionB: "Mrs. Nancy is going to deliver a speech.",
+        optionC: "The Jewish lady is going to deliver a speech.",
+        optionD: "Mr. Nando, our city senior, is going to deliver a speech.",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which of the following is the best content for an answer to the interview question, “What do you consider your strengths?”",
+        optionA: "Cite your academic record and achievements",
+        optionB: "List 3 specific abilities that you have and explain how they have served you in the past",
+        optionC: "Refer to your work-related accomplishments",
+        optionD: "Relate your skills and knowledge to the job requirements",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What is career development? ",
+        optionA: "It's a lifelong process in which we become aware of, interested in, knowledgeable about, and skilled in a career. ",
+        optionB: "It's a key part of human development as our identity forms and our life unfolds.",
+        optionC: "It's a development process that varies from person to person on the life journey to discover themselves. ",
+        optionD: "All are correct",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "What are the four cyclical steps of the career roadmap identifies? ",
+        optionA: "Know yourself, Explore and choose options, Gain knowledge and experience, Put it all together: the job search process",
+        optionB: "Know yourself, Increase income, Gain more business relationship, Put it all together: the job search process",
+        optionC: "Know the job market, Know leadership, Explore and choose options, Improve living standard of self and family",
+        optionD: "Know employees' requirement, Explore your passion, Gain money, Gain social relationship",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "Which of the following is incorrect about resume? ",
+        optionA: "A résumé is a “selfie” for business purposes.",
+        optionB: "It is a written picture of who you are—it's a marketing tool, and a promotion of you as an ideal candidate for any job you may be interested in",
+        optionC: "The word résumé comes from the French word résumé, which means “a summary.”",
+        optionD: "Resume is to show to your family what you do for a living. ",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which of the following is optional in a resume? ",
+        optionA: "Work experience ",
+        optionB: "Education background",
+        optionC: "Job-related skills ",
+        optionD: "Hobbies/interests ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What should you put in the Education part in a resume? ",
+        optionA: "academic degrees, professional development, certificates, internships",
+        optionB: "most recent jobs you have experience; include the title of the position, employer’s name, location, employment dates",
+        optionC: "5-10 skills you have gained in your field",
+        optionD: "Personal contact ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "What should you put in the Work experience part in a resume? ",
+        optionA: "Academic degrees, professional development, certificates, internships",
+        optionB: "Most recent jobs you have experience; include the title of the position, employer’s name, location, employment dates",
+        optionC: "5-10 skills you have gained in your field",
+        optionD: "Personal contact ",
+        correctOption: "optionB"
+    },
+    
+    {
+        question: "What should be written in the Personal Information part in a resume? ",
+        optionA: "Email and phone number ",
+        optionB: "Health issue",
+        optionC: "Religious belief ",
+        optionD: "Gender, height, weight ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "What can a student put in his or her cover letter?",
+        optionA: "GPA",
+        optionB: "Soft skills",
+        optionC: "Volunteer works",
+        optionD: "All are correct ",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Which of the following advice is NOT suitable for a job interview?",
+        optionA: "Review job description",
+        optionB: "Be confident ",
+        optionC: "Come prepared ",
+        optionD: "Dress casually ",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Which of the following advice is NOT suitable for a job interview?",
+        optionA: "Research the company",
+        optionB: "Research other companies in the same industry",
+        optionC: "Practice answer questions about the job ",
+        optionD: "Practice answer questions about personal life",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "What should you do right after a job interview?",
+        optionA: "Do nothing",
+        optionB: "Wait patiently for the HR department to call you ",
+        optionC: "Send an email to HR department asking about the result of the interview",
+        optionD: "Send thank you email to the interviewer",
+        correctOption: "optionD"
+    },
+
+    {
+        question: "Below are questions that a job applicant should prepare to ask during an interview EXCEPT",
+        optionA: "What are the major responsibilities of the job?",
+        optionB: "Please describe the normal routine of this position?",
+        optionC: "How is job performance evaluated and how often?",
+        optionD: "How much can the company pay me?",
+        correctOption: "optionD"
+    },
+    
+    {
+        question: "Who do potential employers consider references from as the best type of references?",
+        optionA: "Your friends",
+        optionB: "Your lecturers or your previous manager",
+        optionC: "Your family",
+        optionD: "Your best friends",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "Choose the best answer for the interview question “How old are you?”",
+        optionA: "Old enough to have the knowledge to do the job well but not too old to be excited about continuing to improve and do it better.",
+        optionB: "22 years old.",
+        optionC: "Old enough to take this job.",
+        optionD: "My age is written in my resume. I am a very young, active, energetic person.  ",
+        correctOption: "optionA"
+    },
+
+    {
+        question: "An interviewer may intentionally challenge you by asking difficult questions to ………..",
+        optionA: "see how you handle different situations.",
+        optionB: "see you panic.",
+        optionC: "show you the working environment can be stressful.",
+        optionD: "avoid being friendly.",
+        correctOption: "optionA"
+    },
+    
+    {
+        question: "What is good advice to communicate effectively in a job interview?",
+        optionA: "Using jargon",
+        optionB: "Rambling ",
+        optionC: "Keep eye contact",
+        optionD: "Over friendly",
+        correctOption: "optionC"
+    }
+
+]
+
+
+let shuffledQuestions = [] //empty array to hold shuffled selected questions
+
+function handleQuestions() { 
+    //function to shuffle and push 10 questions to shuffledQuestions array
+    while (shuffledQuestions.length <= 24) {
+        const random = questions[Math.floor(Math.random() * questions.length)]
+        if (!shuffledQuestions.includes(random)) {
+            shuffledQuestions.push(random)
+        }
+    }
+}
+
+
+let questionNumber = 1
+let playerScore = 0  
+let wrongAttempt = 0 
+let indexNumber = 0
+
+// function for displaying next question in the array to dom
+function NextQuestion(index) {
+    handleQuestions()
+    const currentQuestion = shuffledQuestions[index]
+    document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("player-score").innerHTML = playerScore
+    document.getElementById("display-question").innerHTML = currentQuestion.question;
+    document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
+    document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
+    document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
+    document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+
+}
+
+
+function checkForAnswer() {
+    const currentQuestion = shuffledQuestions[indexNumber] //gets current Question 
+    const currentQuestionAnswer = currentQuestion.correctOption //gets current Question's answer
+    const options = document.getElementsByName("option"); //gets all elements in dom with name of 'option' (in this the radio inputs)
+    let correctOption = null
+
+    options.forEach((option) => {
+        if (option.value === currentQuestionAnswer) {
+            //get's correct's radio input with correct answer
+            correctOption = option.labels[0].id
+        }
+    })
+   
+    //checking to make sure a radio input has been checked or an option being chosen
+    if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
+        document.getElementById('option-modal').style.display = "flex"
+    }
+
+    //checking if checked radio button is same as answer
+    options.forEach((option) => {
+        if (option.checked === true && option.value === currentQuestionAnswer) {
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            playerScore++
+            indexNumber++
+            //set to delay question number till when next question loads
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+
+        else if (option.checked && option.value !== currentQuestionAnswer) {
+            const wrongLabelId = option.labels[0].id
+            document.getElementById(wrongLabelId).style.backgroundColor = "red"
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            wrongAttempt++
+            indexNumber++
+            //set to delay question number till when next question loads
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+    })
+}
+
+
+
+//called when the next button is called
+function handleNextQuestion() {
+    checkForAnswer()
+    unCheckRadioButtons()
+    //delays next question displaying for a second
+    setTimeout(() => {
+        if (indexNumber <= 24) {
+            NextQuestion(indexNumber)
+        }
+        else {
+            handleEndGame()
+        }
+        resetOptionBackground()
+    }, 1500);
+}
+
+//sets options background back to null after display the right/wrong colors
+function resetOptionBackground() {
+    const options = document.getElementsByName("option");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).style.backgroundColor = ""
+    })
+}
+
+// unchecking all radio buttons for next question(can be done with map or foreach loop also)
+function unCheckRadioButtons() {
+    const options = document.getElementsByName("option");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+// function for when all questions being answered
+function handleEndGame() {
+    let remark = null
+    let remarkColor = null
+
+    // condition check for player remark and remark color
+    if (playerScore <= 3) {
+        remark = "Bad Grades, Keep Practicing."
+        remarkColor = "red"
+    }
+    else if (playerScore >= 4 && playerScore < 7) {
+        remark = "Average Grades, You can do better."
+        remarkColor = "orange"
+    }
+    else if (playerScore >= 7) {
+        remark = "Excellent, Keep the good work going."
+        remarkColor = "green"
+    }
+    const playerGrade = (playerScore / 25) * 100
+
+    //data to display to score board
+    document.getElementById('remarks').innerHTML = remark
+    document.getElementById('remarks').style.color = remarkColor
+    document.getElementById('grade-percentage').innerHTML = playerGrade
+    document.getElementById('wrong-answers').innerHTML = wrongAttempt
+    document.getElementById('right-answers').innerHTML = playerScore
+    document.getElementById('score-modal').style.display = "flex"
+
+}
+
+//closes score modal and resets game
+function closeScoreModal() {
+    questionNumber = 1
+    playerScore = 0
+    wrongAttempt = 0
+    indexNumber = 0
+    shuffledQuestions = []
+    NextQuestion(indexNumber)
+    document.getElementById('score-modal').style.display = "none"
+}
+
+//function to close warning modal
+function closeOptionModal() {
+    document.getElementById('option-modal').style.display = "none"
+}
+    </script>
+</body></html>
