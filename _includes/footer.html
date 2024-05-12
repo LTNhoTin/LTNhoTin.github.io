@@ -1,8 +1,13 @@
 <footer class="page__footer" style="background-color: #000; color: #fff; padding: 20px 0;">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-contact">
-        <h3>Liên hệ:</h3>
+      <div class="footer-social-contact">
+        <h3>Theo dõi chúng tôi:</h3>
+        <ul class="social-icons">
+          <li><a href="#" class="social-icon-link"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" class="social-icon-link"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" class="social-icon-link"><i class="fab fa-instagram"></i></a></li>
+        </ul>
         <ul class="contact-info">
           <li class="contact-info__item"><strong class="small-text">Nho Tín</strong></li>
           <li class="contact-info__item contact-info__item--phone">
@@ -16,19 +21,12 @@
         <h3>Donate qua tài khoản ngân hàng:</h3>
         <div class="donate-info">
           <p class="account-name">Tài khoản: LE TO NHO TIN</p>
-          <!-- Chèn mã QR code vào đây -->
-          <img src="/assets/images/qrcode.jpg" alt="QR Code for bank donation" class="qr-code">
+          <p class="bank-name">Ngân hàng: Techcombank</p>
         </div>
-        <p class="bank-name">Ngân hàng: Techcombank</p>
       </div>
 
-      <div class="footer-social">
-        <h3>Theo dõi chúng tôi:</h3>
-        <ul class="social-icons">
-          <li><a href="#" class="social-icon-link"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#" class="social-icon-link"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" class="social-icon-link"><i class="fab fa-instagram"></i></a></li>
-        </ul>
+      <div class="footer-qr-code">
+        <img src="/assets/images/qrcode.jpg" alt="QR Code for bank donation" class="qr-code">
       </div>
     </div>
   </div>
@@ -49,15 +47,23 @@
   justify-content: space-between;
 }
 
-.footer-contact,
+.footer-social-contact,
 .footer-donate,
-.footer-social {
+.footer-qr-code {
   flex-basis: 30%;
 }
 
-.footer-donate .qr-code {
+.footer-donate .donate-info {
+  margin-bottom: 20px;
+}
+
+.footer-donate .account-name,
+.footer-donate .bank-name {
+  margin-bottom: 10px;
+}
+
+.qr-code {
   width: 100px;
-  margin-top: 10px;
 }
 
 .contact-info {
@@ -104,16 +110,11 @@
     flex-direction: column;
   }
 
-  .footer-contact,
+  .footer-social-contact,
   .footer-donate,
-  .footer-social {
+  .footer-qr-code {
     flex-basis: 100%;
     margin-bottom: 20px;
-  }
-
-  .footer-donate .qr-code {
-    margin-left: 0;
-    margin-top: 10px;
   }
 }
 </style>
