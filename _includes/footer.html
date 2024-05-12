@@ -1,134 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Footer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .page__footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center; /* Căn giữa nội dung */
-      padding: 20px 0;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap; /* Cho phép dòng mới */
-      justify-content: center; /* Căn giữa nội dung */
-    }
-
-    .footer-content > div {
-      margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
-    }
-    
-    .footer-section {
-      flex: 1;
-      max-width: 300px; /* Giới hạn chiều rộng của mỗi phần */
-    }
-    
-    .contact-info {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 16px; /* Kích thước chữ chung */
-    }
-    
-    .contact-info__item {
-      margin-bottom: 10px;
-    }
-    
-    .contact-info__item--phone {
-      display: flex;
-      align-items: center;
-    }
-    
-    .small-text {
-      font-size: 14px;
-    }
-    
-    .social-icons {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .social-icons li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-    
-    .social-icon-link {
-      color: #fff;
-      font-size: 20px;
-      transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu sắc */
-    }
-
-    .social-icon-link:hover {
-      color: #007bff; /* Màu xanh dương khi rê chuột vào */
-    }
-    
-    .page__footer-follow {
-      display: flex;
-      align-items: center;
-    }
-    
-    .page__footer-follow strong {
-      margin-right: 10px;
-    }
-    
-    .page__footer-copyright {
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    @media (max-width: 768px) {
-      .footer-content {
-        flex-direction: column;
-      }
-      
-      .footer-section {
-        max-width: 100%; /* Đảm bảo các phần tử căn chiều rộng tối đa trên thiết bị nhỏ */
-      }
-    }
-  </style>
-</head>
-<body>
-
 <footer class="page__footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-section">
-        <ul class="contact-info">
-          <li class="contact-info__item"><strong class="small-text">Nho Tín</strong></li>
-          <li class="contact-info__item contact-info__item--phone">
-            <i class="fas fa-phone-square-alt" aria-hidden="true"></i>
-            <a href="tel:0963620379" class="phone-link small-text">0963 620 379</a>
-          </li>
-          <li><strong>Follow us:</strong></li>
-          <li>
-            <ul class="social-icons">
-              <li><a href="#" class="https://www.facebook.com/tin.letonho" title="Facebook"><i class="fab fa-facebook-f social-icon-link"></i></a></li>
-              <li><a href="#" class="https://www.linkedin.com/in/ltnhotin/" title="LinkedIn"><i class="fab fa-linkedin social-icon-link"></i></a></li>
-              <li><a href="#" class="https://github.com/LTNhoTin" title="GitHub"><i class="fab fa-github social-icon-link"></i></a></li>
-            </ul>
-          </li>
+        <ul class="social-icons">
+          {% if site.data.ui-text[site.locale].follow_label %}
+            <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
+          {% endif %}
+  
+          {% if site.footer.links %}
+            {% for link in site.footer.links %}
+              {% if link.label and link.url %}
+                <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+  
+          {% unless site.atom_feed.hide %}
+            <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+          {% endunless %}
         </ul>
       </div>
     </div>
   </div>
 </footer>
-
-</body>
-</html>
