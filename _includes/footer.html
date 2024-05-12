@@ -6,11 +6,16 @@
   <title>Footer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
     .page__footer {
-      padding: 20px 0;
       background-color: #000;
       color: #fff;
       text-align: center; /* Căn giữa nội dung */
+      padding: 20px 0;
     }
     
     .container {
@@ -28,10 +33,9 @@
       margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
     }
     
-    .footer-social-contact,
-    .footer-donate,
-    .footer-qr-code {
-      flex-basis: calc(33.3333% - 20px); /* Adjusted for margin-right */
+    .footer-section {
+      flex: 1;
+      max-width: 300px; /* Giới hạn chiều rộng của mỗi phần */
     }
     
     .footer-donate .donate-info {
@@ -105,11 +109,9 @@
       .footer-content {
         flex-direction: column;
       }
-    
-      .footer-social-contact,
-      .footer-donate,
-      .footer-qr-code {
-        flex-basis: calc(100% - 20px); /* Kích thước đầy đủ trên thiết bị nhỏ */
+      
+      .footer-section {
+        max-width: 100%; /* Đảm bảo các phần tử căn chiều rộng tối đa trên thiết bị nhỏ */
       }
     }
   </style>
@@ -119,7 +121,7 @@
 <footer class="page__footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-donate">
+      <div class="footer-section footer-donate">
         <h3>Donate via bank account:</h3>
         <div class="donate-info">
           <p class="account-name">Account: LE TO NHO TIN</p>
@@ -127,11 +129,11 @@
         </div>
       </div>
 
-      <div class="footer-qr-code">
+      <div class="footer-section footer-qr-code">
         <img src="/assets/images/qrcode.jpg" alt="QR Code for bank donation" class="qr-code">
       </div>
 
-      <div class="footer-social-contact">
+      <div class="footer-section footer-social-contact">
         <ul class="contact-info">
           <li class="contact-info__item"><strong class="small-text">Nho Tín</strong></li>
           <li class="contact-info__item contact-info__item--phone">
