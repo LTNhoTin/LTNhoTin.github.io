@@ -102,7 +102,7 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:nhotin911@gmail.com"
+      url: "https://mail.google.com/mail/?view=cm&fs=1&to=nhotin911@gmail.com"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://www.facebook.com/tin.letonho"
