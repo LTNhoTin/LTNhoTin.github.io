@@ -1,7 +1,7 @@
 ---
 title: "Welcome to my blog"
 excerpt: "First post"
-last_modified_at: 2024-05-12T07:53:04-04:00
+last_modified_at: 2024-05-12T07:53:04+07:00
 author_profile: true
 classes: wide 
 header:
