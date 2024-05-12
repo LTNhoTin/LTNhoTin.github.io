@@ -1,31 +1,25 @@
-minimal_mistakes_skin    : "dark"
+# Giao diện và giao diện người dùng
+minimal_mistakes_skin    : "dark"  # Chọn chủ đề giao diện tối
 
-locale                   : "en-US"
-title                    : "Nho Tin | Personal Blog"
-subtitle                 : "My Personal Blog"
-name                     : "Lê Tô Nho Tín"
-description              : "Blog about Knowledge sharing in programming and My personal life as a programmer"
-url                      : "https://ltnhotin.github.io"
-logo                     : "/assets/images/favicon.png"
-masthead_title           : "Nho's Journey"
-words_per_minute         : 200
+# Cài đặt trang web
+locale                   : "en-US"  # Ngôn ngữ của trang web
+title                    : "Nho Tin | Personal Blog"  # Tiêu đề trang web
+subtitle                 : "My Personal Blog"  # Phụ đề
+name                     : "Lê Tô Nho Tín"  # Tên tác giả
+description              : "Blog about Knowledge sharing in programming and My personal life as a programmer"  # Mô tả trang web
+url                      : "https://ltnhotin.github.io"  # URL trang web
+logo                     : "/assets/images/favicon.png"  # Đường dẫn đến logo
+masthead_title           : "Nho's Journey"  # Tiêu đề của tiêu đề trang web
+words_per_minute         : 200  # Số từ trung bình mỗi phút
 
+# Tác giả
 author:
-  name             : "Lê Tô Nho Tín"
-  avatar           : "/assets/images/avatar.jpg"
-  bio              : "I'm a **AI Engineering** Student at FPTU-HCM&QN"
-  location         : "Viet Nam"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "https://mail.google.com/mail/?view=cm&fs=1&to=nhotin911@gmail.com"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://www.facebook.com/tin.letonho"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/LTNhoTin"
+  name             : "Lê Tô Nho Tín"  # Tên tác giả
+  avatar           : "/assets/images/avatar.jpg"  # Đường dẫn đến ảnh đại diện
+  bio              : "I'm a **AI Engineering** Student at FPTU-HCM&QN"  # Tiểu sử
+  location         : "Viet Nam"  # Địa chỉ
 
+# Chân trang
 footer:
   links:
     - label: "Facebook"
@@ -35,59 +29,17 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/LTNhoTin"
 
+# Các tùy chọn cài đặt khác và xử lý
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
   - vendor
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
-  - CHANGELOG
-  - config
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - log
-  - node_modules
-  - package.json
-  - package-lock.json
-  - Rakefile
-  - README
-  - tmp
-  - /docs
-  - /test
+  # Loại bỏ các thư mục không cần thiết
 keep_files:
   - .git
   - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+encoding: "utf-8"  # Mã hóa UTF-8
 
-markdown: kramdown
-highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
-
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-sass:
-  sass_dir: _sass
-  style: compressed
-
-permalink: /:categories/:title/
-paginate: 5
-paginate_path: /page:num/
+markdown: kramdown  # Cài đặt sử dụng Kramdown
+highlighter: rouge  # Cài đặt sử dụng Rouge cho việc tô màu cú pháp
+paginate: 5  # Số bài viết trên mỗi trang
