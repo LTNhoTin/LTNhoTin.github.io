@@ -1,12 +1,110 @@
-<footer class="page__footer" style="background-color: #000; color: #fff; padding: 20px 0;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .page__footer {
+      padding: 20px 0;
+      background-color: #000;
+      color: #fff;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .footer-social-contact,
+    .footer-donate,
+    .footer-qr-code {
+      flex-basis: 30%;
+    }
+    
+    .footer-donate .donate-info {
+      margin-bottom: 20px;
+    }
+    
+    .footer-donate .account-name,
+    .footer-donate .bank-name {
+      margin-bottom: 10px;
+    }
+    
+    .qr-code {
+      width: 150px;
+      margin-top: 60px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .contact-info {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .contact-info__item {
+      margin-bottom: 10px;
+    }
+    
+    .contact-info__item--phone {
+      display: flex;
+      align-items: center;
+    }
+    
+    .small-text {
+      font-size: 14px;
+    }
+    
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .social-icons li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    
+    .social-icon-link {
+      color: #fff;
+      font-size: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+      }
+    
+      .footer-social-contact,
+      .footer-donate,
+      .footer-qr-code {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<footer class="page__footer">
   <div class="container">
     <div class="footer-content">
       <div class="footer-social-contact">
-        <h3>Theo dõi chúng tôi:</h3>
+        <h3>Follow us:</h3>
         <ul class="social-icons">
           <li><a href="#" class="social-icon-link"><i class="fab fa-facebook-f"></i></a></li>
-          <li><a href="#" class="social-icon-link"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#" class="social-icon-link"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#" class="social-icon-link"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#" class="social-icon-link"><i class="fab fa-github"></i></a></li>
         </ul>
         <ul class="contact-info">
           <li class="contact-info__item"><strong class="small-text">Nho Tín</strong></li>
@@ -18,10 +116,10 @@
       </div>
 
       <div class="footer-donate">
-        <h3>Donate qua tài khoản ngân hàng:</h3>
+        <h3>Donate via bank account:</h3>
         <div class="donate-info">
-          <p class="account-name">Tài khoản: LE TO NHO TIN</p>
-          <p class="bank-name">Ngân hàng: Techcombank</p>
+          <p class="account-name">Account: LE TO NHO TIN</p>
+          <p class="bank-name">Bank: Techcombank</p>
         </div>
       </div>
 
@@ -32,89 +130,5 @@
   </div>
 </footer>
 
-<style>
-.page__footer {
-  padding: 20px 0;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer-social-contact,
-.footer-donate,
-.footer-qr-code {
-  flex-basis: 30%;
-}
-
-.footer-donate .donate-info {
-  margin-bottom: 20px;
-}
-
-.footer-donate .account-name,
-.footer-donate .bank-name {
-  margin-bottom: 10px;
-}
-
-.qr-code {
-  width: 120px; /* Phóng to mã QR */
-  margin-top: 20px; /* Đẩy mã QR xuống dưới */
-  display: block; /* Hiển thị mã QR dưới dạng block */
-  margin-left: auto; /* Căn giữa mã QR */
-  margin-right: auto; /* Căn giữa mã QR */
-}
-
-.contact-info {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.contact-info__item {
-  margin-bottom: 10px;
-}
-
-.contact-info__item--phone {
-  display: flex;
-  align-items: center;
-}
-
-.small-text {
-  font-size: 14px;
-}
-
-.social-icons {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.social-icons li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.social-icon-link {
-  color: #fff;
-  font-size: 20px;
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-  }
-
-  .footer-social-contact,
-  .footer-donate,
-  .footer-qr-code {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-  }
-}
-</style>
+</body>
+</html>
