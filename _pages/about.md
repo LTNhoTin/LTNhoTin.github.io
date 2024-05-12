@@ -19,14 +19,20 @@ toc: true
 ## WELCOME TO MY BLOG
 
 ## General Information
-- My name is Tien Thanh, a Software Engineering student
-- I'm studying at Ho Chi Minh City University of Science - VNU. 
-- I'm interested in software development, computer science, competitive programming, US/UK music, ... 
+- My name is Nho Tin, an AI Engineering student.
+- I'm studying at FPT University in HCMC and Quy Nhon.
+- I'm interested in AI development, computer science, competitive programming, Vietnamese pop music, ...
 
 ## Purpose of this blog
-- 💻 I hope to share a little of my knowledge for everybody who interested in programming.
-- 🎧 Where I'm tell about my life as a programmer and more. 
-- 😃 And ... I need a place to write and share my feeling (just for myself) 
+- 🌟 My aspiration is to generously impart my programming insights with anyone eager to learn.
+- 📚 Here, I divulge the tales of my journey as a programmer and beyond.
+- ✨ Moreover, this serves as my sanctuary to pen down and express my innermost thoughts and emotions.
+
+
+
+
+
+
 
 ---
 
