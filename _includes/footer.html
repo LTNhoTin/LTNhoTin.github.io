@@ -38,23 +38,6 @@
       max-width: 300px; /* Giới hạn chiều rộng của mỗi phần */
     }
     
-    .footer-donate .donate-info {
-      margin-bottom: 20px;
-    }
-    
-    .footer-donate .account-name,
-    .footer-donate .bank-name {
-      margin-bottom: 10px;
-    }
-    
-    .qr-code {
-      width: 150px;
-      margin-top: 20px; /* Giảm khoảng cách với nội dung trên */
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
     .contact-info {
       list-style: none;
       padding: 0;
@@ -89,6 +72,11 @@
     .social-icon-link {
       color: #fff;
       font-size: 20px;
+      transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu sắc */
+    }
+
+    .social-icon-link:hover {
+      color: #007bff; /* Màu xanh dương khi rê chuột vào */
     }
     
     .page__footer-follow {
@@ -121,19 +109,7 @@
 <footer class="page__footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-section footer-donate">
-        <h3>Donate via bank account:</h3>
-        <div class="donate-info">
-          <p class="account-name">Account: LE TO NHO TIN</p>
-          <p class="bank-name">Bank: Techcombank</p>
-        </div>
-      </div>
-
-      <div class="footer-section footer-qr-code">
-        <img src="/assets/images/qrcode.jpg" alt="QR Code for bank donation" class="qr-code">
-      </div>
-
-      <div class="footer-section footer-social-contact">
+      <div class="footer-section">
         <ul class="contact-info">
           <li class="contact-info__item"><strong class="small-text">Nho Tín</strong></li>
           <li class="contact-info__item contact-info__item--phone">
@@ -143,9 +119,9 @@
           <li><strong>Follow us:</strong></li>
           <li>
             <ul class="social-icons">
-              <li><a href="#" class="https://www.facebook.com/tin.letonho"><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#" class="https://www.linkedin.com/in/ltnhotin/"><i class="fab fa-linkedin"></i></a></li>
-              <li><a href="#" class="https://github.com/LTNhoTin"><i class="fab fa-github"></i></a></li>
+              <li><a href="#" class="https://www.facebook.com/tin.letonho" title="Facebook"><i class="fab fa-facebook-f social-icon-link"></i></a></li>
+              <li><a href="#" class="https://www.linkedin.com/in/ltnhotin/" title="LinkedIn"><i class="fab fa-linkedin social-icon-link"></i></a></li>
+              <li><a href="#" class="https://github.com/LTNhoTin" title="GitHub"><i class="fab fa-github social-icon-link"></i></a></li>
             </ul>
           </li>
         </ul>
