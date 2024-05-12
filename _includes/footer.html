@@ -10,6 +10,7 @@
       padding: 20px 0;
       background-color: #000;
       color: #fff;
+      text-align: center; /* Căn giữa nội dung */
     }
     
     .container {
@@ -19,21 +20,18 @@
     
     .footer-content {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap; /* Cho phép dòng mới */
+      justify-content: center; /* Căn giữa nội dung */
     }
 
-    .footer-content > div:not(:last-child) {
-      margin-right: 20px;
-    }
-
-    .footer-content > div:last-child {
-      margin-right: 0;
+    .footer-content > div {
+      margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
     }
     
     .footer-social-contact,
     .footer-donate,
     .footer-qr-code {
-      flex-basis: calc(33.3333% - 10px); /* Adjusted for margin-right */
+      flex-basis: calc(33.3333% - 20px); /* Adjusted for margin-right */
     }
     
     .footer-donate .donate-info {
@@ -47,7 +45,7 @@
     
     .qr-code {
       width: 150px;
-      margin-top: 60px;
+      margin-top: 20px; /* Giảm khoảng cách với nội dung trên */
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -57,6 +55,7 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      font-size: 16px; /* Kích thước chữ chung */
     }
     
     .contact-info__item {
@@ -110,8 +109,7 @@
       .footer-social-contact,
       .footer-donate,
       .footer-qr-code {
-        flex-basis: 100%;
-        margin-bottom: 20px;
+        flex-basis: calc(100% - 20px); /* Kích thước đầy đủ trên thiết bị nhỏ */
       }
     }
   </style>
@@ -121,26 +119,6 @@
 <footer class="page__footer">
   <div class="container">
     <div class="footer-content">
-      <div class="footer-social-contact">
-        <div class="page__footer-follow">
-          {% if site.data.ui-text[site.locale].follow_label %}
-            <strong>{{ site.data.ui-text[site.locale].follow_label }}</strong>
-          {% endif %}
-          <ul class="social-icons">
-            <li><a href="#" class="https://www.facebook.com/tin.letonho"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" class="https://www.linkedin.com/in/ltnhotin/"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#" class="https://github.com/LTNhoTin"><i class="fab fa-github"></i></a></li>
-          </ul>
-        </div>
-        <ul class="contact-info">
-          <li class="contact-info__item"><strong class="small-text">Nho Tín</strong></li>
-          <li class="contact-info__item contact-info__item--phone">
-            <i class="fas fa-phone-square-alt" aria-hidden="true"></i>
-            <a href="tel:0963620379" class="phone-link small-text">0963 620 379</a>
-          </li>
-        </ul>
-      </div>
-
       <div class="footer-donate">
         <h3>Donate via bank account:</h3>
         <div class="donate-info">
@@ -151,6 +129,24 @@
 
       <div class="footer-qr-code">
         <img src="/assets/images/qrcode.jpg" alt="QR Code for bank donation" class="qr-code">
+      </div>
+
+      <div class="footer-social-contact">
+        <ul class="contact-info">
+          <li class="contact-info__item"><strong class="small-text">Nho Tín</strong></li>
+          <li class="contact-info__item contact-info__item--phone">
+            <i class="fas fa-phone-square-alt" aria-hidden="true"></i>
+            <a href="tel:0963620379" class="phone-link small-text">0963 620 379</a>
+          </li>
+          <li><strong>Follow us:</strong></li>
+          <li>
+            <ul class="social-icons">
+              <li><a href="#" class="https://www.facebook.com/tin.letonho"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#" class="https://www.linkedin.com/in/ltnhotin/"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="#" class="https://github.com/LTNhoTin"><i class="fab fa-github"></i></a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
