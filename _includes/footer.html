@@ -14,10 +14,8 @@
     .page__footer {
       background-color: #000;
       color: #fff;
-      text-align: center; /* Căn giữa nội dung */
-      padding: 15px 0; /* Giảm padding của footer */
-      max-width: 800px; /* Giảm độ rộng tối đa của footer */
-      margin: 0 auto;
+      text-align: center;
+      padding: 10px 0; /* Giảm chiều cao của footer */
     }
     
     .container {
@@ -27,20 +25,21 @@
     
     .footer-content {
       display: flex;
-      flex-wrap: wrap; /* Cho phép dòng mới */
-      justify-content: space-between; /* Canh các phần tử trong footer */
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .footer-content > div {
-      margin-bottom: 20px; /* Khoảng cách giữa các phần tử */
+      margin-bottom: 20px;
     }
     
     .footer-section {
       flex: 1;
-      max-width: 300px; /* Giới hạn chiều rộng của mỗi phần */
+      max-width: 300px;
     }
     
-    .contact-info {
+    .contact-info,
+    .social-icons {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -51,58 +50,23 @@
       margin-bottom: 8px; /* Giảm khoảng cách giữa các mục */
     }
     
-    .contact-info__item--phone {
-      display: flex;
-      align-items: center;
-    }
-    
     .small-text {
-      font-size: 12px; /* Giảm kích thước chữ */
-    }
-    
-    .social-icons {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      font-size: 12px; /* Kích thước chữ nhỏ hơn */
     }
     
     .social-icons li {
       display: inline-block;
-      margin-right: 5px; /* Giảm khoảng cách giữa các biểu tượng mạng xã hội */
+      margin-right: 10px;
     }
     
     .social-icon-link {
       color: #fff;
-      font-size: 16px; /* Giảm kích thước chữ */
-      transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu sắc */
+      font-size: 18px; /* Giảm kích thước của biểu tượng mạng xã hội */
+      transition: color 0.3s ease;
     }
 
     .social-icon-link:hover {
-      color: #007bff; /* Màu xanh dương khi rê chuột vào */
-    }
-    
-    .page__footer-follow {
-      display: flex;
-      align-items: center;
-    }
-    
-    .page__footer-follow strong {
-      margin-right: 10px;
-    }
-    
-    .page__footer-copyright {
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    @media (max-width: 768px) {
-      .footer-content {
-        flex-direction: column;
-      }
-      
-      .footer-section {
-        max-width: 100%; /* Đảm bảo các phần tử căn chiều rộng tối đa trên thiết bị nhỏ */
-      }
+      color: #007bff;
     }
   </style>
 </head>
@@ -130,12 +94,12 @@
           {% if site.footer.links %}
             {% for link in site.footer.links %}
               {% if link.label and link.url %}
-                <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer" class="social-icon-link"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
+                <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a></li>
               {% endif %}
             {% endfor %}
           {% endif %}
   
-          <li><a href="https://www.linkedin.com/in/ltnhotin/" class="social-icon-link"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/ltnhotin/"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
         </ul>
       </div>
     </div>
