@@ -21,11 +21,19 @@
       display: flex;
       justify-content: space-between;
     }
+
+    .footer-content > div:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    .footer-content > div:last-child {
+      margin-right: 0;
+    }
     
     .footer-social-contact,
     .footer-donate,
     .footer-qr-code {
-      flex-basis: 30%;
+      flex-basis: calc(33.3333% - 10px); /* Adjusted for margin-right */
     }
     
     .footer-donate .donate-info {
@@ -119,10 +127,9 @@
             <strong>{{ site.data.ui-text[site.locale].follow_label }}</strong>
           {% endif %}
           <ul class="social-icons">
-            <li><a href="#" class="social-icon-link"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#" class="social-icon-link"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#" class="social-icon-link"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#" class="social-icon-link"><i class="fab fa-github"></i></a></li>
+            <li><a href="#" class="https://www.facebook.com/tin.letonho"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#" class="https://www.linkedin.com/in/ltnhotin/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#" class="https://github.com/LTNhoTin"><i class="fab fa-github"></i></a></li>
           </ul>
         </div>
         <ul class="contact-info">
