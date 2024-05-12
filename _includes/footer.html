@@ -30,10 +30,28 @@
 
 
 <div class="page__footer-donate">
-  <h3>Donate qua tài khoản ngân hàng:</h3>
-  <p>Tài khoản: LE TO NHO TIN</p>
-  <p>Ngân hàng: Techcombank</p>
+  <div class="donate-info">
+    <h3>Donate qua tài khoản ngân hàng:</h3>
+    <p class="account-name">Tài khoản: LE TO NHO TIN</p>
+    <p class="bank-name">Ngân hàng: Techcombank</p>
+  </div>
   <!-- Chèn mã QR code vào đây -->
-  <img src="/assets/images/qrcode.jpg" alt="QR Code for bank donation">
+  <img src="/assets/images/qrcode.jpg" alt="QR Code for bank donation" class="qr-code">
 </div>
+
+<style>
+    .page__footer-donate {
+        display: flex;
+        align-items: center;
+    }
+
+    .donate-info {
+        flex: 1;
+    }
+
+    .qr-code {
+        width: 100px; /* Điều chỉnh kích thước của QR code tùy thuộc vào kích thước bạn muốn */
+        margin-left: 20px; /* Điều chỉnh khoảng cách giữa tài khoản và QR code */
+    }
+</style>
 
