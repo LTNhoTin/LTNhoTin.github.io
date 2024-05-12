@@ -1,4 +1,4 @@
-<footer class="page__footer" style="background-color: #000; color: #fff;">
+<footer class="page__footer" style="background-color: #000; color: #fff; padding: 20px 0;">
   <div class="container">
     <div class="footer-content">
       <div class="footer-contact">
@@ -21,13 +21,22 @@
         </div>
         <p class="bank-name">Ngân hàng: Techcombank</p>
       </div>
+
+      <div class="footer-social">
+        <h3>Theo dõi chúng tôi:</h3>
+        <ul class="social-icons">
+          <li><a href="#" class="social-icon-link"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#" class="social-icon-link"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#" class="social-icon-link"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
 .page__footer {
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .container {
@@ -41,13 +50,14 @@
 }
 
 .footer-contact,
-.footer-donate {
-  flex-basis: 48%;
+.footer-donate,
+.footer-social {
+  flex-basis: 30%;
 }
 
 .footer-donate .qr-code {
   width: 100px;
-  margin-left: 20px;
+  margin-top: 10px;
 }
 
 .contact-info {
@@ -73,13 +83,30 @@
   margin-left: 5px;
 }
 
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icon-link {
+  color: #fff;
+  font-size: 20px;
+}
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
   }
 
   .footer-contact,
-  .footer-donate {
+  .footer-donate,
+  .footer-social {
     flex-basis: 100%;
     margin-bottom: 20px;
   }
