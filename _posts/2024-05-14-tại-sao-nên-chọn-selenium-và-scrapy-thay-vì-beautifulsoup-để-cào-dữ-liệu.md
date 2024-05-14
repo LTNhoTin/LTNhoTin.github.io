@@ -5,13 +5,10 @@ author_profile: true
 classes: wide 
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/treeland.jpg
+  overlay_image: /assets/images/day.jpg
   caption: "Post created by NhoTin"
 ---
-
-# Chào các bạn,
-
-Trong lĩnh vực cào dữ liệu (web scraping), việc lựa chọn công cụ phù hợp là một yếu tố quan trọng để đảm bảo hiệu quả và độ chính xác. Dưới đây, mình sẽ trình bày lý do tại sao không nên sử dụng BeautifulSoup mà thay vào đó nên chọn Selenium và Scrapy.
+# Trong lĩnh vực cào dữ liệu (web scraping), việc lựa chọn công cụ phù hợp là một yếu tố quan trọng để đảm bảo hiệu quả và độ chính xác. Dưới đây, mình sẽ trình bày lý do tại sao không nên sử dụng BeautifulSoup mà thay vào đó nên chọn Selenium và Scrapy.
 
 ## Hạn Chế của BeautifulSoup
 

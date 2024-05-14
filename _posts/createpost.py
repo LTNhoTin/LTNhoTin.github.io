@@ -12,14 +12,20 @@ def create_blog_post():
         messagebox.showwarning("Input Error", "Please enter both title and content.")
         return
     
-    # Lấy ngày giờ hiện tại
     now = datetime.now()
     date_str = now.strftime('%Y-%m-%d')
     time_str = now.strftime('%Y-%m-%dT%H:%M:%S%z')
     
-    # Tạo tên tệp
+    # Xác định ảnh nền dựa trên thời gian hiện tại
+    current_hour = now.hour
+    if 6 <= current_hour < 17:
+        overlay_image = "/assets/images/day.jpg"
+    else:
+        overlay_image = "/assets/images/night.jpg"
+    
     file_name = f"{date_str}-{title.replace(' ', '-').lower()}.md"
     file_path = os.path.join("/Users/nhotin/Documents/GitHub/LTNhoTin.github.io/_posts", file_name)
+
     
     # Nội dung của bài viết
     file_content = f"""---

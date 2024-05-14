@@ -6,7 +6,7 @@ author_profile: true
 classes: wide 
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/treeland.jpg
+  overlay_image: /assets/images/night.jpg
   #caption: ""
 
 # sidebar:
