@@ -6,10 +6,6 @@ permalink: /archive-layout-with-content/
 
 A variety of common markup showing how the theme styles them.
 
-{% for post in site.posts %}
-  {% include archive-single.html %}
-{% endfor %}
-
 # Header one
 
 ## Header two
