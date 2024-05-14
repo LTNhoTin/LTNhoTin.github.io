@@ -8,7 +8,7 @@ header:
   overlay_image: /assets/images/day.jpg
   caption: "Post created by NhoTin"
 ---
-# Trong lĩnh vực cào dữ liệu (web scraping), việc lựa chọn công cụ phù hợp là một yếu tố quan trọng để đảm bảo hiệu quả và độ chính xác. Dưới đây, mình sẽ trình bày lý do tại sao không nên sử dụng BeautifulSoup mà thay vào đó nên chọn Selenium và Scrapy.
+<div class="hidden-title"># Trong lĩnh vực cào dữ liệu (web scraping), việc lựa chọn công cụ phù hợp là một yếu tố quan trọng để đảm bảo hiệu quả và độ chính xác. Dưới đây, mình sẽ trình bày lý do tại sao không nên sử dụng BeautifulSoup mà thay vào đó nên chọn Selenium và Scrapy.
 
 ## Hạn Chế của BeautifulSoup
 
