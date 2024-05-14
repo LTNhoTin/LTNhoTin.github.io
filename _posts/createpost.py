@@ -4,12 +4,12 @@ from datetime import datetime
 import os
 import subprocess
 
-def create_blog_post():
+def create_blog_post(show_date_var):
     title = title_entry.get()
     excerpt = excerpt_entry.get()
     show_date = show_date_var.get()
-    tags = tags_entry.get()
-    categories = categories_entry.get()
+    tags = [tag.strip() for tag in tags_entry.get().split(',')]
+    categories = [cat.strip() for cat in categories_entry.get().split(',')]
     content = content_text.get("1.0", tk.END).strip()
     
     if not title or not excerpt or not tags or not categories or not content:
@@ -30,16 +30,23 @@ def create_blog_post():
     file_name = f"{date_str}-{title.replace(' ', '-').lower()}.md"
     file_path = os.path.join("/Users/nhotin/Documents/GitHub/LTNhoTin.github.io/_posts", file_name)
 
+    # Tạo chuỗi tags và categories theo định dạng YAML
+    tags_str = '\n'.join([f"  - {tag}" for tag in tags])
+    categories_str = '\n'.join([f"  - {cat}" for cat in categories])
+
     # Nội dung của bài viết
     file_content = f"""---
 title: "{title}"
 excerpt: "{excerpt}"
 show_date: {show_date}
-tags: {tags}
-categories: {categories}
+tags:
+{tags_str}
+categories:
+{categories_str}
 last_modified_at: {time_str}
 author_profile: true
 classes: wide 
+toc: true
 header:
   overlay_color: "#5e616c"
   overlay_image: {overlay_image}
@@ -81,24 +88,21 @@ tk.Label(root, text="Excerpt:").grid(row=1, column=0, sticky=tk.W)
 excerpt_entry = tk.Entry(root, width=50)
 excerpt_entry.grid(row=1, column=1, padx=10, pady=5)
 
-tk.Label(root, text="Show Date:").grid(row=2, column=0, sticky=tk.W)
-show_date_var = tk.BooleanVar()
-show_date_check = tk.Checkbutton(root, variable=show_date_var)
-show_date_check.grid(row=2, column=1, sticky=tk.W, padx=10, pady=5)
-
-tk.Label(root, text="Tags (comma-separated):").grid(row=3, column=0, sticky=tk.W)
+tk.Label(root, text="Tags (comma-separated):").grid(row=2, column=0, sticky=tk.W)
 tags_entry = tk.Entry(root, width=50)
-tags_entry.grid(row=3, column=1, padx=10, pady=5)
+tags_entry.grid(row=2, column=1, padx=10, pady=5)
 
-tk.Label(root, text="Categories (comma-separated):").grid(row=4, column=0, sticky=tk.W)
+tk.Label(root, text="Categories (comma-separated):").grid(row=3, column=0, sticky=tk.W)
 categories_entry = tk.Entry(root, width=50)
-categories_entry.grid(row=4, column=1, padx=10, pady=5)
+categories_entry.grid(row=3, column=1, padx=10, pady=5)
 
-tk.Label(root, text="Content:").grid(row=5, column=0, sticky=tk.NW)
+tk.Label(root, text="Content:").grid(row=4, column=0, sticky=tk.NW)
 content_text = tk.Text(root, width=60, height=20)
-content_text.grid(row=5, column=1, padx=10, pady=5)
+content_text.grid(row=4, column=1, padx=10, pady=5)
 
-submit_button = tk.Button(root, text="Submit", command=create_blog_post)
-submit_button.grid(row=6, column=1, sticky=tk.E, padx=10, pady=10)
+show_date_var = tk.BooleanVar(value=True)  # Set to True by default
+
+submit_button = tk.Button(root, text="Submit", command=lambda: create_blog_post(show_date_var))
+submit_button.grid(row=5, column=1, sticky=tk.E, padx=10, pady=10)
 
 root.mainloop()
