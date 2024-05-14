@@ -6,7 +6,7 @@ classes: wide
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/treeland.jpg
-  #caption: "Post created by NhoTin"
+  caption: "Post created by NhoTin"
 ---
 
 # Chào các bạn,
