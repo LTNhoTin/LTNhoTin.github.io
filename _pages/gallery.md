@@ -12,6 +12,5 @@ header:
 excerpt: >
   <span style="color: cyan;">**Hello world!!**</span> <br/>
   **Site này đang phát triển đợi đi** <br />
-  📷 🌏 🎶 💖 
   <br/>
 ---
