@@ -38,14 +38,14 @@ header:
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(file_content)
     
-    # Thực hiện các lệnh Git
+    # Git commands to add, commit, and push the file
     try:
         subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "add", file_path], check=True)
-        subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "commit", "-m", f"Add new post: {title}"], check=True)
+        subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "commit", "-m", f"Add new post: {file_name}"], check=True)
         subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "push"], check=True)
         messagebox.showinfo("Success", f"Tệp bài viết '{file_name}' đã được tạo và đẩy lên GitHub thành công.")
     except subprocess.CalledProcessError as e:
-        messagebox.showerror("Git Error", f"Đã xảy ra lỗi khi thực hiện các lệnh Git: {e}")
+        messagebox.showerror("Git Error", f"Đã xảy ra lỗi khi đẩy tệp lên GitHub: {e}")
     
     title_entry.delete(0, tk.END)
     content_text.delete("1.0", tk.END)
