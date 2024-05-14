@@ -9,7 +9,6 @@ tags:
 categories:
   - AI
   - Machine Learning
-toc: true
 last_modified_at: 2024-05-14T18:13:57
 author_profile: true
 classes: wide 
