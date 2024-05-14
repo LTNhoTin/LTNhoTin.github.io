@@ -1,7 +1,6 @@
 ---
 title: "Phân Tích Dữ Liệu Văn Bản Cho Mô Hình Xử Lý Ngôn Ngữ Tự Nhiên (NLP)"
-excerpt: ""Khám phá các kỹ thuật và công cụ phân tích dữ liệu văn bản cần thiết để tiền xử lý dữ liệu trước khi đưa vào mô hình xử lý ngôn ngữ tự nhiên (NLP), từ việc tokenization đến loại bỏ stopwords và phân tích tần suất từ."
-
+excerpt: "Khám phá các kỹ thuật và công cụ phân tích dữ liệu văn bản cần thiết để tiền xử lý dữ liệu trước khi đưa vào mô hình xử lý ngôn ngữ tự nhiên (NLP), từ việc tokenization đến loại bỏ stopwords và phân tích tần suất từ."
 show_date: True
 tags: 
   - NLP
@@ -11,9 +10,14 @@ categories:
   - AI
   - Machine Learning
 toc: true
-
-
-
+last_modified_at: 2024-05-14T18:13:57
+author_profile: true
+classes: wide 
+header:
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/night.jpg
+  caption: "Post created by NhoTin"
+  
 ---
 
 Dữ liệu văn bản là một nguồn tài nguyên quan trọng trong lĩnh vực xử lý ngôn ngữ tự nhiên (NLP), nhưng trước khi có thể áp dụng các mô hình NLP phức tạp, dữ liệu cần phải trải qua quá trình tiền xử lý để làm sạch và chuẩn bị. Dưới đây là một số kỹ thuật phân tích dữ liệu văn bản phổ biến và cần thiết:

@@ -1,6 +1,5 @@
 ---
 title: "Tại Sao Nên Chọn Selenium và Scrapy Thay Vì BeautifulSoup Để Cào Dữ Liệu"
-excerpt: ""Khám phá các kỹ thuật và công cụ phân tích dữ liệu văn bản cần thiết để tiền xử lý dữ liệu trước khi đưa vào mô hình xử lý ngôn ngữ tự nhiên (NLP), từ việc tokenization đến loại bỏ stopwords và phân tích tần suất từ."
 last_modified_at: 2024-05-14T15:28:28
 author_profile: true
 classes: wide 
