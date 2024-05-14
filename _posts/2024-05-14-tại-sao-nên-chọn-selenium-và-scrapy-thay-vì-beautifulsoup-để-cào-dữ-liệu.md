@@ -1,5 +1,7 @@
 ---
 title: "Tại Sao Nên Chọn Selenium và Scrapy Thay Vì BeautifulSoup Để Cào Dữ Liệu"
+excerpt: "Selenium và Scrapy Thay Vì BeautifulSoup."
+toc: true
 last_modified_at: 2024-05-14T15:28:28
 author_profile: true
 classes: wide 
