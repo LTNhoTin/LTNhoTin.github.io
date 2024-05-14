@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from datetime import datetime
 import os
+import subprocess
 
 def create_blog_post():
     title = title_entry.get()
@@ -18,6 +19,7 @@ def create_blog_post():
     
     # Tạo tên tệp
     file_name = f"{date_str}-{title.replace(' ', '-').lower()}.md"
+    file_path = os.path.join("/Users/nhotin/Documents/GitHub/LTNhoTin.github.io/_posts", file_name)
     
     # Nội dung của bài viết
     file_content = f"""---
@@ -33,10 +35,18 @@ header:
 """
     
     # Lưu nội dung vào tệp
-    with open(file_name, 'w', encoding='utf-8') as file:
+    with open(file_path, 'w', encoding='utf-8') as file:
         file.write(file_content)
     
-    messagebox.showinfo("Success", f"Tệp bài viết '{file_name}' đã được tạo thành công.")
+    # Thực hiện các lệnh Git
+    try:
+        subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "add", file_path], check=True)
+        subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "commit", "-m", f"Add new post: {title}"], check=True)
+        subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "push"], check=True)
+        messagebox.showinfo("Success", f"Tệp bài viết '{file_name}' đã được tạo và đẩy lên GitHub thành công.")
+    except subprocess.CalledProcessError as e:
+        messagebox.showerror("Git Error", f"Đã xảy ra lỗi khi thực hiện các lệnh Git: {e}")
+    
     title_entry.delete(0, tk.END)
     content_text.delete("1.0", tk.END)
 
