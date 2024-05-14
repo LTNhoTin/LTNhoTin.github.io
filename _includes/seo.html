@@ -20,10 +20,11 @@
   {%- assign canonical_url = page.url | replace: "index.html", "" | absolute_url %}
 {% endif %}
 
-{%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
+<!-- Removed the seo_description assignment and meta description line -->
+<!-- {%- assign seo_description = page.description | default: page.excerpt | default: site.description -%}
 {%- if seo_description -%}
   {%- assign seo_description = seo_description | markdownify | strip_html | newline_to_br | strip_newlines | replace: '<br />', ' ' | escape_once | strip -%}
-{%- endif -%}
+{%- endif -%} -->
 
 {%- assign author = page.author | default: page.authors[0] | default: site.author -%}
 {%- assign author = site.data.authors[author] | default: author -%}
@@ -48,7 +49,8 @@
 {%- endif -%}
 
 <title>{{ seo_title | default: site.title }}{% if paginator %}{% unless paginator.page == 1 %} {{ title_separator }} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}{% endif %}</title>
-<meta name="description" content="{{ seo_description }}">
+<!-- Removed meta name="description" -->
+<!-- <meta name="description" content="{{ seo_description }}"> -->
 
 {% if author.name %}
   <meta name="author" content="{{ author.name | default: author }}">
