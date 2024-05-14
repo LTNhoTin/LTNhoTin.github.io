@@ -2,7 +2,7 @@
 title: "Tại Sao Nên Chọn Selenium và Scrapy Thay Vì BeautifulSoup Để Cào Dữ Liệu"
 last_modified_at: 2024-05-14T15:28:28
 author_profile: true
-classes: wide 
+
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/day.jpg
