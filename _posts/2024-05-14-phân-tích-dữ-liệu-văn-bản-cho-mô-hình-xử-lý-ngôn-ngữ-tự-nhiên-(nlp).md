@@ -1,16 +1,13 @@
 ---
-title: "Phân Tích Dữ Liệu Văn Bản Cho Mô Hình Xử Lý Ngôn Ngữ Tự Nhiên (NLP)"
-excerpt: ""Khám phá các kỹ thuật và công cụ phân tích dữ liệu văn bản cần thiết để tiền xử lý dữ liệu trước khi đưa vào mô hình xử lý ngôn ngữ tự nhiên (NLP), từ việc tokenization đến loại bỏ stopwords và phân tích tần suất từ."
-show_date: True
-tags: NLP, phân tích dữ liệu văn bản, tiền xử lý dữ liệu, machine learning, data science
+title: "Sweep Line Technique"
+excerpt: "Kỹ thuật sweepline và ứng dụng trong các bài toán về hình học"
 
-
-categories: AI, Machine Learning
-
-
-last_modified_at: 2024-05-14T18:13:57
-author_profile: true
-classes: wide 
+show_date: true
+tags:
+  - algorithm
+categories:
+  - Competitive Programming
+toc: true
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/night.jpg
