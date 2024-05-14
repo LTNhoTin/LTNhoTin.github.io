@@ -29,6 +29,8 @@ author_profile: true
 classes: wide 
 header:
   overlay_color: "#5e616c"
+  overlay_image: /assets/images/treeland.jpg
+  #caption: "Post created by NhoTin"
 ---
 
 {content}

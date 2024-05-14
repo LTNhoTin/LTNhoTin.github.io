@@ -6,8 +6,8 @@ author_profile: true
 classes: wide 
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/mountain.jpg
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  overlay_image: /assets/images/treeland.jpg
+  #caption: ""
 
 # sidebar:
 #   - title: "Title"
