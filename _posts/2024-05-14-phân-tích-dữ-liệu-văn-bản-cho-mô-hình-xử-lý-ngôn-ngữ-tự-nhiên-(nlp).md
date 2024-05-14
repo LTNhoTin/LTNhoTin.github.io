@@ -7,7 +7,7 @@ categories: AI, Machine Learning
 toc: true
 last_modified_at: 2024-05-14T18:13:57
 author_profile: true
-classes: wide 
+#classes: wide 
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/night.jpg
