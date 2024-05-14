@@ -1,40 +1,34 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 from datetime import datetime
 import os
 import subprocess
 
 def create_blog_post(show_date_var):
-    title = title_entry.get()
-    excerpt = excerpt_entry.get()
+    title = title_text.get("1.0", tk.END).strip()
+    excerpt = excerpt_text.get("1.0", tk.END).strip()
     show_date = show_date_var.get()
-    tags = [tag.strip() for tag in tags_entry.get().split(',')]
-    categories = [cat.strip() for cat in categories_entry.get().split(',')]
+    tags = [tag.strip() for tag in tags_text.get("1.0", tk.END).strip().split(',')] if tags_text.get("1.0", tk.END).strip() else []
+    categories = [cat.strip() for cat in categories_text.get("1.0", tk.END).strip().split(',')] if categories_text.get("1.0", tk.END).strip() else []
     content = content_text.get("1.0", tk.END).strip()
     
-    if not title or not excerpt or not tags or not categories or not content:
-        messagebox.showwarning("Input Error", "Please fill in all fields.")
+    if not title or not excerpt or not content:
+        messagebox.showwarning("Input Error", "Please fill in all fields except Tags and Categories.")
         return
     
     now = datetime.now()
     date_str = now.strftime('%Y-%m-%d')
     time_str = now.strftime('%Y-%m-%dT%H:%M:%S%z')
     
-    # Xác định ảnh nền dựa trên thời gian hiện tại
     current_hour = now.hour
-    if 6 <= current_hour < 17:
-        overlay_image = "/assets/images/day.jpg"
-    else:
-        overlay_image = "/assets/images/night.jpg"
+    overlay_image = "/assets/images/day.jpg" if 6 <= current_hour < 17 else "/assets/images/night.jpg"
     
     file_name = f"{date_str}-{title.replace(' ', '-').lower()}.md"
     file_path = os.path.join("/Users/nhotin/Documents/GitHub/LTNhoTin.github.io/_posts", file_name)
-
-    # Tạo chuỗi tags và categories theo định dạng YAML
+    
     tags_str = '\n'.join([f"  - {tag}" for tag in tags])
     categories_str = '\n'.join([f"  - {cat}" for cat in categories])
-
-    # Nội dung của bài viết
+    
     file_content = f"""---
 title: "{title}"
 excerpt: "{excerpt}"
@@ -56,11 +50,9 @@ header:
 {content}
 """
     
-    # Lưu nội dung vào tệp
     with open(file_path, 'w', encoding='utf-8') as file:
         file.write(file_content)
     
-    # Git commands to add, commit, and push the file
     try:
         subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "add", file_path], check=True)
         subprocess.run(["git", "-C", "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io", "commit", "-m", f"Add new post: {file_name}"], check=True)
@@ -69,40 +61,43 @@ header:
     except subprocess.CalledProcessError as e:
         messagebox.showerror("Git Error", f"An error occurred while pushing the file to GitHub: {e}")
     
-    title_entry.delete(0, tk.END)
-    excerpt_entry.delete(0, tk.END)
-    tags_entry.delete(0, tk.END)
-    categories_entry.delete(0, tk.END)
+    title_text.delete("1.0", tk.END)
+    excerpt_text.delete("1.0", tk.END)
+    tags_text.delete("1.0", tk.END)
+    categories_text.delete("1.0", tk.END)
     content_text.delete("1.0", tk.END)
     show_date_var.set(False)
 
-# Tạo giao diện người dùng với Tkinter
 root = tk.Tk()
 root.title("Blog Post Creator")
+root.configure(bg='#2e2e2e')
 
-tk.Label(root, text="Title:").grid(row=0, column=0, sticky=tk.W)
-title_entry = tk.Entry(root, width=50)
-title_entry.grid(row=0, column=1, padx=10, pady=5)
+style = ttk.Style()
+style.configure("TLabel", font=("Arial", 12), foreground="#ffffff", background='#2e2e2e')
+style.configure("TButton", font=("Arial", 12), foreground="#ffffff", background="#007acc", padding=10)
+style.configure("TEntry", font=("Arial", 12))
+style.configure("TText", font=("Arial", 12))
 
-tk.Label(root, text="Excerpt:").grid(row=1, column=0, sticky=tk.W)
-excerpt_entry = tk.Entry(root, width=50)
-excerpt_entry.grid(row=1, column=1, padx=10, pady=5)
+# Create a frame for the form
+form_frame = ttk.Frame(root, padding="20 20 20 20", style="TFrame")
+form_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-tk.Label(root, text="Tags (comma-separated):").grid(row=2, column=0, sticky=tk.W)
-tags_entry = tk.Entry(root, width=50)
-tags_entry.grid(row=2, column=1, padx=10, pady=5)
+# Function to create a common layout for labels and text widgets
+def create_label_and_text(parent, label_text, row, height=2):
+    ttk.Label(parent, text=label_text, style="TLabel").grid(row=row, column=0, sticky=tk.W, padx=5, pady=5)
+    text_widget = tk.Text(parent, width=60, height=height, font=("Arial", 12), bg='#3e3e3e', fg='#ffffff', insertbackground='#ffffff')
+    text_widget.grid(row=row, column=1, padx=5, pady=5)
+    return text_widget
 
-tk.Label(root, text="Categories (comma-separated):").grid(row=3, column=0, sticky=tk.W)
-categories_entry = tk.Entry(root, width=50)
-categories_entry.grid(row=3, column=1, padx=10, pady=5)
+title_text = create_label_and_text(form_frame, "Title:", 0, height=2)
+excerpt_text = create_label_and_text(form_frame, "Excerpt:", 1, height=2)
+content_text = create_label_and_text(form_frame, "Content:", 2, height=20)
+tags_text = create_label_and_text(form_frame, "Tags (comma-separated):", 3, height=2)
+categories_text = create_label_and_text(form_frame, "Categories (comma-separated):", 4, height=2)
 
-tk.Label(root, text="Content:").grid(row=4, column=0, sticky=tk.NW)
-content_text = tk.Text(root, width=60, height=20)
-content_text.grid(row=4, column=1, padx=10, pady=5)
+show_date_var = tk.BooleanVar(value=True)
 
-show_date_var = tk.BooleanVar(value=True)  # Set to True by default
-
-submit_button = tk.Button(root, text="Submit", command=lambda: create_blog_post(show_date_var))
+submit_button = ttk.Button(form_frame, text="Submit", command=lambda: create_blog_post(show_date_var), style="TButton")
 submit_button.grid(row=5, column=1, sticky=tk.E, padx=10, pady=10)
 
 root.mainloop()
