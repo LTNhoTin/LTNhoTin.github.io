@@ -2,7 +2,7 @@
 title: My Image Gallery
 layout: splash
 permalink: /gallery/
-
+hidden: true
 header:
   overlay_color: "#5e616c"  # Adjust the overlay color as needed
   overlay_image: /assets/images/gallery/day.jpg  # Path to your overlay image
