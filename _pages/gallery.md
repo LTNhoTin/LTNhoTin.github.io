@@ -7,26 +7,11 @@ header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/gallery/my_photos/my3.jpeg
   actions:
-    - label: "My journey"
 excerpt: >
   <span style="color: cyan;">**Hello world!!**</span> <br/>
   **Site này để up mấy tấm ảnh cá nhân mà mình thích** <br />
   📷 🌏 🎶 💖 
   <br/>
-
-my_photos_gallery:
-  - url: /assets/images/gallery/my_photos/my1.jpeg
-    image_path: /assets/images/gallery/my_photos/my1.jpeg
-    alt: "My Photo"
-    title: "Me"  # Short and clear title
-  - url: /assets/images/gallery/my_photos/my2.jpeg
-    image_path: /assets/images/gallery/my_photos/my2.jpeg
-    alt: "My Photo"
-    title: "Me"
-  - url: /assets/images/gallery/my_photos/my3.jpeg
-    image_path: /assets/images/gallery/my_photos/my3.jpeg
-    alt: "My Photo"
-    title: "Me"
 
 mylove_gallery:
   - url: /assets/images/gallery/mylove/mylove1.jpeg
@@ -42,6 +27,20 @@ mylove_gallery:
     alt: "My Love"
     title: "My Love"
 
+cat_dua_gallery:
+  - url: /assets/images/gallery/cat_dua/dua1.jpeg
+    image_path: /assets/images/gallery/cat_dua/dua1.jpeg
+    alt: "Cat Dừa"
+    title: "Dừa"
+  - url: /assets/images/gallery/cat_dua/dua2.jpeg
+    image_path: /assets/images/gallery/cat_dua/dua2.jpeg
+    alt: "Cat Dừa"
+    title: "Dừa"
+  - url: /assets/images/gallery/cat_dua/dua27.jpeg
+    image_path: /assets/images/gallery/cat_dua/dua27.jpeg
+    alt: "Cat Dừa"
+    title: "Dừa"
+    
 cat_bap_gallery:
   # Use a list of dictionaries for better readability
   - url: /assets/images/gallery/cat_bap/bap1.jpeg
@@ -59,11 +58,6 @@ cat_bap_gallery:
 
 ---
 
-
-## My Photos  # Consistent section title
-
-{% include gallery id="my_photos_gallery" %}
-
 ## My Love  # Kept the original title
 
 {% include gallery id="mylove_gallery" %}
@@ -71,3 +65,7 @@ cat_bap_gallery:
 ## Image Sections  # Improved heading
 
 {% include gallery id="cat_bap_gallery" %}
+
+## Ảnh của Dừa  # Kept the original title
+
+{% include gallery id="cat_dua_gallery" %}
