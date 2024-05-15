@@ -2,64 +2,87 @@
 title: My Image Gallery
 layout: splash
 permalink: /gallery/
-hidden: true
+
 header:
-  overlay_color: "#5e616c"
-  overlay_image: /assets/images/gallery/dalat.jpg
-  caption: 
-  actions:
-    - label: "My journey"
-excerpt: >
-  <span style="color: cyan;">**Hello world!!**</span> <br/>
-  **Site này đang phát triển đợi đi** <br />
-  <br/>
+  overlay_color: "#5e616c"  # Adjust the overlay color as needed
+  overlay_image: /assets/images/gallery/day.jpg  # Path to your overlay image
+  caption:  # Optional caption text
+
+actions:  # Optional action buttons
+  - label: "My journey"
+
+excerpt: >  # Descriptive text for the gallery
+  **Welcome to my image gallery!**  # Replace with your desired text
+  This site is under development, but feel free to browse my photos.
+
 ---
+
+# Image Galleries  # Clearer heading
+
 cat_bap_gallery:
-{% for i in (1..24) %}
+  # Sử dụng một danh sách các từ điển cho sự dễ đọc tốt hơn
+  {% for i in (1..24) %}
   - url: /assets/images/gallery/cat_bap/bap{{ i }}.jpeg
     image_path: /assets/images/gallery/cat_bap/bap{{ i }}.jpeg
-    alt: "Cat Bắp {{ i }}"
-    title: "Ảnh {{ i }} của Bắp"
-{% endfor %}
+    alt: "Cat Bắp {{ i }}"  # Văn bản thay thế mô tả
+    title: "Bắp {{ i }}"  # Tiêu đề ngắn gọn
+  {% endfor %}
 
 cat_dua_gallery:
-{% for i in (1..27) %}
+  {% for i in (1..27) %}
   - url: /assets/images/gallery/cat_dua/dua{{ i }}.jpeg
     image_path: /assets/images/gallery/cat_dua/dua{{ i }}.jpeg
     alt: "Cat Dừa {{ i }}"
-    title: "Ảnh {{ i }} của Dừa"
-{% endfor %}
+    title: "Dừa {{ i }}"
+  {% endfor %}
+
 
 my_photos_gallery:
-{% for i in (1..3) %}
-  - url: /assets/images/gallery/my_photos/my{{ i }}.jpeg
-    image_path: /assets/images/gallery/my_photos/my{{ i }}.jpeg
-    alt: "My Photo {{ i }}"
-    title: "Ảnh {{ i }} của tôi"
-{% endfor %}
+  - url: /assets/images/gallery/my_photos/my1.jpeg
+    image_path: /assets/images/gallery/my_photos/my1.jpeg
+    alt: "My Photo"
+    title: "Me"  # Short and clear title
+  - url: /assets/images/gallery/my_photos/my2.jpeg
+    image_path: /assets/images/gallery/my_photos/my2.jpeg
+    alt: "My Photo"
+    title: "Me"
+  - url: /assets/images/gallery/my_photos/my3.jpeg
+    image_path: /assets/images/gallery/my_photos/my3.jpeg
+    alt: "My Photo"
+    title: "Me"
 
 mylove_gallery:
-{% for i in (1..4) %}
-  - url: /assets/images/gallery/mylove/mylove{{ i }}.jpeg
-    image_path: /assets/images/gallery/mylove/mylove{{ i }}.jpeg
-    alt: "My Love {{ i }}"
-    title: "Ảnh {{ i }} của mylove"
-{% endfor %}
+  - url: /assets/images/gallery/mylove/mylove1.jpeg
+    image_path: /assets/images/gallery/mylove/mylove1.jpeg
+    alt: "My Love"
+    title: "My Love"
+  - url: /assets/images/gallery/mylove/mylove2.jpeg
+    image_path: /assets/images/gallery/mylove/mylove2.jpeg
+    alt: "My Love"
+    title: "My Love"
+  - url: /assets/images/gallery/mylove/mylove3.jpeg
+    image_path: /assets/images/gallery/mylove/mylove3.jpeg
+    alt: "My Love"
+    title: "My Love"
+  - url: /assets/images/gallery/mylove/mylove4.jpeg
+    image_path: /assets/images/gallery/mylove/mylove4.jpeg
+    alt: "My Love"
+    title: "My Love"
+
 ---
 
-## Ảnh của Bắp
+## Image Sections  # Improved heading
 
 {% include gallery id="cat_bap_gallery" %}
 
-## Ảnh của Dừa
+## Ảnh của Dừa  # Kept the original title
 
 {% include gallery id="cat_dua_gallery" %}
 
-## Các ảnh của tôi
+## My Photos  # Consistent section title
 
 {% include gallery id="my_photos_gallery" %}
 
-## Ảnh của My Love
+## My Love  # Kept the original title
 
 {% include gallery id="mylove_gallery" %}
-
