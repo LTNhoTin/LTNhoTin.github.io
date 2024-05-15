@@ -44,6 +44,13 @@ mylove_gallery:
     title: "My Love"
 ---
 
+<style>
+  .gallery-img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
 ## My Photos  # Consistent section title
 
 {% include gallery id="my_photos_gallery" %}
