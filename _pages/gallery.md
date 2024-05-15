@@ -58,19 +58,6 @@ cat_bap_gallery:
     alt: "Cat Bắp"
     title: "Bắp"
 
-cat_dua_gallery:
-  - url: /assets/images/gallery/cat_dua/dua1.jpeg
-    image_path: /assets/images/gallery/cat_dua/dua1.jpeg
-    alt: "Cat Dừa"
-    title: "Dừa"
-  - url: /assets/images/gallery/cat_dua/dua2.jpeg
-    image_path: /assets/images/gallery/cat_dua/dua2.jpeg
-    alt: "Cat Dừa"
-    title: "Dừa"
-    - url: /assets/images/gallery/cat_dua/dua3.jpeg
-    image_path: /assets/images/gallery/cat_dua/dua3.jpeg
-    alt: "Cat Dừa"
-    title: "Dừa"
 ---
 
 
@@ -85,7 +72,3 @@ cat_dua_gallery:
 ## Image Sections  # Improved heading
 
 {% include gallery id="cat_bap_gallery" %}
-
-## Ảnh của Dừa  # Kept the original title
-
-{% include gallery id="cat_dua_gallery" %}
