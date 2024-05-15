@@ -14,9 +14,6 @@ actions:  # Optional action buttons
 excerpt: >  # Descriptive text for the gallery
   **Welcome to my image gallery!**  # Replace with your desired text
   This site is under development, but feel free to browse my photos.
-
----
-
 # Image Galleries  # Clearer heading
 
 cat_bap_gallery:
