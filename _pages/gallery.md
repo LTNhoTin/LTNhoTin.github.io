@@ -43,7 +43,6 @@ mylove_gallery:
     alt: "My Love"
     title: "My Love"
 
-
 cat_bap_gallery:
   # Use a list of dictionaries for better readability
   - url: /assets/images/gallery/cat_bap/bap1.jpeg
@@ -58,7 +57,6 @@ cat_bap_gallery:
     image_path: /assets/images/gallery/cat_bap/bap3.jpeg
     alt: "Cat Bắp"
     title: "Bắp"
-
 
 cat_dua_gallery:
   - url: /assets/images/gallery/cat_dua/dua1.jpeg
@@ -75,23 +73,14 @@ cat_dua_gallery:
     title: "Dừa"
 ---
 
-<style>
-  .gallery-img {
-    width: 100%;
-    height: 200px; /* Set a fixed height for all images */
-    object-fit: cover; /* Scale the image while preserving aspect ratio */
-  }
-</style>
-
-
-
-## My Love  # Kept the original title
-
-{% include gallery id="mylove_gallery" %}
 
 ## My Photos  # Consistent section title
 
 {% include gallery id="my_photos_gallery" %}
+
+## My Love  # Kept the original title
+
+{% include gallery id="mylove_gallery" %}
 
 ## Image Sections  # Improved heading
 
