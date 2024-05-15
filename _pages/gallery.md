@@ -46,7 +46,7 @@ my_photos_gallery:
     alt: "My Photo"
     title: "Me"
 
-mylove_gallery:
+gallery12Tin:
   - url: /assets/images/gallery/mylove/mylove1.jpeg
     image_path: /assets/images/gallery/mylove/mylove1.jpeg
     alt: "My Love"
