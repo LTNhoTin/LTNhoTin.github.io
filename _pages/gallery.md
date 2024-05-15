@@ -15,29 +15,6 @@ excerpt: >
   📷 🌏 🎶 💖 
   <br/>
 
-feature_row:
-  - image_path: /assets/images/gallery/t2.jpg
-    alt: "journeys"
-    title: "Những chuyến đi"
-    excerpt: "Chuyến đi xa tự túc đầu tiên đến Đà Lạt"
-    url: "/gallery/"
-    btn_class: "btn--primary"
-    btn_label: "Xem thêm"
-  - image_path: /assets/images/gallery/thachthuc2020.jpg
-    alt: "contests"
-    title: "Những cuộc thi"
-    excerpt: "Thách Thức, cuộc thi nhiều kỉ niệm nhất"
-    url: ""
-    btn_class: "btn--primary"
-    btn_label: "Xem thêm"
-  - image_path: /assets/images/gallery/t3.jpg
-    alt: "friends"
-    title: "Những người bạn"
-    excerpt: "3 giờ sáng dậy đi săn mây trong cơn lạnh giá"
-    url: ""
-    btn_class: "btn--primary"
-    btn_label: "Xem thêm"  
-
 my_photos_gallery:
   - url: /assets/images/gallery/my_photos/my1.jpeg
     image_path: /assets/images/gallery/my_photos/my1.jpeg
@@ -57,10 +34,6 @@ mylove_gallery:
     image_path: /assets/images/gallery/mylove/mylove1.jpeg
     alt: "My Love"
     title: "My Love"
-  - url: /assets/images/gallery/mylove/mylove2.jpeg
-    image_path: /assets/images/gallery/mylove/mylove2.jpeg
-    alt: "My Love"
-    title: "My Love"
   - url: /assets/images/gallery/mylove/mylove3.jpeg
     image_path: /assets/images/gallery/mylove/mylove3.jpeg
     alt: "My Love"
@@ -70,8 +43,6 @@ mylove_gallery:
     alt: "My Love"
     title: "My Love"
 ---
-{% include feature_row %}
-
 
 ## My Photos  # Consistent section title
 
