@@ -38,36 +38,64 @@ feature_row:
     btn_class: "btn--primary"
     btn_label: "Xem thêm"  
 
-mylove_gallery:
-  - url: /assets/images/gallery/mylove/mylove1.jpeg
-    image_path: /assets/images/gallery/mylove/mylove1.jpeg
-    alt: "My Love"
-    title: "My Love"
-  - url: /assets/images/gallery/mylove/mylove2.jpeg
-    image_path: /assets/images/gallery/mylove/mylove2.jpeg
-    alt: "My Love"
-    title: "My Love"
-  - url: /assets/images/gallery/mylove/mylove3.jpeg
-    image_path: /assets/images/gallery/mylove/mylove3.jpeg
-    alt: "My Love"
-    title: "My Love"
-  - url: /assets/images/gallery/mylove/mylove4.jpeg
-    image_path: /assets/images/gallery/mylove/mylove4.jpeg
-    alt: "My Love"
-    title: "My Love"
+galleryQHH:
+  - url: /assets/images/gallery/qhh-1.jpg
+    image_path: /assets/images/gallery/qhh-1.jpg
+    alt: "placeholder image 1"
+    title: ""
+  - url: /assets/images/gallery/qhh-5.jpg
+    image_path: /assets/images/gallery/qhh-5.jpg
+    alt: "placeholder image 3"
+    title: "Nguồn: fanpage *Một mảnh quốc học*"
+  - url: /assets/images/gallery/qhh-3.jpg
+    image_path: /assets/images/gallery/qhh-3.jpg
+    alt: "placeholder image 3"
+    title: ""
+  
+  - url: /assets/images/gallery/qhh-2.jpg
+    image_path: /assets/images/gallery/qhh-2.jpg
+    alt: "placeholder image 3"
+    title: ""
+  - url: /assets/images/gallery/qhh-4.jpg
+    image_path: /assets/images/gallery/qhh-4.jpg
+    alt: "placeholder image 3"
+    title: "Nguồn: fanpage *Một mảnh quốc học*"
 
-my_photos_gallery:
-  - url: /assets/images/gallery/my_photos/my1.jpeg
-    image_path: /assets/images/gallery/my_photos/my1.jpeg
-    alt: "My Photo"
-    title: "Me"  # Short and clear title
-  - url: /assets/images/gallery/my_photos/my2.jpeg
-    image_path: /assets/images/gallery/my_photos/my2.jpeg
-    alt: "My Photo"
-    title: "Me"
-  - url: /assets/images/gallery/my_photos/my3.jpeg
-    image_path: /assets/images/gallery/my_photos/my3.jpeg
-    alt: "My Photo"
-    title: "Me"
+  - url: /assets/images/gallery/qhh-6.jpg
+    image_path: /assets/images/gallery/qhh-6.jpg
+    alt: "placeholder image 3"
+    title: "cửa sổ lớp"
+
+gallery12Tin:
+  - url: /assets/images/gallery/qhh-12tin.jpg
+    image_path: /assets/images/gallery/qhh-12tin.jpg
+    alt: "placeholder image 3"
+    title: "cửa sổ lớp"
+  
+  - url: /assets/images/gallery/qhh-12tinprom.jpg
+    image_path: /assets/images/gallery/qhh-12tinprom.jpg
+    alt: "placeholder image 3"
+    title: "cửa sổ lớp"
+  
+  - url: /assets/images/gallery/qhh-12tintrucban.jpg
+    image_path: /assets/images/gallery/qhh-12tintrucban.jpg
+    alt: "placeholder image 3"
+    title: "cửa sổ lớp"
 ---
 {% include feature_row %}
+
+
+
+## Quốc Học Huế - Trường cấp 3 của tôi
+Đi đâu thì cũng thấy trường cấp 3 của mình là đẹp nhất :>
+
+Nơi lưu giữ nhiều kỉ niệm thời học sinh, nơi mình cố gắng rất nhiều ...
+
+{% include gallery id="galleryQHH"%}
+
+{% include gallery id="gallery12Tin" caption="Lớp cấp 3 của tôi" %}
+
+
+## *[29-06-2021]* Chuyên mục ảnh này được tạo trên blog
+Có thể coi đây như mạng xã hội chỉ dành cho riêng mình, muốn up gì thì up :'>
+{% include figure image_path="/assets/images/gallery/gallery_created.png" alt="this is a placeholder image" %}
