@@ -83,19 +83,3 @@ gallery12Tin:
     title: "cửa sổ lớp"
 ---
 {% include feature_row %}
-
-
-
-## Quốc Học Huế - Trường cấp 3 của tôi
-Đi đâu thì cũng thấy trường cấp 3 của mình là đẹp nhất :>
-
-Nơi lưu giữ nhiều kỉ niệm thời học sinh, nơi mình cố gắng rất nhiều ...
-
-{% include gallery id="galleryQHH"%}
-
-{% include gallery id="gallery12Tin" caption="Lớp cấp 3 của tôi" %}
-
-
-## *[29-06-2021]* Chuyên mục ảnh này được tạo trên blog
-Có thể coi đây như mạng xã hội chỉ dành cho riêng mình, muốn up gì thì up :'>
-{% include figure image_path="/assets/images/gallery/gallery_created.png" alt="this is a placeholder image" %}
