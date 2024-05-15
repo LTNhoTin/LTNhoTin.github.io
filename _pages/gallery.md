@@ -42,6 +42,37 @@ mylove_gallery:
     image_path: /assets/images/gallery/mylove/mylove4.jpeg
     alt: "My Love"
     title: "My Love"
+
+
+cat_bap_gallery:
+  # Use a list of dictionaries for better readability
+  - url: /assets/images/gallery/cat_bap/bap1.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap1.jpeg
+    alt: "Cat Bắp"  # Descriptive alternative text
+    title: "Bắp"  # Concise title
+  - url: /assets/images/gallery/cat_bap/bap2.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap2.jpeg
+    alt: "Cat Bắp"
+    title: "Bắp"
+  - url: /assets/images/gallery/cat_bap/bap3.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap3.jpeg
+    alt: "Cat Bắp"
+    title: "Bắp"
+
+
+cat_dua_gallery:
+  - url: /assets/images/gallery/cat_dua/dua1.jpeg
+    image_path: /assets/images/gallery/cat_dua/dua1.jpeg
+    alt: "Cat Dừa"
+    title: "Dừa"
+  - url: /assets/images/gallery/cat_dua/dua2.jpeg
+    image_path: /assets/images/gallery/cat_dua/dua2.jpeg
+    alt: "Cat Dừa"
+    title: "Dừa"
+    - url: /assets/images/gallery/cat_dua/dua3.jpeg
+    image_path: /assets/images/gallery/cat_dua/dua3.jpeg
+    alt: "Cat Dừa"
+    title: "Dừa"
 ---
 
 <style>
@@ -51,10 +82,20 @@ mylove_gallery:
   }
 </style>
 
-## My Photos  # Consistent section title
 
-{% include gallery id="my_photos_gallery" %}
 
 ## My Love  # Kept the original title
 
 {% include gallery id="mylove_gallery" %}
+
+## My Photos  # Consistent section title
+
+{% include gallery id="my_photos_gallery" %}
+
+## Image Sections  # Improved heading
+
+{% include gallery id="cat_bap_gallery" %}
+
+## Ảnh của Dừa  # Kept the original title
+
+{% include gallery id="cat_dua_gallery" %}
