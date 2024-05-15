@@ -32,38 +32,6 @@ feature_row:
     url: ""
     btn_class: "btn--primary"
     btn_label: "Xem thêm"
-  - image_path: /assets/images/gallery/t3.jpg
-    alt: "friends"
-    title: "Những người bạn"
-    excerpt: "3 giờ sáng dậy đi săn mây trong cơn lạnh giá"
-    url: ""
-    btn_class: "btn--primary"
-    btn_label: "Xem thêm"  
-- image_path: /assets/images/gallery/t3.jpg
-    alt: "friends"
-    title: "Những người bạn"
-    excerpt: "3 giờ sáng dậy đi săn mây trong cơn lạnh giá"
-    url: ""
-    btn_class: "btn--primary"
-    btn_label: "Xem thêm"  
-cat_bap_gallery:
-  # Sử dụng một danh sách các từ điển cho sự dễ đọc tốt hơn
-  {% for i in (1..24) %}
-  - url: /assets/images/gallery/cat_bap/bap{{ i }}.jpeg
-    image_path: /assets/images/gallery/cat_bap/bap{{ i }}.jpeg
-    alt: "Cat Bắp {{ i }}"  # Văn bản thay thế mô tả
-    title: "Bắp {{ i }}"  # Tiêu đề ngắn gọn
-  {% endfor %}
-
-cat_dua_gallery:
-  {% for i in (1..27) %}
-  - url: /assets/images/gallery/cat_dua/dua{{ i }}.jpeg
-    image_path: /assets/images/gallery/cat_dua/dua{{ i }}.jpeg
-    alt: "Cat Dừa {{ i }}"
-    title: "Dừa {{ i }}"
-  {% endfor %}
-
-
 my_photos_gallery:
   - url: /assets/images/gallery/my_photos/my1.jpeg
     image_path: /assets/images/gallery/my_photos/my1.jpeg
