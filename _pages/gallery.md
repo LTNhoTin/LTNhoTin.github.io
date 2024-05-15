@@ -38,48 +38,45 @@ feature_row:
     btn_class: "btn--primary"
     btn_label: "Xem thêm"  
 
-galleryQHH:
-  - url: /assets/images/gallery/qhh-1.jpg
-    image_path: /assets/images/gallery/qhh-1.jpg
-    alt: "placeholder image 1"
-    title: ""
-  - url: /assets/images/gallery/qhh-5.jpg
-    image_path: /assets/images/gallery/qhh-5.jpg
-    alt: "placeholder image 3"
-    title: "Nguồn: fanpage *Một mảnh quốc học*"
-  - url: /assets/images/gallery/qhh-3.jpg
-    image_path: /assets/images/gallery/qhh-3.jpg
-    alt: "placeholder image 3"
-    title: ""
-  
-  - url: /assets/images/gallery/qhh-2.jpg
-    image_path: /assets/images/gallery/qhh-2.jpg
-    alt: "placeholder image 3"
-    title: ""
-  - url: /assets/images/gallery/qhh-4.jpg
-    image_path: /assets/images/gallery/qhh-4.jpg
-    alt: "placeholder image 3"
-    title: "Nguồn: fanpage *Một mảnh quốc học*"
+my_photos_gallery:
+  - url: /assets/images/gallery/my_photos/my1.jpeg
+    image_path: /assets/images/gallery/my_photos/my1.jpeg
+    alt: "My Photo"
+    title: "Me"  # Short and clear title
+  - url: /assets/images/gallery/my_photos/my2.jpeg
+    image_path: /assets/images/gallery/my_photos/my2.jpeg
+    alt: "My Photo"
+    title: "Me"
+  - url: /assets/images/gallery/my_photos/my3.jpeg
+    image_path: /assets/images/gallery/my_photos/my3.jpeg
+    alt: "My Photo"
+    title: "Me"
 
-  - url: /assets/images/gallery/qhh-6.jpg
-    image_path: /assets/images/gallery/qhh-6.jpg
-    alt: "placeholder image 3"
-    title: "cửa sổ lớp"
-
-gallery12Tin:
-  - url: /assets/images/gallery/qhh-12tin.jpg
-    image_path: /assets/images/gallery/qhh-12tin.jpg
-    alt: "placeholder image 3"
-    title: "cửa sổ lớp"
-  
-  - url: /assets/images/gallery/qhh-12tinprom.jpg
-    image_path: /assets/images/gallery/qhh-12tinprom.jpg
-    alt: "placeholder image 3"
-    title: "cửa sổ lớp"
-  
-  - url: /assets/images/gallery/qhh-12tintrucban.jpg
-    image_path: /assets/images/gallery/qhh-12tintrucban.jpg
-    alt: "placeholder image 3"
-    title: "cửa sổ lớp"
+mylove_gallery:
+  - url: /assets/images/gallery/mylove/mylove1.jpeg
+    image_path: /assets/images/gallery/mylove/mylove1.jpeg
+    alt: "My Love"
+    title: "My Love"
+  - url: /assets/images/gallery/mylove/mylove2.jpeg
+    image_path: /assets/images/gallery/mylove/mylove2.jpeg
+    alt: "My Love"
+    title: "My Love"
+  - url: /assets/images/gallery/mylove/mylove3.jpeg
+    image_path: /assets/images/gallery/mylove/mylove3.jpeg
+    alt: "My Love"
+    title: "My Love"
+  - url: /assets/images/gallery/mylove/mylove4.jpeg
+    image_path: /assets/images/gallery/mylove/mylove4.jpeg
+    alt: "My Love"
+    title: "My Love"
 ---
 {% include feature_row %}
+
+
+## My Photos  # Consistent section title
+
+{% include gallery id="my_photos_gallery" %}
+
+## My Love  # Kept the original title
+
+{% include gallery id="mylove_gallery" %}
