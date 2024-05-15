@@ -5,8 +5,7 @@ permalink: /gallery/
 hidden: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/gallery/dalat.jpg
-  caption: "[**Đà Lạt, Việt Nam**]"
+  overlay_image: /assets/images/gallery/my_photos/my3.jpeg
   actions:
     - label: "My journey"
 excerpt: >
