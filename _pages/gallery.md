@@ -77,8 +77,9 @@ cat_dua_gallery:
 
 <style>
   .gallery-img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Scale the image while preserving aspect ratio */
   }
 </style>
 
