@@ -28,15 +28,15 @@ mylove_gallery:
     title: "My Love"
 
 cat_dua_gallery:
-  - url: /assets/images/gallery/cat_dua/dua1.jpeg
+  - url: /assets/images/gallery/cat_dua/dua21.jpeg
     image_path: /assets/images/gallery/cat_dua/dua1.jpeg
     alt: "Cat Dừa"
     title: "Dừa"
-  - url: /assets/images/gallery/cat_dua/dua2.jpeg
+  - url: /assets/images/gallery/cat_dua/dua20.jpeg
     image_path: /assets/images/gallery/cat_dua/dua2.jpeg
     alt: "Cat Dừa"
     title: "Dừa"
-  - url: /assets/images/gallery/cat_dua/dua27.jpeg
+  - url: /assets/images/gallery/cat_dua/dua6.jpeg
     image_path: /assets/images/gallery/cat_dua/dua27.jpeg
     alt: "Cat Dừa"
     title: "Dừa"
