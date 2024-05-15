@@ -16,6 +16,30 @@ excerpt: >  # Descriptive text for the gallery
   This site is under development, but feel free to browse my photos.
 # Image Galleries  # Clearer heading
 
+
+feature_row:
+  - image_path: /assets/images/gallery/t2.jpg
+    alt: "journeys"
+    title: "Những chuyến đi"
+    excerpt: "Chuyến đi xa tự túc đầu tiên đến Đà Lạt"
+    url: "/gallery/"
+    btn_class: "btn--primary"
+    btn_label: "Xem thêm"
+  - image_path: /assets/images/gallery/thachthuc2020.jpg
+    alt: "contests"
+    title: "Những cuộc thi"
+    excerpt: "Thách Thức, cuộc thi nhiều kỉ niệm nhất"
+    url: ""
+    btn_class: "btn--primary"
+    btn_label: "Xem thêm"
+  - image_path: /assets/images/gallery/t3.jpg
+    alt: "friends"
+    title: "Những người bạn"
+    excerpt: "3 giờ sáng dậy đi săn mây trong cơn lạnh giá"
+    url: ""
+    btn_class: "btn--primary"
+    btn_label: "Xem thêm"  
+
 cat_bap_gallery:
   # Sử dụng một danh sách các từ điển cho sự dễ đọc tốt hơn
   {% for i in (1..24) %}
@@ -67,19 +91,4 @@ mylove_gallery:
     title: "My Love"
 
 ---
-
-## Image Sections  # Improved heading
-
-{% include gallery id="cat_bap_gallery" %}
-
-## Ảnh của Dừa  # Kept the original title
-
-{% include gallery id="cat_dua_gallery" %}
-
-## My Photos  # Consistent section title
-
-{% include gallery id="my_photos_gallery" %}
-
-## My Love  # Kept the original title
-
-{% include gallery id="mylove_gallery" %}
+{% include feature_row %}
