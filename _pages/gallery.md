@@ -6,15 +6,14 @@ hidden: true
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/gallery/dalat.jpg
-  caption: "[**Đà Lạt, Việt Nam**]"
+  caption: 
   actions:
     - label: "My journey"
 excerpt: >
   <span style="color: cyan;">**Hello world!!**</span> <br/>
-  **Site này để up mấy tấm ảnh cá nhân mà mình thích** <br />
-  📷 🌏 🎶 💖 
+  **Site này đang phát triển đợi đi** <br />
   <br/>
-
+---
 cat_bap_gallery:
 {% for i in (1..24) %}
   - url: /assets/images/gallery/cat_bap/bap{{ i }}.jpeg
@@ -63,3 +62,4 @@ mylove_gallery:
 ## Ảnh của My Love
 
 {% include gallery id="mylove_gallery" %}
+
