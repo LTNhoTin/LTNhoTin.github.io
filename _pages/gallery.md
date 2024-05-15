@@ -46,15 +46,15 @@ mylove_gallery:
 cat_bap_gallery:
   # Use a list of dictionaries for better readability
   - url: /assets/images/gallery/cat_bap/bap1.jpeg
-    image_path: /assets/images/gallery/cat_bap/bap1.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap6.jpeg
     alt: "Cat Bắp"  # Descriptive alternative text
     title: "Bắp"  # Concise title
   - url: /assets/images/gallery/cat_bap/bap2.jpeg
-    image_path: /assets/images/gallery/cat_bap/bap2.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap11.jpeg
     alt: "Cat Bắp"
     title: "Bắp"
   - url: /assets/images/gallery/cat_bap/bap3.jpeg
-    image_path: /assets/images/gallery/cat_bap/bap3.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap24.jpeg
     alt: "Cat Bắp"
     title: "Bắp"
 
