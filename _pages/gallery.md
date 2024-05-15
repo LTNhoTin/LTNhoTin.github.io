@@ -62,10 +62,11 @@ cat_bap_gallery:
 
 {% include gallery id="mylove_gallery" %}
 
+## Ảnh của Dừa  # Kept the original title
+
+{% include gallery id="cat_dua_gallery" %}
+
 ## Image Sections  # Improved heading
 
 {% include gallery id="cat_bap_gallery" %}
 
-## Ảnh của Dừa  # Kept the original title
-
-{% include gallery id="cat_dua_gallery" %}
