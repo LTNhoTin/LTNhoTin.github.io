@@ -39,7 +39,13 @@ feature_row:
     url: ""
     btn_class: "btn--primary"
     btn_label: "Xem thêm"  
-
+- image_path: /assets/images/gallery/t3.jpg
+    alt: "friends"
+    title: "Những người bạn"
+    excerpt: "3 giờ sáng dậy đi săn mây trong cơn lạnh giá"
+    url: ""
+    btn_class: "btn--primary"
+    btn_label: "Xem thêm"  
 cat_bap_gallery:
   # Sử dụng một danh sách các từ điển cho sự dễ đọc tốt hơn
   {% for i in (1..24) %}
