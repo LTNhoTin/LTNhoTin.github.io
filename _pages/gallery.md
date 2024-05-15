@@ -4,18 +4,16 @@ layout: splash
 permalink: /gallery/
 hidden: true
 header:
-  overlay_color: "#5e616c"  # Adjust the overlay color as needed
-  overlay_image: /assets/images/gallery/day.jpg  # Path to your overlay image
-  caption:  # Optional caption text
-
-actions:  # Optional action buttons
-  - label: "My journey"
-
-excerpt: >  # Descriptive text for the gallery
-  **Welcome to my image gallery!**  # Replace with your desired text
-  This site is under development, but feel free to browse my photos.
-# Image Galleries  # Clearer heading
-
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/gallery/dalat.jpg
+  caption: "[**Đà Lạt, Việt Nam**]"
+  actions:
+    - label: "My journey"
+excerpt: >
+  <span style="color: cyan;">**Hello world!!**</span> <br/>
+  **Site này để up mấy tấm ảnh cá nhân mà mình thích** <br />
+  📷 🌏 🎶 💖 
+  <br/>
 
 feature_row:
   - image_path: /assets/images/gallery/t2.jpg
@@ -32,21 +30,15 @@ feature_row:
     url: ""
     btn_class: "btn--primary"
     btn_label: "Xem thêm"
-my_photos_gallery:
-  - url: /assets/images/gallery/my_photos/my1.jpeg
-    image_path: /assets/images/gallery/my_photos/my1.jpeg
-    alt: "My Photo"
-    title: "Me"  # Short and clear title
-  - url: /assets/images/gallery/my_photos/my2.jpeg
-    image_path: /assets/images/gallery/my_photos/my2.jpeg
-    alt: "My Photo"
-    title: "Me"
-  - url: /assets/images/gallery/my_photos/my3.jpeg
-    image_path: /assets/images/gallery/my_photos/my3.jpeg
-    alt: "My Photo"
-    title: "Me"
+  - image_path: /assets/images/gallery/t3.jpg
+    alt: "friends"
+    title: "Những người bạn"
+    excerpt: "3 giờ sáng dậy đi săn mây trong cơn lạnh giá"
+    url: ""
+    btn_class: "btn--primary"
+    btn_label: "Xem thêm"  
 
-gallery12Tin:
+mylove_gallery:
   - url: /assets/images/gallery/mylove/mylove1.jpeg
     image_path: /assets/images/gallery/mylove/mylove1.jpeg
     alt: "My Love"
@@ -64,5 +56,18 @@ gallery12Tin:
     alt: "My Love"
     title: "My Love"
 
+my_photos_gallery:
+  - url: /assets/images/gallery/my_photos/my1.jpeg
+    image_path: /assets/images/gallery/my_photos/my1.jpeg
+    alt: "My Photo"
+    title: "Me"  # Short and clear title
+  - url: /assets/images/gallery/my_photos/my2.jpeg
+    image_path: /assets/images/gallery/my_photos/my2.jpeg
+    alt: "My Photo"
+    title: "Me"
+  - url: /assets/images/gallery/my_photos/my3.jpeg
+    image_path: /assets/images/gallery/my_photos/my3.jpeg
+    alt: "My Photo"
+    title: "Me"
 ---
 {% include feature_row %}
