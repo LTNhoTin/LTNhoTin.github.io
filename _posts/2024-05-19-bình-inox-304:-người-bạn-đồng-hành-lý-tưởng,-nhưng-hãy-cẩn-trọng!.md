@@ -2,10 +2,6 @@
 title: "Bình Inox 304: Người bạn đồng hành lý tưởng, nhưng hãy cẩn trọng!"
 excerpt: "Inox 304 đã trở thành vật liệu quen thuộc trong căn bếp của mỗi gia đình nhờ độ bền, vẻ ngoài sáng bóng và khả năng giữ nhiệt tốt. Tuy nhiên, không phải loại nước nào cũng "hợp cạ" với inox 304. Hãy cùng tìm hiểu để sử dụng bình inox 304 đúng cách và an toàn nhé!"
 show_date: True
-tags:
-
-categories:
-
 last_modified_at: 2024-05-19T15:50:20
 author_profile: true
 classes: wide 
