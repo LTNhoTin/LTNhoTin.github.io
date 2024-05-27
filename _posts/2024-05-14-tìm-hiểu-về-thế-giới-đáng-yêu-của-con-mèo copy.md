@@ -1,5 +1,5 @@
 ---
-title: "Tìm hiểu về thế giới đáng yêu của con mèo"
+title: "A Comprehensive Guide to Data Splitting in Machine Learning"
 excerpt: "Khám phá sự đa dạng và sự đáng yêu của các loại mèo khác nhau."
 show_date: True
 tags:
