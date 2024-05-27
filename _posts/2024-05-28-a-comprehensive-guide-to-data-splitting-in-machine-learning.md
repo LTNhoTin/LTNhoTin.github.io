@@ -11,7 +11,7 @@ categories:
 last_modified_at: 2024-05-28T03:13:09
 author_profile: true
 classes: wide 
-toc: true
+toc: false 
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/night.jpg
