@@ -5,9 +5,6 @@ show_date: True
 tags:
   - Data Splitting
   - Machine Learning
-  - Training Set
-  - Test Set
-  - Validation Set
   - Data Science
 categories:
   - Machine Learning
