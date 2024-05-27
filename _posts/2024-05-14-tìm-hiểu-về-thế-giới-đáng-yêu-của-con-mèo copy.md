@@ -3,11 +3,11 @@ title: "A Comprehensive Guide to Data Splitting in Machine Learning"
 excerpt: "Khám phá tầm quan trọng của chia tách dữ liệu trong machine learning"
 show_date: True
 tags:
-  - Mèo
-  - Thú cưng
+  - Data Splitting
+  - Machine Learning
+  - Data Science
 categories:
-  - Động vật
-  - Nuôi mèo
+  - Machine Learning
 last_modified_at: 2024-05-14T19:14:51
 author_profile: true
 classes: wide 
