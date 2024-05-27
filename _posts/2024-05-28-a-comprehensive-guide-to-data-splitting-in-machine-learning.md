@@ -1,6 +1,6 @@
 ---
 title: "A Comprehensive Guide to Data Splitting in Machine Learning"
-excerpt: "Khám phá tầm quan trọng của chia tách dữ liệu trong machine learning. Tìm hiểu về các kỹ thuật khác nhau như chia ngẫu nhiên, chia phân tầng và chia theo chuỗi thời gian để nâng cao hiệu suất mô hình của bạn."
+excerpt: "Khám phá tầm quan trọng của chia tách dữ liệu trong machine learning"
 show_date: True
 tags:
   - Data Splitting
@@ -11,7 +11,7 @@ categories:
 last_modified_at: 2024-05-28T03:13:09
 author_profile: true
 classes: wide 
-toc: false 
+toc: true
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/night.jpg
