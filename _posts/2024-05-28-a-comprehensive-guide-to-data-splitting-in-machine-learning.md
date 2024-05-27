@@ -40,15 +40,15 @@ Chia tách dữ liệu đề cập đến việc phân chia một tập dữ li�
 
 Có nhiều phương pháp có thể được sử dụng để chia tách dữ liệu, tùy thuộc vào yêu cầu cụ thể và tính chất của dữ liệu.
 
-## Chia Ngẫu Nhiên
+- **Chia Ngẫu Nhiên**
 
 Đây là kỹ thuật đơn giản nhất, trong đó dữ liệu được chia ngẫu nhiên thành các tập huấn luyện, xác minh và kiểm tra.
 
-## Chia Tách Phân Tầng
+- **Chia Tách Phân Tầng**
 
 Kỹ thuật này đảm bảo rằng mỗi tập con có cùng phân phối các lớp biến mục tiêu, điều này rất quan trọng đối với các tập dữ liệu không cân bằng.
 
-## Chia Tách Theo Chuỗi Thời Gian
+- **Chia Tách Theo Chuỗi Thời Gian**
 
 Đối với dữ liệu phụ thuộc vào thời gian, như giá cổ phiếu hoặc dữ liệu thời tiết, chúng ta nên chia tách dữ liệu dựa trên thời gian để giữ nguyên thứ tự thời gian.
 
