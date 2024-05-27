@@ -1,6 +1,6 @@
 ---
 title: "A Comprehensive Guide to Data Splitting in Machine Learning"
-excerpt: "Khám phá sự đa dạng và sự đáng yêu của các loại mèo khác nhau."
+excerpt: "Khám phá tầm quan trọng của chia tách dữ liệu trong machine learning"
 show_date: True
 tags:
   - Mèo
