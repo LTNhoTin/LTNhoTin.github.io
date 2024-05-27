@@ -1,3 +1,26 @@
+---
+title: "A Comprehensive Guide to Data Splitting in Machine Learning"
+excerpt: "Khám phá tầm quan trọng của chia tách dữ liệu trong machine learning. Tìm hiểu về các kỹ thuật khác nhau như chia ngẫu nhiên, chia phân tầng và chia theo chuỗi thời gian để nâng cao hiệu suất mô hình của bạn."
+show_date: True
+tags:
+  - Data Splitting
+  - Machine Learning
+  - Training Set
+  - Test Set
+  - Validation Set
+  - Data Science
+categories:
+  - Machine Learning
+last_modified_at: 2024-05-28T03:13:09
+author_profile: true
+classes: wide 
+toc: true
+header:
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/night.jpg
+  caption: "Post created by NhoTin"
+---
+
 # Giới Thiệu
 
 Chia tách dữ liệu là một bước quan trọng trong quy trình machine learning. Nó đảm bảo rằng các mô hình được huấn luyện, xác minh và kiểm tra trên các tập dữ liệu khác nhau, thúc đẩy việc đánh giá hiệu suất một cách toàn diện và không thiên vị. Hướng dẫn này sẽ khám phá các khía cạnh cơ bản của việc chia tách dữ liệu, tầm quan trọng của nó và các kỹ thuật khác nhau để chia tách dữ liệu một cách hiệu quả.
