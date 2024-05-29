@@ -39,7 +39,7 @@ First, create a virtual environment to keep your dependencies isolated.
 ```sh
 python3 -m venv venv-metal
 source venv-metal/bin/activate
-python -m pip install -U pip
+python3 -m pip install -U pip
 ```
 
 ### 2. Install Base TensorFlow
@@ -49,13 +49,13 @@ Depending on your TensorFlow version, you will install it as follows:
 - For TensorFlow version 2.13 or later:
 
   ```sh
-  python -m pip install tensorflow
+  python3 -m pip install tensorflow
   ```
 
 - For TensorFlow version 2.12 or earlier:
 
   ```sh
-  python -m pip install tensorflow-macos
+  python3 -m pip install tensorflow-macos
   ```
 
 ### 3. Install `tensorflow-metal` Plug-in
@@ -63,7 +63,7 @@ Depending on your TensorFlow version, you will install it as follows:
 Install the `tensorflow-metal` plug-in to enable GPU acceleration.
 
 ```sh
-python -m pip install tensorflow-metal
+python3 -m pip install tensorflow-metal
 ```
 
 ### 4. Verify the Installation
