@@ -37,9 +37,9 @@ Accelerate the training of machine learning models with TensorFlow right on your
 First, create a virtual environment to keep your dependencies isolated.
 
 ```sh
-python3 -m venv venv-metal
-source venv-metal/bin/activate
-python3 -m pip install -U pip
+python3 -m venv ~/venv-metal
+source ~/venv-metal/bin/activate
+python -m pip install -U pip
 ```
 
 ### 2. Install Base TensorFlow
