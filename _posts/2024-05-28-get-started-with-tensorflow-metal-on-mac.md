@@ -37,7 +37,7 @@ Accelerate the training of machine learning models with TensorFlow right on your
 First, create a virtual environment to keep your dependencies isolated.
 
 ```sh
-python3 -m venv ~/venv-metal
+python3.10 -m venv ~/venv-metal
 source ~/venv-metal/bin/activate
 python -m pip install -U pip
 ```
@@ -57,7 +57,7 @@ Depending on your TensorFlow version, you will install it as follows:
   ```sh
   python3 -m pip install tensorflow-macos
   ```
-
+- Requirement (install bolth of them)
 ### 3. Install `tensorflow-metal` Plug-in
 
 Install the `tensorflow-metal` plug-in to enable GPU acceleration.
