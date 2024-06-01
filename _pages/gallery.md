@@ -18,8 +18,8 @@ mylove_gallery:
     image_path: /assets/images/gallery/mylove/mylove1.jpeg
     alt: "My Love"
     title: "My Love"
-  - url: /assets/images/gallery/mylove/mylove2.jpeg
-    image_path: /assets/images/gallery/mylove/mylove2.jpeg
+  - url: /assets/images/gallery/mylove/mylove4.jpeg
+    image_path: /assets/images/gallery/mylove/mylove4.jpeg
     alt: "My Love"
     title: "My Love"
   - url: /assets/images/gallery/mylove/mylove3.jpeg
