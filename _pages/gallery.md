@@ -9,7 +9,7 @@ header:
   actions:
 excerpt: >
   <span style="color: pink;">**🌍👋 Xin chào từ hành tinh của mình!**</span> <br/>
-  **🐱Đây là góc nhỏ của mình, nơi mình chia sẻ những bức  🐶 ảnh đời thường mà mình yêu thích.** <br />
+  **Đây là góc nhỏ, nơi mình chia sẻ những bức ảnh mà mình yêu thích.🐶** <br />
   📸 ✨ 🏡 🖼️
   <br/>
 
