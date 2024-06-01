@@ -5,7 +5,7 @@ permalink: /gallery/
 hidden: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/gallery/my_photos/my3.jpeg
+  overlay_image: /assets/images/gallery/my_photos/my2.jpeg
   actions:
 excerpt: >
   <span style="color: pink;">**🌍👋 Xin chào từ hành tinh của mình!**</span> <br/>
