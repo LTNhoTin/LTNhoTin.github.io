@@ -1,5 +1,5 @@
 ---
-title: My Image Gallery
+title: My Visual Diary 📖📸
 layout: splash
 permalink: /gallery/
 hidden: true
@@ -8,8 +8,8 @@ header:
   overlay_image: /assets/images/gallery/my_photos/my3.jpeg
   actions:
 excerpt: >
-  <span style="color: cyan;">**🌍👋 Xin chào từ hành tinh của mình! 📸💖**</span> <br/>
-  **👋🐶🐱Đây là góc nhỏ của mình, nơi mình chia sẻ những bức ảnh đời thường mà mình yêu thích.** <br />
+  <span style="color: pink;">**🌍👋 Xin chào từ hành tinh của mình!**</span> <br/>
+  **🐶🐱Đây là góc nhỏ của mình, nơi mình chia sẻ những bức ảnh đời thường mà mình yêu thích.** <br />
   📸 ✨ 🏡 🖼️
   <br/>
 
