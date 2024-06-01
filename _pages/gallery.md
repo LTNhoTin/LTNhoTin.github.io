@@ -37,22 +37,22 @@ cat_dua_gallery:
     alt: "Cat Dừa"
     title: "Dừa"
   - url: /assets/images/gallery/cat_dua/dua6.jpeg
-    image_path: /assets/images/gallery/cat_dua/dua27.jpeg
+    image_path: /assets/images/gallery/cat_dua/dua3.jpeg
     alt: "Cat Dừa"
     title: "Dừa"
     
 cat_bap_gallery:
   # Use a list of dictionaries for better readability
   - url: /assets/images/gallery/cat_bap/bap1.jpeg
-    image_path: /assets/images/gallery/cat_bap/bap6.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap1.jpeg
     alt: "Cat Bắp"  # Descriptive alternative text
     title: "Bắp"  # Concise title
   - url: /assets/images/gallery/cat_bap/bap2.jpeg
-    image_path: /assets/images/gallery/cat_bap/bap11.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap2.jpeg
     alt: "Cat Bắp"
     title: "Bắp"
   - url: /assets/images/gallery/cat_bap/bap3.jpeg
-    image_path: /assets/images/gallery/cat_bap/bap24.jpeg
+    image_path: /assets/images/gallery/cat_bap/bap3.jpeg
     alt: "Cat Bắp"
     title: "Bắp"
 
