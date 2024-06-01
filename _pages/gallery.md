@@ -18,25 +18,25 @@ mylove_gallery:
     image_path: /assets/images/gallery/mylove/mylove1.jpeg
     alt: "My Love"
     title: "My Love"
+  - url: /assets/images/gallery/mylove/mylove2.jpeg
+    image_path: /assets/images/gallery/mylove/mylove2.jpeg
+    alt: "My Love"
+    title: "My Love"
   - url: /assets/images/gallery/mylove/mylove3.jpeg
     image_path: /assets/images/gallery/mylove/mylove3.jpeg
     alt: "My Love"
     title: "My Love"
-  - url: /assets/images/gallery/mylove/mylove4.jpeg
-    image_path: /assets/images/gallery/mylove/mylove4.jpeg
-    alt: "My Love"
-    title: "My Love"
 
 cat_dua_gallery:
-  - url: /assets/images/gallery/cat_dua/dua21.jpeg
+  - url: /assets/images/gallery/cat_dua/dua1.jpeg
     image_path: /assets/images/gallery/cat_dua/dua1.jpeg
     alt: "Cat Dừa"
     title: "Dừa"
-  - url: /assets/images/gallery/cat_dua/dua20.jpeg
+  - url: /assets/images/gallery/cat_dua/dua2.jpeg
     image_path: /assets/images/gallery/cat_dua/dua2.jpeg
     alt: "Cat Dừa"
     title: "Dừa"
-  - url: /assets/images/gallery/cat_dua/dua6.jpeg
+  - url: /assets/images/gallery/cat_dua/dua3.jpeg
     image_path: /assets/images/gallery/cat_dua/dua3.jpeg
     alt: "Cat Dừa"
     title: "Dừa"
