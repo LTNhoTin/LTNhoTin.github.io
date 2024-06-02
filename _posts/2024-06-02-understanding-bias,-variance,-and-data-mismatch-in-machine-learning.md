@@ -43,7 +43,6 @@ A model with low bias fits the data well, capturing the underlying patterns accu
 **Example**:
 Imagine you're trying to predict house prices based on square footage. If you use a simple linear regression model, it might not capture the true relationship between square footage and price, especially if the relationship is non-linear. The model might consistently predict lower or higher prices than the actual values, indicating high bias.
 
-**Image**:
 ![Bias](https://LTNhoTin.github.io/assets/images/post/bias.png)
 
 ## Variance
@@ -60,7 +59,6 @@ A model with low variance generalizes well to new data, maintaining consistent p
 **Example**:
 Suppose you're using a very deep decision tree to classify whether an email is spam or not. If the tree is too deep, it might learn to perfectly classify the training emails, including the noise and outliers. However, when new emails are introduced, the model may perform poorly because it has overfitted to the training data.
 
-**Image**:
 ![Variance](https://LTNhoTin.github.io/assets/images/post/variance.png)
 
 ## Data-Mismatch
