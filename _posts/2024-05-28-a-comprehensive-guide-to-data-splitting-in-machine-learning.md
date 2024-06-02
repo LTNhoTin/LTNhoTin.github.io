@@ -1,6 +1,6 @@
 ---
 title: "A Comprehensive Guide to Data Splitting in Machine Learning"
-excerpt: "Khám phá tầm quan trọng của chia tách dữ liệu trong machine learning"
+excerpt: "Explore the importance of data splitting in machine learning"
 show_date: True
 tags:
   - Data Splitting
@@ -18,44 +18,44 @@ header:
   caption: "Post created by NhoTin"
 ---
 
-Chia tách dữ liệu là một bước quan trọng trong quy trình machine learning. Nó đảm bảo rằng các mô hình được huấn luyện, xác minh và kiểm tra trên các tập dữ liệu khác nhau, thúc đẩy việc đánh giá hiệu suất một cách toàn diện và không thiên vị. Hướng dẫn này sẽ khám phá các khía cạnh cơ bản của việc chia tách dữ liệu, tầm quan trọng của nó và các kỹ thuật khác nhau để chia tách dữ liệu một cách hiệu quả.
+Data splitting is a crucial step in the machine learning workflow. It ensures that models are trained, validated, and tested on different subsets of data, promoting comprehensive and unbiased performance evaluation. This guide will explore the fundamental aspects of data splitting, its importance, and various techniques to effectively split data.
 
-### Hiểu Về Chia Tách Dữ Liệu
+### Understanding Data Splitting
 
-Chia tách dữ liệu đề cập đến việc phân chia một tập dữ liệu thành các tập con riêng biệt để huấn luyện, xác minh và kiểm tra. Mục tiêu chính là tạo ra một mô hình có khả năng tổng quát hóa tốt với dữ liệu chưa từng thấy. Dưới đây là sự phân chia thông thường:
+Data splitting refers to the division of a dataset into separate subsets for training, validation, and testing. The main goal is to create a model that generalizes well to unseen data. Here is the typical split:
 
-- **Tập Huấn Luyện**: Tập dữ liệu này được sử dụng để huấn luyện mô hình. Nó thường chiếm 60-80% tổng dữ liệu.
-- **Tập Xác Minh**: Tập dữ liệu này được sử dụng để tinh chỉnh các siêu tham số và đưa ra quyết định về cấu trúc mô hình. Nó thường chiếm khoảng 10-20% dữ liệu.
-- **Tập Kiểm Tra**: Tập dữ liệu này đánh giá hiệu suất của mô hình và kiểm tra xem mô hình có bị overfitting hoặc underfitting không. Nó cũng thường chiếm khoảng 10-20% dữ liệu.
+- **Training Set**: This dataset is used to train the model. It usually constitutes 60-80% of the total data.
+- **Validation Set**: This dataset is used to fine-tune hyperparameters and make decisions about the model architecture. It typically comprises about 10-20% of the data.
+- **Test Set**: This dataset evaluates the model's performance and checks for overfitting or underfitting. It also usually comprises about 10-20% of the data.
 
-### Tại Sao Chia Tách Dữ Liệu Quan Trọng?
+### Why Is Data Splitting Important?
 
-- **Ngăn Chặn Overfitting**: Bằng cách đánh giá mô hình trên dữ liệu chưa từng thấy, chúng ta có thể đảm bảo rằng mô hình không chỉ đơn thuần ghi nhớ dữ liệu huấn luyện.
-- **Đảm Bảo Hiệu Suất Ổn Định**: Chia tách dữ liệu cho phép chúng ta xác minh hiệu suất của mô hình trên các tập dữ liệu khác nhau, đảm bảo rằng nó hoạt động tốt trên các tình huống dữ liệu khác nhau.
-- **Tinh Chỉnh Siêu Tham Số**: Các tập xác minh giúp tinh chỉnh các siêu tham số, dẫn đến một mô hình được tối ưu hóa hơn.
+- **Prevent Overfitting**: By evaluating the model on unseen data, we can ensure that the model does not merely memorize the training data.
+- **Ensure Stable Performance**: Data splitting allows us to validate the model's performance on different datasets, ensuring it performs well across various data scenarios.
+- **Hyperparameter Tuning**: Validation sets help in fine-tuning hyperparameters, leading to a more optimized model.
 
-### Các Kỹ Thuật Chia Tách Dữ Liệu
+### Data Splitting Techniques
 
-Có nhiều phương pháp có thể được sử dụng để chia tách dữ liệu, tùy thuộc vào yêu cầu cụ thể và tính chất của dữ liệu.
+There are several methods that can be used to split data, depending on the specific requirements and nature of the data.
 
-- **Chia Ngẫu Nhiên**
+- **Random Split**
 
-Đây là kỹ thuật đơn giản nhất, trong đó dữ liệu được chia ngẫu nhiên thành các tập huấn luyện, xác minh và kiểm tra.
+This is the simplest technique, where the data is randomly split into training, validation, and test sets.
 
-- **Chia Tách Phân Tầng**
+- **Stratified Split**
 
-Kỹ thuật này đảm bảo rằng mỗi tập con có cùng phân phối các lớp biến mục tiêu, điều này rất quan trọng đối với các tập dữ liệu không cân bằng.
+This technique ensures that each subset has the same distribution of the target variable classes, which is crucial for imbalanced datasets.
 
-- **Chia Tách Theo Chuỗi Thời Gian**
+- **Time-Series Split**
 
-Đối với dữ liệu phụ thuộc vào thời gian, như giá cổ phiếu hoặc dữ liệu thời tiết, chúng ta nên chia tách dữ liệu dựa trên thời gian để giữ nguyên thứ tự thời gian.
+For time-dependent data, such as stock prices or weather data, it is advisable to split the data based on time to maintain the temporal order.
 
-### Thực Hành Tốt Nhất Khi Chia Tách Dữ Liệu
+### Best Practices for Data Splitting
 
-- **Giữ Tập Kiểm Tra Không Bị Ảnh Hưởng**: Tập kiểm tra không nên được sử dụng trong bất kỳ giai đoạn huấn luyện và xác minh nào để duy trì đánh giá không thiên vị.
-- **Sử Dụng Ngẫu Nhiên Consistent Seed**: Sử dụng seed ngẫu nhiên nhất quán để đảm bảo tái lập.
-- **Xử Lý Dữ Liệu Không Cân Bằng**: Sử dụng chia tách phân tầng đối với các tập dữ liệu không cân bằng để đảm bảo các tập con đại diện.
+- **Keep the Test Set Untouched**: The test set should not be used in any training or validation stages to maintain unbiased evaluation.
+- **Use Consistent Random Seed**: Use a consistent random seed to ensure reproducibility.
+- **Handle Imbalanced Data**: Use stratified splitting for imbalanced datasets to ensure representative subsets.
 
-### Kết Luận
+### Conclusion
 
-Chia tách dữ liệu là một bước quan trọng trong việc xây dựng các mô hình machine learning đáng tin cậy và có khả năng tổng quát hóa. Bằng cách hiểu và thực hiện đúng các kỹ thuật chia tách dữ liệu, các nhà khoa học dữ liệu có thể đảm bảo rằng các mô hình của họ hoạt động tốt trên dữ liệu chưa từng thấy, dẫn đến các dự đoán chính xác và ổn định hơn.
+Data splitting is a critical step in building reliable and generalizable machine learning models. By understanding and correctly implementing data splitting techniques, data scientists can ensure their models perform well on unseen data, leading to more accurate and stable predictions.
