@@ -59,7 +59,7 @@ A model with low variance generalizes well to new data, maintaining consistent p
 **Example**:
 Suppose you're using a very deep decision tree to classify whether an email is spam or not. If the tree is too deep, it might learn to perfectly classify the training emails, including the noise and outliers. However, when new emails are introduced, the model may perform poorly because it has overfitted to the training data.
 
-![Variance]
+![Variance](https://LTNhoTin.github.io/assets/images/post/variancce.png)
 
 ## Data-Mismatch
 
