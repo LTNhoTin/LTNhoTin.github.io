@@ -41,7 +41,6 @@ A model with high bias is too simple and underfits the data. It fails to capture
 Imagine you're trying to predict house prices based on square footage. If you use a simple linear regression model, it might not capture the true relationship between square footage and price, especially if the relationship is non-linear. The model might consistently predict lower or higher prices than the actual values, indicating high bias.
 
 **Illustration**:
-![High Bias](https://example.com/high_bias_image)
 - The model's predictions (red line) do not fit the data points (blue dots) well, showing a high error.
 
 ## Variance
@@ -56,7 +55,6 @@ A model with high variance is too complex and overfits the data. It captures noi
 Suppose you're using a very deep decision tree to classify whether an email is spam or not. If the tree is too deep, it might learn to perfectly classify the training emails, including the noise and outliers. However, when new emails are introduced, the model may perform poorly because it has overfitted to the training data.
 
 **Illustration**:
-![High Variance](https://example.com/high_variance_image)
 - The model's predictions fit the training data perfectly but fail to generalize to new data points, showing a high error.
 
 ## Data-Mismatch
@@ -71,7 +69,6 @@ This occurs when the model encounters data during deployment that is significant
 Consider a model trained on high-resolution, well-lit images of fruits to classify them. If this model is deployed in a real-world setting with low-resolution, poorly-lit images taken by different cameras, its performance will likely degrade due to data-mismatch.
 
 **Illustration**:
-![Data Mismatch](https://example.com/data_mismatch_image)
 - The model was trained on high-quality images but is tested on low-quality images, leading to poor performance.
 
 ## Diagnosing and Addressing Issues
