@@ -1,40 +1,17 @@
+---
+---
+
 <!doctype html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
-    
-    <!-- SEO Optimization -->
-    <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
-    <meta name="keywords" content="Deep Learning, Neural Networks, Machine Learning, AI, Artificial Intelligence, Data Science">
-    <meta property="og:title" content="{{ page.title }}">
-    <meta property="og:description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
-    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ page.image | default: site.logo }}">
-    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-    
-    <!-- Bootstrap CDN for performance optimization -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
 
-  <body class="layout--{{ page.layout | default: layout.layout }} dark-mode {% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html %}
     {% include_cached browser-upgrade.html %}
     {% include_cached masthead.html %}
-
-    {% if page.breadcrumbs %}
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ site.baseurl }}/">Home</a></li>
-          {% for crumb in page.breadcrumbs %}
-            <li class="breadcrumb-item"><a href="{{ crumb.url }}">{{ crumb.title }}</a></li>
-          {% endfor %}
-          <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
-        </ol>
-      </nav>
-    {% endif %}
 
     <div class="initial-content">
       {{ content }}
@@ -54,5 +31,6 @@
     </div>
 
     {% include scripts.html %}
+
   </body>
 </html>
