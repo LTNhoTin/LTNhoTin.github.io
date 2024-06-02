@@ -17,9 +17,6 @@
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
-    <!-- Google Translate element -->
-    <div id="google_translate_element" style="position: absolute; top: 10px; right: 10px;"></div>
-
     {% include_cached skip-links.html %}
     {% include_cached browser-upgrade.html %}
     {% include_cached masthead.html %}
@@ -27,6 +24,9 @@
     <div class="initial-content">
       {{ content }}
     </div>
+
+    <!-- Google Translate element below TOC -->
+    <div id="google_translate_element" style="text-align: right; padding-top: 10px;"></div>
 
     {% if site.search == true %}
       <div class="search-content">
