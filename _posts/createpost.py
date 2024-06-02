@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox, ttk
-from datetime import datetime
+from datetime import datetime, timedelta
 import os
 import subprocess
 
@@ -17,10 +17,11 @@ def create_blog_post(show_date_var):
         return
     
     now = datetime.now()
-    date_str = now.strftime('%Y-%m-%d')
-    time_str = now.strftime('%Y-%m-%dT%H:%M:%S%z')
+    local_time = now + timedelta(hours=7)  # Adjusting time to GMT+7
+    date_str = local_time.strftime('%Y-%m-%d')
+    time_str = local_time.strftime('%Y-%m-%dT%H:%M:%S+07:00')
     
-    current_hour = now.hour
+    current_hour = local_time.hour
     overlay_image = "/assets/images/day.jpg" if 6 <= current_hour < 17 else "/assets/images/night.jpg"
     
     file_name = f"{date_str}-{title.replace(' ', '-').lower()}.md"
@@ -37,7 +38,7 @@ tags:
 {tags_str}
 categories:
 {categories_str}
-last_modified_at: {time_str}
+date: {time_str}
 author_profile: true
 classes: wide 
 toc: true
