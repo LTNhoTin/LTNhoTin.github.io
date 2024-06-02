@@ -12,6 +12,14 @@
           layout: google.translate.TranslateElement.InlineLayout.SIMPLE
         }, 'google_translate_element');
       }
+
+      function translatePageToVietnamese() {
+        var select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = 'vi';
+          select.dispatchEvent(new Event('change'));
+        }
+      }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </head>
@@ -22,11 +30,10 @@
     {% include_cached masthead.html %}
 
     <div class="initial-content">
+      <div id="google_translate_element" style="text-align: right;"></div>
+      <button onclick="translatePageToVietnamese()" style="position: absolute; top: 10px; right: 10px;">Dịch sang Tiếng Việt</button>
       {{ content }}
     </div>
-
-    <!-- Google Translate element below TOC -->
-    <div id="google_translate_element" style="text-align: right; padding-top: 10px;"></div>
 
     {% if site.search == true %}
       <div class="search-content">
@@ -42,6 +49,5 @@
     </div>
 
     {% include scripts.html %}
-
   </body>
 </html>
