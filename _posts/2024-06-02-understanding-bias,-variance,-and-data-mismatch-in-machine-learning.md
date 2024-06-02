@@ -37,8 +37,14 @@ Bias refers to the difference between the average prediction of the model and th
 **High Bias**:
 A model with high bias is too simple and underfits the data. It fails to capture the underlying patterns in the data, leading to poor performance on both the training and test datasets.
 
+**Low Bias**:
+A model with low bias fits the data well, capturing the underlying patterns accurately.
+
 **Example**:
 Imagine you're trying to predict house prices based on square footage. If you use a simple linear regression model, it might not capture the true relationship between square footage and price, especially if the relationship is non-linear. The model might consistently predict lower or higher prices than the actual values, indicating high bias.
+
+**Image**:
+![Bias](https://LTNhoTin.github.io/assets/images/post/bias.png)
 
 ## Variance
 
@@ -48,9 +54,14 @@ Variance refers to the variability of the model's predictions for a given data p
 **High Variance**:
 A model with high variance is too complex and overfits the data. It captures noise along with the underlying patterns, resulting in excellent performance on the training data but poor generalization to new data.
 
+**Low Variance**:
+A model with low variance generalizes well to new data, maintaining consistent predictions.
+
 **Example**:
 Suppose you're using a very deep decision tree to classify whether an email is spam or not. If the tree is too deep, it might learn to perfectly classify the training emails, including the noise and outliers. However, when new emails are introduced, the model may perform poorly because it has overfitted to the training data.
 
+**Image**:
+![Variance](https://LTNhoTin.github.io/assets/images/post/variance.png)
 
 ## Data-Mismatch
 
@@ -60,9 +71,11 @@ Data-Mismatch refers to the difference between the distribution of data the mode
 **High Data-Mismatch**:
 This occurs when the model encounters data during deployment that is significantly different from the training data. This can happen due to changes in the environment, user behavior, or other factors that were not present or considered during training.
 
+**Low Data-Mismatch**:
+This occurs when the training data and real-world data have similar distributions, leading to better performance.
+
 **Example**:
 Consider a model trained on high-resolution, well-lit images of fruits to classify them. If this model is deployed in a real-world setting with low-resolution, poorly-lit images taken by different cameras, its performance will likely degrade due to data-mismatch.
-
 
 ## Diagnosing and Addressing Issues
 
