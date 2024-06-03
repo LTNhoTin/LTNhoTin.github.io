@@ -14,7 +14,7 @@ categories:
   - AI
   - Technology
   - Data Science
-date: 2024-06-03T11:16:26+07:00
+last_modified_at: 2024-06-03T11:16:26+07:00
 author_profile: true
 classes: wide 
 toc: true
