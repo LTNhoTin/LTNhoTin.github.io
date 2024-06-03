@@ -38,7 +38,7 @@ tags:
 {tags_str}
 categories:
 {categories_str}
-date: {time_str}
+last_modified_at: {time_str}
 author_profile: true
 classes: wide 
 toc: true
