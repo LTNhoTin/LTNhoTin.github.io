@@ -1,19 +1,19 @@
 #chatbot-container {
-    width: 80%;
-    max-width: 600px; 
+    width: 90%; /* Tăng kích thước khung chat */
+    max-width: 800px; /* Tăng kích thước tối đa */
     margin: 20px auto;
     background-color: #1f2937; /* Màu nền xám đậm */
     border-radius: 8px;       
     padding: 16px;           
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Bóng mờ đậm hơn */
     font-family: "Inter", sans-serif; 
-    color: #e5e7eb;          /* Màu chữ trắng nhạt */
+    color: #e5e7eb; /* Màu chữ trắng nhạt */
   }
   
   #chat-window {
     border: none;          
     padding: 16px;         
-    height: 400px;
+    height: 600px; /* Tăng chiều cao khung chat */
     overflow-y: scroll;
     background-color: #111827; /* Màu nền xám rất đậm */
   }
@@ -36,13 +36,13 @@
   
   .user-message {
     background-color: #1f2937; /* Màu nền xám đậm */
-    color: #e5e7eb;          /* Màu chữ trắng nhạt */
+    color: #e5e7eb; /* Màu chữ trắng nhạt */
     float: right;         
   }
   
   .bot-message {
     background-color: #374151; /* Màu xám trung bình */
-    color: #e5e7eb;          /* Màu chữ trắng nhạt */
+    color: #e5e7eb; /* Màu chữ trắng nhạt */
     float: left;           
   }
   
@@ -54,7 +54,7 @@
     border-radius: 20px;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
     background-color: #1f2937; /* Màu nền xám đậm */
-    color: #e5e7eb;          /* Màu chữ trắng nhạt */
+    color: #e5e7eb; /* Màu chữ trắng nhạt */
   }
   
   button {
@@ -62,7 +62,7 @@
     margin-top: 8px;
     border: none;
     background-color: #818cf8; /* Màu tím nhạt hơn cho dark theme */
-    color: #111827;          /* Màu chữ xám rất đậm */
+    color: #111827; /* Màu chữ xám rất đậm */
     border-radius: 20px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
