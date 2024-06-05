@@ -17,6 +17,10 @@
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
+          <!-- Thêm liên kết truy cập vào ChatBot -->
+          <li class="masthead__menu-item">
+            <a href="{{ '/chatbot/' | relative_url }}">ChatBot</a>
+          </li>
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
