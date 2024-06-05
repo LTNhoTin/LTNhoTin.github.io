@@ -5,7 +5,7 @@
     background-color: #221f1f; /* Màu nền trắng */
     border-radius: 8px;       /* Góc bo tròn ít hơn */
     padding: 16px;           /* Giảm padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng mờ tinh tế */
+    box-shadow: 0 2px 5px rgba(49, 47, 47, 0.1); /* Hiệu ứng bóng mờ tinh tế */
     font-family: "Inter", sans-serif; /* Phông chữ Inter của Gemini */
   }
   
@@ -14,7 +14,7 @@
     padding: 16px;         /* Tăng padding */
     height: 400px;
     overflow-y: scroll;
-    background-color: #f8f8f8; /* Màu nền xám nhạt hơn */
+    background-color: #2b2929; /* Màu nền xám nhạt hơn */
   }
   
   #output {
