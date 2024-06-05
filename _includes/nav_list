@@ -22,9 +22,5 @@
         {% endif %}
       </li>
     {% endfor %}
-    <!-- Add new link for Chatbot AI -->
-    <li>
-      <a href="{{ '/chatbot-ai' | relative_url }}"><span class="nav__sub-title">Chatbot AI</span></a>
-    </li>
   </ul>
 </nav>

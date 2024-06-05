@@ -4,6 +4,15 @@ layout: archive
 
 {{ content }}
 
+<!-- Thêm các phần tử mới -->
+<header>
+  <h1>Welcome to My Blog</h1>
+  <img src="{{ '/assets/images/robot_im...2ea4e.png' | relative_url }}" alt="Robot Image">
+</header>
+<main>
+  <img src="{{ '/assets/images/vite.svg' | relative_url }}" alt="Vite Logo">
+</main>
+
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
 {% if paginator %}
