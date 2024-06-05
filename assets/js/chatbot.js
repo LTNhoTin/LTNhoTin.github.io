@@ -1,47 +1,52 @@
 document.getElementById('user-input').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-        sendMessage();
+      sendMessage();
     }
-});
-
-function sendMessage() {
-    const userInput = document.getElementById('user-input').value;
+  });
+  
+  async function sendMessage() {
+    const userInput = document.getElementById('user-input').value.trim(); // Loại bỏ khoảng trắng thừa
     if (userInput) {
-        const chatWindow = document.getElementById('output');
-        const userMessage = document.createElement('div');
-        userMessage.textContent = userInput;
-        userMessage.className = 'user-message';
-        chatWindow.appendChild(userMessage);
-
-        // Clear the input field
-        document.getElementById('user-input').value = '';
-
-        // Call the Gemini API
-        callGeminiAPI(userInput).then(response => {
-            const botMessage = document.createElement('div');
-            botMessage.textContent = response;
-            botMessage.className = 'bot-message';
-            chatWindow.appendChild(botMessage);
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        }).catch(error => {
-            console.error('Error:', error);
-        });
+      displayMessage(userInput, 'user-message');
+  
+      try {
+        const response = await callGeminiAPI(userInput);
+        displayMessage(response, 'bot-message');
+      } catch (error) {
+        displayMessage("Xin lỗi, hiện tại tôi không thể xử lý yêu cầu của bạn.", 'bot-message');
+        console.error('Lỗi khi gọi API Gemini:', error);
+      }
     }
-}
-
-async function callGeminiAPI(message) {
-    const apiKey = 'AIzaSyBkOdlXM6HN9so1P7rA-Wr_bpwA6oEgZGA';  // Replace with your actual API key
-    const apiUrl = 'https://api.gemini.com/v1/your-endpoint';  // Replace with your actual API endpoint
-
+  }
+  
+  function displayMessage(message, className) {
+    const chatWindow = document.getElementById('output');
+    const newMessage = document.createElement('div');
+    newMessage.textContent = message;
+    newMessage.className = className;
+    chatWindow.appendChild(newMessage);
+    chatWindow.scrollTop = chatWindow.scrollHeight; // Cuộn xuống tin nhắn mới nhất
+    document.getElementById('user-input').value = ''; // Xóa nội dung input
+  }
+  
+  async function callGeminiAPI(message) {
+    const apiKey = 'YOUR_API_KEY'; 
+    const apiUrl = 'YOUR_API_ENDPOINT'; 
+  
     const response = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({ query: message })
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({ query: message })
     });
-
+  
+    if (!response.ok) { // Kiểm tra xem response có thành công hay không
+      throw new Error(`API request failed with status ${response.status}`);
+    }
+  
     const data = await response.json();
-    return data.answer;  // Adjust according to the actual response structure
-}
+    return data.answer; // Trả về câu trả lời từ Gemini
+  }
+  
