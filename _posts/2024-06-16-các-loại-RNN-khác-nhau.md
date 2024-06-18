@@ -43,26 +43,6 @@ Mô hình RNN cơ bản, hoạt động như cuộn giấy dài, đọc và ghi 
 - **Ví dụ thực tiễn**:
   Khi dự đoán giá cổ phiếu, mô hình nhận giá cổ phiếu của các ngày trước đó và sử dụng thông tin này để dự đoán giá của ngày tiếp theo. Tuy nhiên, với Vanilla RNN, mô hình gặp khó khăn trong việc ghi nhớ thông tin từ nhiều ngày trước do vấn đề biến mất gradient, làm cho dự đoán trở nên kém chính xác hơn.
 
-### LSTM (Long Short-Term Memory)
-
-RNN cải tiến với khả năng ghi nhớ thông tin dài hạn tốt hơn. LSTM hoạt động như một cuốn sổ ghi chép thông minh, chọn lọc thông tin quan trọng để lưu trữ.
-
-- **Giải thích**:
-  LSTM hoạt động giống như một sổ ghi chép thông minh. Bạn có thể quyết định giữ lại những ghi chú quan trọng và bỏ đi những ghi chú không cần thiết. Mỗi khi bạn thêm thông tin mới, bạn quyết định giữ lại hoặc bỏ qua thông tin đó dựa trên ngữ cảnh. Điều này giúp LSTM duy trì được thông tin dài hạn mà không bị ảnh hưởng bởi vấn đề biến mất gradient như Vanilla RNN.
-
-- **Ví dụ thực tiễn**:
-  Trong dịch máy, LSTM có khả năng nhớ ngữ cảnh của câu dài và sử dụng thông tin đó để dịch chính xác hơn từng từ trong câu. Ví dụ, để dịch một câu dài từ tiếng Anh sang tiếng Việt, LSTM có khả năng nhớ và sử dụng ngữ cảnh của các từ và cụm từ trước đó để đưa ra bản dịch chính xác cho các từ và cụm từ hiện tại.
-
-### GRU (Gated Recurrent Unit)
-
-Phiên bản đơn giản của LSTM, vẫn giữ khả năng ghi nhớ dài hạn nhưng ít tham số hơn. GRU hoạt động như một cuốn sổ ghi chú với hai phần: thông tin quan trọng và thông tin tạm thời.
-
-- **Giải thích**:
-  GRU hoạt động giống như một cuốn sổ ghi chú đơn giản với hai phần: phần ghi chú quan trọng và phần ghi chú tạm thời. Khi bạn thêm thông tin mới, bạn quyết định cập nhật phần ghi chú nào dựa trên tầm quan trọng của thông tin. GRU có cấu trúc đơn giản hơn so với LSTM, giúp giảm bớt tính toán và thời gian huấn luyện mà vẫn giữ được khả năng ghi nhớ thông tin dài hạn.
-
-- **Ví dụ thực tiễn**:
-  Trong phân tích cảm xúc, GRU có thể nắm bắt và phân tích ngữ cảnh của các từ trong câu để xác định cảm xúc tổng thể (tích cực, tiêu cực, trung tính). Ví dụ, trong phân tích cảm xúc từ các bài đăng trên mạng xã hội, GRU có thể phân tích các từ và cụm từ để xác định cảm xúc chung của bài viết, giúp các nhà quản lý mạng xã hội hiểu rõ hơn về phản hồi của người dùng.
-
 ### Bi-directional RNNs
 
 RNN hai chiều, xử lý thông tin theo cả hai hướng (từ trái sang phải và ngược lại). Tương tự như đọc một cuốn sách từ cả đầu và cuối để hiểu rõ hơn ngữ cảnh.
@@ -118,6 +98,27 @@ RNN thường gặp phải vấn đề "biến mất/nổ gradient". Đây là h
 
 - **Ví dụ**:
   Hãy tưởng tượng rằng thay vì đổ nước từ một thùng lớn vào một loạt các cốc nhỏ, bạn sử dụng một hệ thống van thông minh trên từng cốc. Hệ thống này quyết định giữ lại bao nhiêu nước và loại bỏ bao nhiêu nước từ mỗi cốc dựa trên mức độ quan trọng của thông tin. Điều này giúp duy trì thông tin quan trọng và bỏ qua những thông tin không cần thiết, đảm bảo rằng thông tin quan trọng từ đầu chuỗi vẫn được giữ lại và sử dụng ở cuối chuỗi. Trong một mô hình dịch máy sử dụng LSTM, mô hình có thể nhớ và sử dụng ngữ cảnh của các từ và cụm từ từ đầu câu để dịch chính xác từ cuối câu, nhờ vào khả năng duy trì thông tin dài hạn của LSTM.
+
+### LSTM (Long Short-Term Memory)
+
+RNN cải tiến với khả năng ghi nhớ thông tin dài hạn tốt hơn. LSTM hoạt động như một cuốn sổ ghi chép thông minh, chọn lọc thông tin quan trọng để lưu trữ.
+
+- **Giải thích**:
+  LSTM hoạt động giống như một sổ ghi chép thông minh. Bạn có thể quyết định giữ lại những ghi chú quan trọng và bỏ đi những ghi chú không cần thiết. Mỗi khi bạn thêm thông tin mới, bạn quyết định giữ lại hoặc bỏ qua thông tin đó dựa trên ngữ cảnh. Điều này giúp LSTM duy trì được thông tin dài hạn mà không bị ảnh hưởng bởi vấn đề biến mất gradient như Vanilla RNN.
+
+- **Ví dụ thực tiễn**:
+  Trong dịch máy, LSTM có khả năng nhớ ngữ cảnh của câu dài và sử dụng thông tin đó để dịch chính xác hơn từng từ trong câu. Ví dụ, để dịch một câu dài từ tiếng Anh sang tiếng Việt, LSTM có khả năng nhớ và sử dụng ngữ cảnh của các từ và cụm từ trước đó để đưa ra bản dịch chính xác cho các từ và cụm từ hiện tại.
+
+### GRU (Gated Recurrent Unit)
+
+Phiên bản đơn giản của LSTM, vẫn giữ khả năng ghi nhớ dài hạn nhưng ít tham số hơn. GRU hoạt động như một cuốn sổ ghi chú với hai phần: thông tin quan trọng và thông tin tạm thời.
+
+- **Giải thích**:
+  GRU hoạt động giống như một cuốn sổ ghi chú đơn giản với hai phần: phần ghi chú quan trọng và phần ghi chú tạm thời. Khi bạn thêm thông tin mới, bạn quyết định cập nhật phần ghi chú nào dựa trên tầm quan trọng của thông tin. GRU có cấu trúc đơn giản hơn so với LSTM, giúp giảm bớt tính toán và thời gian huấn luyện mà vẫn giữ được khả năng ghi nhớ thông tin dài hạn.
+
+- **Ví dụ thực tiễn**:
+  Trong phân tích cảm xúc, GRU có thể nắm bắt và phân tích ngữ cảnh của các từ trong câu để xác định cảm xúc tổng thể (tích cực, tiêu cực, trung tính). Ví dụ, trong phân tích cảm xúc từ các bài đăng trên mạng xã hội, GRU có thể phân tích các từ và cụm từ để xác định cảm xúc chung của bài viết, giúp các nhà quản lý mạng xã hội hiểu rõ hơn về phản hồi của người dùng.
+
 
 ### Cắt gradient (Gradient clipping):
 
