@@ -1,12 +1,14 @@
-<div id="chatbot-container">
-    <div id="chat-window">
-      <div id="output">
-        <div class="bot-message">Xin chào! Đây là Chatbot.</div>
-        <div class="user-message">Xin chào!</div>
-        <!-- Các tin nhắn khác -->
-      </div>
-    </div>
-    <input type="text" id="user-input" placeholder="Nhập tin nhắn của bạn...">
-    <button id="send-button">Gửi</button>
-  </div>
-  
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}">
+    <main class="chatbot-page">
+      {{ content }}
+    </main>
+
+    {% include scripts.html %}
+  </body>
+</html>
