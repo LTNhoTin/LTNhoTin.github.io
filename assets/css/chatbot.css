@@ -1,75 +1,74 @@
 #chatbot-container {
-    width: 90%; /* Tăng kích thước khung chat */
-    max-width: 800px; /* Tăng kích thước tối đa */
-    margin: 20px auto;
-    background-color: #1f2937; /* Màu nền xám đậm */
-    border-radius: 8px;       
-    padding: 16px;           
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Bóng mờ đậm hơn */
-    font-family: "Inter", sans-serif; 
-    color: #e5e7eb; /* Màu chữ trắng nhạt */
-  }
-  
-  #chat-window {
-    border: none;          
-    padding: 16px;         
-    height: 600px; /* Tăng chiều cao khung chat */
-    overflow-y: scroll;
-    background-color: #111827; /* Màu nền xám rất đậm */
-  }
-  
-  #output {
-    height: calc(100% - 50px);
-    overflow-y: auto;
-    padding: 0;             
-  }
-  
-  .user-message,
-  .bot-message {
-    margin: 12px 0;        
-    padding: 12px 16px;   
-    border-radius: 20px;   
-    max-width: 80%;
-    clear: both;          
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Bóng mờ đậm hơn */
-  }
-  
-  .user-message {
-    background-color: #1f2937; /* Màu nền xám đậm */
-    color: #e5e7eb; /* Màu chữ trắng nhạt */
-    float: right;         
-  }
-  
-  .bot-message {
-    background-color: #374151; /* Màu xám trung bình */
-    color: #e5e7eb; /* Màu chữ trắng nhạt */
-    float: left;           
-  }
-  
-  #user-input {
-    width: calc(100% - 24px);
-    padding: 10px;
-    margin-top: 16px;
-    border: 1px solid #4b5563; /* Viền xám đậm */
-    border-radius: 20px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-    background-color: #1f2937; /* Màu nền xám đậm */
-    color: #e5e7eb; /* Màu chữ trắng nhạt */
-  }
-  
-  button {
-    padding: 8px 16px;     
-    margin-top: 8px;
-    border: none;
-    background-color: #818cf8; /* Màu tím nhạt hơn cho dark theme */
-    color: #111827; /* Màu chữ xám rất đậm */
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.2s ease; 
-  }
-  
-  button:hover {
-    background-color: #a5b4fc; /* Màu tím nhạt hơn khi hover */
-  }
-  
+  width: 90%; /* Tăng kích thước khung chat */
+  max-width: 800px; /* Tăng kích thước tối đa */
+  margin: 20px auto;
+  background-color: #1f2937; /* Màu nền xám đậm */
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Bóng mờ đậm hơn */
+  font-family: "Inter", sans-serif;
+  color: #e5e7eb; /* Màu chữ trắng nhạt */
+}
+
+#chat-window {
+  border: none;
+  padding: 16px;
+  height: 600px; /* Tăng chiều cao khung chat */
+  overflow-y: scroll;
+  background-color: #111827; /* Màu nền xám rất đậm */
+}
+
+#output {
+  height: calc(100% - 50px);
+  overflow-y: auto;
+  padding: 0;
+}
+
+.user-message,
+.bot-message {
+  margin: 12px 0;
+  padding: 12px 16px;
+  border-radius: 20px;
+  max-width: 80%;
+  clear: both;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Bóng mờ đậm hơn */
+}
+
+.user-message {
+  background-color: #1f2937; /* Màu nền xám đậm */
+  color: #e5e7eb; /* Màu chữ trắng nhạt */
+  float: right;
+}
+
+.bot-message {
+  background-color: #374151; /* Màu xám trung bình */
+  color: #e5e7eb; /* Màu chữ trắng nhạt */
+  float: left;
+}
+
+#user-input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-top: 16px;
+  border: 1px solid #4b5563; /* Viền xám đậm */
+  border-radius: 20px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: #1f2937; /* Màu nền xám đậm */
+  color: #e5e7eb; /* Màu chữ trắng nhạt */
+}
+
+button {
+  padding: 8px 16px;
+  margin-top: 8px;
+  border: none;
+  background-color: #818cf8; /* Màu tím nhạt hơn cho dark theme */
+  color: #111827; /* Màu chữ xám rất đậm */
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #a5b4fc; /* Màu tím nhạt hơn khi hover */
+}
