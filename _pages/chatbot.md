@@ -4,7 +4,7 @@ title: ChatBot
 permalink: /chatbot/
 ---
 
-<div class="bg-gradient-to-r from-blue-50 to-purple-100 h-screen flex items-center justify-center">
+<div class="bg-gradient-to-r from-blue-50 to-purple-100 flex justify-center py-8">
   <div class="hidden lg:block drawer-side absolute w-64 h-[20vh] left-3 mt-2 drop-shadow-md">
     <div class="menu p-4 w-full min-h-full bg-gray-50 text-base-content rounded-2xl mt-3 overflow-auto scroll-y-auto max-h-[80vh]">
       <ul class="menu text-sm">
