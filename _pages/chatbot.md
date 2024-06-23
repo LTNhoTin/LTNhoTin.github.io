@@ -4,14 +4,18 @@ title: ChatBot
 permalink: /chatbot/
 ---
 
-<div id="chatbot-container">
-  <div id="chat-window">
-    <div id="output">
-      <div class="bot-message">Xin chào! Đây là Chatbot.</div>
-      <div class="user-message">Xin chào!</div>
-      <!-- Các tin nhắn khác -->
-    </div>
+<div class="chatbot-page">
+  <div class="chatbot-header">
+    <h2>Nho's Journey</h2>
+    <p>Welcome to the ChatBot</p>
   </div>
-  <input type="text" id="user-input" placeholder="Nhập tin nhắn của bạn...">
-  <button id="send-button">Gửi</button>
+  <div id="chatbot-container">
+    <div id="chat-window">
+      <div id="output">
+        <div class="bot-message">Xin chào! Đây là Chatbot của Tín.</div>
+      </div>
+    </div>
+    <input type="text" id="user-input" placeholder="Type your message here...">
+    <button id="send-button">Send</button>
+  </div>
 </div>
