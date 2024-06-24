@@ -1,47 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const sendButton = document.getElementById('send-button');
-  const userInput = document.getElementById('user-input');
-  const output = document.getElementById('output');
-  const chatWindow = document.getElementById('chat-window');
-  const modelSelect = document.getElementById('model-select');
-  const chatHistory = document.querySelector('.sidebar-nav');
+document.querySelector('button').addEventListener('click', function() {
+  var userInput = document.getElementById('user-input').value;
+  if (userInput) {
+    var userMessageDiv = document.createElement('div');
+    userMessageDiv.className = 'user-message';
+    userMessageDiv.textContent = userInput;
+    document.getElementById('output').appendChild(userMessageDiv);
 
-  const appendMessage = (message, className) => {
-    const messageElement = document.createElement('div');
-    messageElement.className = className;
-    messageElement.textContent = message;
-    output.appendChild(messageElement);
-    chatWindow.scrollTop = chatWindow.scrollHeight;
+    // Clear the input field
+    document.getElementById('user-input').value = '';
 
-    // Thêm tin nhắn vào lịch sử đoạn chat
-    const historyItem = document.createElement('div');
-    historyItem.className = 'chat-history-item';
-    historyItem.textContent = message;
-    chatHistory.appendChild(historyItem);
-  };
+    // Here you can add the bot response
+    var botMessageDiv = document.createElement('div');
+    botMessageDiv.className = 'bot-message';
+    botMessageDiv.textContent = 'This is a response from the bot.';
+    document.getElementById('output').appendChild(botMessageDiv);
 
-  sendButton.addEventListener('click', () => {
-    const message = userInput.value.trim();
-    if (message) {
-      appendMessage(message, 'user-message');
-      userInput.value = '';
-
-      // Simulate bot response (you can replace this with your chatbot logic)
-      setTimeout(() => {
-        appendMessage('This is a response from the bot.', 'bot-message');
-      }, 1000);
-    }
-  });
-
-  userInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      sendButton.click();
-    }
-  });
-
-  // Handle model change
-  modelSelect.addEventListener('change', (e) => {
-    const selectedModel = e.target.value;
-    appendMessage(`Model changed to: ${selectedModel}`, 'bot-message');
-  });
+    // Scroll to the bottom of the chat window
+    document.getElementById('chat-window').scrollTop = document.getElementById('chat-window').scrollHeight;
+  }
 });

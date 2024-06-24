@@ -1,17 +1,59 @@
-/* Styles for the ChatBot page */
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #343541;
+  color: #dcdcdc;
+}
+
 .chatbot-page {
+  display: flex;
   max-width: 2000px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #343541;
-  color: #dcdcdc;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+.sidebar-left {
+  width: 260px;
+  background-color: #1f2937;
+  padding: 20px;
+  border-radius: 8px;
+  margin-right: 20px;
+  color: #ffffff;
+}
+
+.sidebar-left h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar-left nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-left nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar-left nav ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #2d3748;
+}
+
+.sidebar-left nav ul li a:hover {
+  background-color: #4a5568;
+}
+
+/* Chatbot Styles */
 .chatbot-container {
   display: flex;
-  height: 80vh; /* Adjust height as needed */
+  flex-grow: 1;
+  height: calc(100vh - 40px); /* Adjust the height */
 }
 
 .chatbot-sidebar {
@@ -30,8 +72,7 @@
   margin-bottom: 10px;
 }
 
-.sidebar-nav .user-list-item,
-.sidebar-nav .feature-item {
+.sidebar-nav .chat-history-item {
   margin-top: 10px;
   padding: 8px;
   border-radius: 4px;
@@ -40,14 +81,12 @@
   color: #dcdcdc;
 }
 
-.sidebar-nav .user-list-item a,
-.sidebar-nav .feature-item a {
+.sidebar-nav .chat-history-item a {
   text-decoration: none;
   color: inherit;
 }
 
-.sidebar-nav .user-list-item:hover,
-.sidebar-nav .feature-item:hover {
+.sidebar-nav .chat-history-item:hover {
   background-color: #4a5568;
 }
 
@@ -66,7 +105,7 @@
   margin-bottom: 20px;
 }
 
-.chatbot-header h2 {
+chatbot-header h2 {
   margin: 0;
   font-size: 2em;
   color: #ffffff;
