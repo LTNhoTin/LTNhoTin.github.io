@@ -1,8 +1,8 @@
 /* Styles for the ChatBot page */
 .chatbot-page {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2000px;
+  padding: 20px;
   background-color: #343541;
   color: #dcdcdc;
   border-radius: 8px;
