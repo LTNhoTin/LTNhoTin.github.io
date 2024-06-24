@@ -1,6 +1,6 @@
 /* Styles for the ChatBot page */
 .chatbot-page {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   background-color: #343541; /* Dark background similar to ChatGPT */
@@ -26,15 +26,43 @@
   color: #a9a9a9;
 }
 
-#chatbot-container {
+.chatbot-container {
+  display: flex;
+  flex-direction: row;
+  height: 70vh; /* Adjust height as needed */
+}
+
+.chatbot-sidebar {
+  width: 25%;
+  background-color: #1f2937;
+  padding: 16px;
+  border-radius: 8px;
+  margin-right: 20px;
+  overflow-y: auto;
+}
+
+.chatbot-sidebar h3 {
+  color: #ffffff;
+  margin-top: 0;
+}
+
+.chat-history {
+  margin-top: 20px;
+}
+
+.chatbot-main {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  height: 70vh; /* Adjust height as needed */
   background-color: #40414F;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  color: #dcdcdc;
+}
+
+.model-selection {
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
 #chat-window {
