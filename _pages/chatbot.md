@@ -23,7 +23,7 @@ permalink: /chatbot/
     </div>
     <div class="chatbot-main">
       <div class="chatbot-header">
-        <h2>Nho's Journey</h2>
+        <h2>LegalBizAI</h2>
         <p>Welcome to the ChatBot</p>
       </div>
       <div class="model-selection">
@@ -35,7 +35,7 @@ permalink: /chatbot/
       </div>
       <div id="chat-window">
         <div id="output">
-          <div class="bot-message">Hello! This is Chatbot.</div>
+          <div class="bot-message">Hello! I'm Friday.</div>
         </div>
       </div>
       <div id="input-container">
