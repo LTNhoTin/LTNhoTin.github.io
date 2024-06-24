@@ -1,22 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('send-button').addEventListener('click', () => {
-    const userInput = document.getElementById('user-input');
+  const sendButton = document.getElementById('send-button');
+  const userInput = document.getElementById('user-input');
+  const output = document.getElementById('output');
+  const chatWindow = document.getElementById('chat-window');
+
+  const appendMessage = (message, className) => {
+    const messageElement = document.createElement('div');
+    messageElement.className = className;
+    messageElement.textContent = message;
+    output.appendChild(messageElement);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  };
+
+  sendButton.addEventListener('click', () => {
     const message = userInput.value.trim();
     if (message) {
-      const userMessageElement = document.createElement('div');
-      userMessageElement.className = 'user-message';
-      userMessageElement.textContent = message;
-      document.getElementById('output').appendChild(userMessageElement);
+      appendMessage(message, 'user-message');
       userInput.value = '';
       
-      // Xử lý logic chatbot để thêm bot message vào đây
-      const botMessageElement = document.createElement('div');
-      botMessageElement.className = 'bot-message';
-      botMessageElement.textContent = 'Đây là phản hồi của bot';
-      document.getElementById('output').appendChild(botMessageElement);
-      
-      // Cuộn xuống cuối
-      document.getElementById('chat-window').scrollTop = document.getElementById('chat-window').scrollHeight;
+      // Simulate bot response (you can replace this with your chatbot logic)
+      setTimeout(() => {
+        appendMessage('This is a response from the bot.', 'bot-message');
+      }, 1000);
+    }
+  });
+
+  userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      sendButton.click();
     }
   });
 });

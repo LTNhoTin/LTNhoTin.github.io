@@ -12,10 +12,13 @@ permalink: /chatbot/
   <div id="chatbot-container">
     <div id="chat-window">
       <div id="output">
-        <div class="bot-message">Xin chào! Đây là Chatbot.</div>
+        <div class="bot-message">Hello! This is Chatbot.</div>
+        <div class="user-message">Hi there!</div>
       </div>
     </div>
-    <input type="text" id="user-input" placeholder="Type your message here...">
-    <button id="send-button">Send</button>
+    <div id="input-container">
+      <input type="text" id="user-input" placeholder="Type your message here...">
+      <button id="send-button"><i class="fas fa-paper-plane"></i></button>
+    </div>
   </div>
 </div>
