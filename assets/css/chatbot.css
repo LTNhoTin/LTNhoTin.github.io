@@ -1,6 +1,16 @@
 /* Styles for the ChatBot page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0; /* Adjust background color as needed */
+}
+
 .chatbot-page {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: #343541;
