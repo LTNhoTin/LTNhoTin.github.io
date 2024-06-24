@@ -1,6 +1,6 @@
 /* Styles for the ChatBot page */
 .chatbot-page {
-  max-width: 1200px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #343541;
@@ -23,13 +23,15 @@
   overflow-y: auto;
 }
 
-.sidebar-header h2 {
+.sidebar-section h2 {
   margin: 0;
   font-size: 1.2em;
   color: #ffffff;
+  margin-bottom: 10px;
 }
 
-.sidebar-nav .chat-history-item {
+.sidebar-nav .user-list-item,
+.sidebar-nav .feature-item {
   margin-top: 10px;
   padding: 8px;
   border-radius: 4px;
@@ -38,12 +40,14 @@
   color: #dcdcdc;
 }
 
-.sidebar-nav .chat-history-item a {
+.sidebar-nav .user-list-item a,
+.sidebar-nav .feature-item a {
   text-decoration: none;
   color: inherit;
 }
 
-.sidebar-nav .chat-history-item:hover {
+.sidebar-nav .user-list-item:hover,
+.sidebar-nav .feature-item:hover {
   background-color: #4a5568;
 }
 
@@ -77,6 +81,14 @@
 .model-selection {
   margin-bottom: 10px;
   color: #ffffff;
+}
+
+#model-select {
+  background-color: #40414F;
+  color: #dcdcdc;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 #chat-window {
@@ -154,4 +166,43 @@ button i {
 
 button:hover {
   background-color: #4682B4;
+}
+
+.sample-questions {
+  width: 260px;
+  background-color: #1f2937;
+  padding: 16px;
+  overflow-y: auto;
+  margin-left: 20px;
+  border-radius: 8px;
+}
+
+.sample-questions h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.sample-questions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sample-questions li {
+  margin-top: 10px;
+}
+
+.sample-questions a {
+  text-decoration: none;
+  color: #dcdcdc;
+  background-color: #2d3748;
+  padding: 8px;
+  border-radius: 4px;
+  display: block;
+}
+
+.sample-questions a:hover {
+  background-color: #4a5568;
 }
