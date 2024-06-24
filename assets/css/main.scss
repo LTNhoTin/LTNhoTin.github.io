@@ -6,7 +6,13 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
 /* Ẩn đi mục Images trên thanh điều hướng */
 #images-navbar {
     display: none;
+}
+
+/* Loại bỏ margin-top trong mục page__footer */
+.page__footer {
+    margin-top: 0;
 }
