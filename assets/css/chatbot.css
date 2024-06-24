@@ -155,22 +155,3 @@ button i {
 button:hover {
   background-color: #4682B4;
 }
-
-/* New styles for buttons */
-#new-chat-button,
-#clear-chat-button {
-  margin: 10px 0;
-  padding: 8px;
-  border: none;
-  background-color: #1E90FF;
-  color: #ffffff;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  text-align: center;
-}
-
-#new-chat-button:hover,
-#clear-chat-button:hover {
-  background-color: #4682B4;
-}

@@ -9,11 +9,15 @@ permalink: /chatbot/
     <div class="chatbot-sidebar">
       <div class="sidebar-header">
         <h2>Chat History</h2>
-        <button id="new-chat-button">New Chat</button>
-        <button id="clear-chat-button">Clear All Chats</button>
         <nav class="sidebar-nav" aria-label="Chat History">
-          <!-- Lịch sử đoạn chat sẽ được thêm vào đây -->
-          <div id="chat-history"></div>
+          <!-- Example of chat history items -->
+          <div class="chat-history-item">
+            <a href="#">Tokenize Difference: Vietnamese vs. English</a>
+          </div>
+          <div class="chat-history-item">
+            <a href="#">Create Web Page Tutorial</a>
+          </div>
+          <!-- More chat history items -->
         </nav>
       </div>
     </div>
