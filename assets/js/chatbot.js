@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const output = document.getElementById('output');
   const chatWindow = document.getElementById('chat-window');
   const modelSelect = document.getElementById('model-select');
-  const chatHistory = document.querySelector('.chat-history');
+  const chatHistory = document.querySelector('.sidebar-nav');
 
   const appendMessage = (message, className) => {
     const messageElement = document.createElement('div');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Thêm tin nhắn vào lịch sử đoạn chat
     const historyItem = document.createElement('div');
-    historyItem.className = className;
+    historyItem.className = 'chat-history-item';
     historyItem.textContent = message;
     chatHistory.appendChild(historyItem);
   };

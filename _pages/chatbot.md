@@ -5,18 +5,27 @@ permalink: /chatbot/
 ---
 
 <div class="chatbot-page">
-  <div class="chatbot-header">
-    <h2>Nho's Journey</h2>
-    <p>Welcome to the ChatBot</p>
-  </div>
   <div class="chatbot-container">
     <div class="chatbot-sidebar">
-      <h3>Chat History</h3>
-      <div class="chat-history">
-        <!-- Lịch sử đoạn chat sẽ được thêm vào đây -->
+      <div class="sidebar-header">
+        <h2>Chat History</h2>
+        <nav class="sidebar-nav" aria-label="Chat History">
+          <!-- Example of chat history items -->
+          <div class="chat-history-item">
+            <a href="#">Tokenize Difference: Vietnamese vs. English</a>
+          </div>
+          <div class="chat-history-item">
+            <a href="#">Create Web Page Tutorial</a>
+          </div>
+          <!-- More chat history items -->
+        </nav>
       </div>
     </div>
     <div class="chatbot-main">
+      <div class="chatbot-header">
+        <h2>Nho's Journey</h2>
+        <p>Welcome to the ChatBot</p>
+      </div>
       <div class="model-selection">
         <label for="model-select">Choose a model:</label>
         <select id="model-select">
