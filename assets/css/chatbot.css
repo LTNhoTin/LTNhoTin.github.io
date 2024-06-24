@@ -1,25 +1,33 @@
 /* Styles for the ChatBot page */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .chatbot-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #343541;
   color: #dcdcdc;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .chatbot-container {
   display: flex;
-  height: 80vh; /* Adjust height as needed */
+  width: 100%;
+  height: 100%;
 }
 
 .chatbot-sidebar {
   width: 260px;
   background-color: #1f2937;
   padding: 16px;
-  border-radius: 8px;
-  margin-right: 20px;
   overflow-y: auto;
 }
 
@@ -76,7 +84,18 @@
 
 .model-selection {
   margin-bottom: 10px;
-  color: #40414F;
+  color: #ffffff;
+  background-color: #343541;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#model-select {
+  background-color: #40414F;
+  color: #dcdcdc;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 #chat-window {
