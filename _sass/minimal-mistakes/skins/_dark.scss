@@ -3,20 +3,19 @@
    ========================================================================== */
 
 /* Colors */
-$background-color: #252a34 !default;
-$text-color: #eaeaea !default;
-$primary-color: #00adb5 !default;
-$border-color: mix(#fff, $background-color, 20%) !default;
-$code-background-color: mix(#000, $background-color, 15%) !default;
-$code-background-color-dark: mix(#000, $background-color, 20%) !default;
-$form-background-color: mix(#000, $background-color, 15%) !default;
-$footer-background-color: mix(#000, $background-color, 30%) !default;
-$link-color: mix($primary-color, $text-color, 40%) !default;
-$link-color-hover: mix(#fff, $link-color, 25%) !default;
-$link-color-visited: mix(#000, $link-color, 25%) !default;
-$masthead-link-color: $text-color !default;
-$masthead-link-color-hover: mix(#000, $text-color, 20%) !default;
-$navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
+$background-color: #1a1a1a !default; /* Màu nền đậm */
+$text-color: #eaeaea !default; /* Màu chữ trắng */
+$primary-color: #00adb5 !default; /* Màu chính */
+$border-color: mix(#fff, $background-color, 15%) !default; /* Màu viền */
+$code-background-color: mix(#000, $background-color, 10%) !default; /* Màu nền mã nguồn */
+$form-background-color: mix(#000, $background-color, 20%) !default; /* Màu nền form */
+$footer-background-color: mix(#000, $background-color, 30%) !default; /* Màu nền footer */
+$link-color: #00d1d7 !default; /* Màu liên kết */
+$link-color-hover: #00e4e8 !default; /* Màu liên kết khi hover */
+$link-color-visited: mix(#000, $link-color, 15%) !default; /* Màu liên kết đã ghé thăm */
+$masthead-link-color: $text-color !default; /* Màu liên kết masthead */
+$masthead-link-color-hover: mix(#000, $text-color, 15%) !default; /* Màu liên kết masthead khi hover */
+$navicon-link-color-hover: mix(#000, $background-color, 20%) !default; /* Màu liên kết navicon khi hover */
 
 .author__urls.social-icons i,
 .author__urls.social-icons .svg-inline--fa,
@@ -28,3 +27,10 @@ $navicon-link-color-hover: mix(#000, $background-color, 30%) !default;
 .ais-search-box .ais-search-box--input {
   background-color: $form-background-color;
 }
+/* Màu sắc cho dark theme */
+$background-color: #1a1a1a;
+$text-color: #eaeaea;
+$primary-color: #45845d;
+$secondary-color: #00adb5;
+$border-color: #2c2c2c;
+/* Định nghĩa màu sắc */

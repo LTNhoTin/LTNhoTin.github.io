@@ -7,7 +7,7 @@
         {% unless logo_path == empty %}
           <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>
         {% endunless %}
-        <a class="site-title" href="{{ '/' | relative_url }}">
+        <a class="site-title" href="{{ '/' | relative_url }}" style="color: #e1a65e;">
           {{ site.masthead_title | default: site.title }}
           {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
         </a>
@@ -17,10 +17,6 @@
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
           {%- endfor -%}
-          <!-- Thêm liên kết truy cập vào ChatBot -->
-          <li class="masthead__menu-item">
-            <a href="{{ '/chatbot/' | relative_url }}">ChatBot</a>
-          </li>
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">

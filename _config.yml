@@ -14,7 +14,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "ltnhotin/ltnhotin.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/favicon.png"
-masthead_title           : "Nho's Journey"
+masthead_title           : "Nhotin Odyssey"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 200
 comments:
