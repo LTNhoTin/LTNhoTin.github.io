@@ -22,17 +22,17 @@ header:
 
 Mở Terminal và chạy lệnh sau để tải xuống trình cài đặt Miniconda cho macOS (Apple Silicon):
 
-\`\`\`sh
+```sh
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
-\`\`\`
+```
 
 ## Bước 2: Chạy trình cài đặt Miniconda
 
 Chạy lệnh sau để bắt đầu quá trình cài đặt Miniconda:
 
-\`\`\`sh
+```sh
 bash Miniconda3-latest-MacOSX-arm64.sh
-\`\`\`
+```
 
 Làm theo các hướng dẫn trên màn hình để hoàn tất cài đặt. Khi được hỏi về việc thêm Miniconda vào PATH, chọn \`yes\`.
 
@@ -42,29 +42,29 @@ Nếu sau khi cài đặt, \`conda\` không được nhận diện trong Termina
 
 Mở tệp cấu hình zsh (\`~/.zshrc\`):
 
-\`\`\`sh
+```sh
 nano ~/.zshrc
-\`\`\`
+```
 
 Thêm dòng sau vào cuối tệp:
 
-\`\`\`sh
+```sh
 export PATH="$HOME/miniconda3/bin:$PATH"
-\`\`\`
+```
 
 Lưu và đóng tệp, sau đó tải lại cấu hình zsh:
 
-\`\`\`sh
+```sh
 source ~/.zshrc
-\`\`\`
+```
 
 ## Bước 4: Kiểm tra cài đặt
 
 Kiểm tra xem \`conda\` đã được cài đặt và thêm vào PATH chưa:
 
-\`\`\`sh
+```sh
 conda --version
-\`\`\`
+```
 
 Lệnh trên sẽ hiển thị phiên bản của \`conda\` nếu bạn đã cài đặt thành công.
 
@@ -74,9 +74,9 @@ Lệnh trên sẽ hiển thị phiên bản của \`conda\` nếu bạn đã cà
 
 Để tạo một môi trường ảo mới, sử dụng lệnh sau:
 
-\`\`\`sh
+```sh
 conda create -n myenv python=3.10
-\`\`\`
+```
 
 Thay \`myenv\` bằng tên môi trường bạn muốn tạo và \`python=3.10\` bằng phiên bản Python bạn cần.
 
@@ -84,37 +84,37 @@ Thay \`myenv\` bằng tên môi trường bạn muốn tạo và \`python=3.10\`
 
 Kích hoạt môi trường ảo vừa tạo bằng lệnh sau:
 
-\`\`\`sh
+```sh
 conda activate myenv
-\`\`\`
+```
 
 ### Hủy kích hoạt môi trường ảo
 
 Để hủy kích hoạt môi trường ảo, sử dụng lệnh:
 
-\`\`\`sh
+```sh
 conda deactivate
-\`\`\`
+```
 
 ## Bước 6: Cài đặt các gói phụ thuộc trong môi trường ảo
 
 Sau khi kích hoạt môi trường ảo, bạn có thể cài đặt các gói cần thiết bằng \`pip\` hoặc \`conda\`. Ví dụ, để cài đặt các gói từ tệp \`requirements.txt\`:
 
-\`\`\`sh
+```sh
 pip install -r requirements.txt
-\`\`\`
+```
 
 Hoặc để cài đặt một gói cụ thể:
 
-\`\`\`sh
+```sh
 pip install <package-name>
-\`\`\`
+```
 
 Hoặc sử dụng conda để cài đặt gói:
 
-\`\`\`sh
+```sh
 conda install <package-name>
-\`\`\`
+```
 
 ## Kết luận
 
