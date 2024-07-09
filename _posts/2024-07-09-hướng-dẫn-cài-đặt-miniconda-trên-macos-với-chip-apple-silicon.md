@@ -40,7 +40,7 @@ Làm theo các hướng dẫn trên màn hình để hoàn tất cài đặt. Kh
 
 Nếu sau khi cài đặt, \`conda\` không được nhận diện trong Terminal, bạn cần thêm Miniconda vào PATH thủ công.
 
-Mở tệp cấu hình zsh (\`~/.zshrc\`):
+Mở tệp cấu hình zsh .zshrc:
 
 ```sh
 nano ~/.zshrc
