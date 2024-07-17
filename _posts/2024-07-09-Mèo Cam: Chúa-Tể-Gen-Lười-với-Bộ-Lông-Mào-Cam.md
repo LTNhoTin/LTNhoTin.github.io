@@ -1,4 +1,4 @@
-title: "Mèo Cam: Chúa Tể Gen Lười với Bộ Lông Rực Rỡ"
+title: "Mèo Cam: Chúa Tể Gen Lười với Bộ Lông Mào Cam"
 excerpt: "Khám phá các yếu tố di truyền, sinh học và văn hóa khiến mèo cam trở nên đặc biệt, cùng với những đặc điểm thú vị và khác biệt so với các loài mèo khác."
 show_date: True
 tags:
