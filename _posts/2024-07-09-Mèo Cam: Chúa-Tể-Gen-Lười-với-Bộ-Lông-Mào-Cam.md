@@ -1,3 +1,4 @@
+---
 title: "Mèo Cam: Chúa Tể Gen Lười với Bộ Lông Mào Cam"
 excerpt: "Khám phá các yếu tố di truyền, sinh học và văn hóa khiến mèo cam trở nên đặc biệt, cùng với những đặc điểm thú vị và khác biệt so với các loài mèo khác."
 show_date: True
@@ -8,14 +9,14 @@ tags:
   - Hành Vi Động Vật
 categories:
   - Hành Vi Động Vật
-last_modified_at: 2024-07-16T10:00:00+07:00
+last_modified_at: 2024-07-09T11:16:26+07:00
 author_profile: true
 classes: wide 
 toc: true
 header:
-  overlay_color: "#FF8C00"
-  overlay_image: /assets/images/orange_cat.jpg
-  caption: "Bài viết bởi NhoTin"
+  overlay_color: "#5e616c"
+  overlay_image: /assets/images/day.jpg
+  caption: "Post created by NhoTin"
 ---
 
 # Mèo Cam: Chúa Tể Gen Lười với Bộ Lông Rực Rỡ
