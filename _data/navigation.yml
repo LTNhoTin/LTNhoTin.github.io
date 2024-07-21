@@ -4,13 +4,13 @@ main:
     url: /year-archive/
   - title: "Portfolio"
     url: /portfolio/
+  - title: "About me"
+    url: /about/
+  # - title: "Categories"
+  #   url: /categories/#edge-case
   - title: "Tags"
     url: /tags/
-  # - title: "Pages"
-  #   url: /page-archive/
   - title: "Images" 
     url: /gallery/
-  - title: "About me" 
-    url: /about/
   - title: "LegalBot"
     url: /LegalbizAi_chatbot/
