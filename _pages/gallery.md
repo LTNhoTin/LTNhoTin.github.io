@@ -58,15 +58,15 @@ cat_bap_gallery:
 
 ---
 
-## My Love #: Tình yêu của tôi
+## My Love
 
 {% include gallery id="mylove_gallery" %}
 
-## Ảnh của Dừa - Nàng mèo tinh nghịch
+## Ảnh của Dừa
 
 {% include gallery id="cat_dua_gallery" %}
 
-## Ảnh của Bắp - Chú mèo đáng yêu của tôi
+## Ảnh của Bắp
 
 {% include gallery id="cat_bap_gallery" %}
 
