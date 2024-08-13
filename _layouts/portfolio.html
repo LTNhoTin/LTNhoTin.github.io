@@ -3,161 +3,156 @@ layout: default
 ---
 
 <div class="portfolio-header">
-  <h1 class="portfolio-title">{{ page.title | default: "Nho Tin's Portfolio" }}</h1>
+  <h1 class="portfolio-title">LÊ TÔ NHO TÍN</h1>
+  <p class="portfolio-subtitle">Sinh viên Đại học FPT - Ngành Trí tuệ Nhân tạo (AI)</p>
 </div>
 
 <div class="portfolio-container">
-  <div id="pdf-viewer" class="pdf-viewer"></div>
-  <div class="pdf-controls">
-    <button id="prev-page" class="pdf-btn">Previous</button>
-    <span>Page <span id="page-num"></span> of <span id="page-count"></span></span>
-    <button id="next-page" class="pdf-btn">Next</button>
-  </div>
+  <section class="section" id="introduction">
+    <div class="content">
+      <h2>Giới thiệu</h2>
+      <p>Tôi là Lê Tô Nho Tín, hiện đang là sinh viên ngành Trí tuệ Nhân tạo tại Đại học FPT. Tôi có niềm đam mê với lĩnh vực AI Engineering và Data Analysis, và tôi đang không ngừng học hỏi, phát triển các kỹ năng cần thiết để trở thành một chuyên gia trong lĩnh vực này.</p>
+      <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="Lê Tô Nho Tín" class="profile-img">
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="content">
+      <h2>Kỹ năng</h2>
+      <ul>
+        <li><i class="fas fa-code"></i> Ngôn ngữ lập trình: Python, ReactJS, HTML, CSS</li>
+        <li><i class="fas fa-laptop-code"></i> Phát triển Web: Xây dựng và tối ưu hóa các ứng dụng web</li>
+        <li><i class="fas fa-database"></i> Phân tích dữ liệu: Kỹ năng sử dụng SQL và các công cụ phân tích dữ liệu</li>
+        <li><i class="fas fa-brain"></i> AI Engineering: Áp dụng các phương pháp và thuật toán AI vào các dự án thực tiễn</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="content">
+      <h2>Dự án tiêu biểu</h2>
+      <h3>LegalbizAI Chatbot</h3>
+      <p>Mô tả: LegalbizAI là một chatbot hỗ trợ các vấn đề về luật doanh nghiệp. Dự án này được thiết kế để cung cấp các câu trả lời chính xác và kịp thời cho các câu hỏi liên quan đến luật doanh nghiệp, nhằm hỗ trợ người dùng trong các tình huống pháp lý khác nhau.</p>
+      <p>Vai trò: Tôi là người chịu trách nhiệm chính về việc phát triển và tích hợp trí tuệ nhân tạo vào chatbot, đảm bảo khả năng hiểu và phản hồi đúng yêu cầu từ người dùng.</p>
+      <p>Kết quả: Dự án đã được triển khai và nhận được phản hồi tích cực từ người dùng.</p>
+      <img src="{{ site.baseurl }}/assets/images/legalbizai.png" alt="LegalbizAI Chatbot" class="project-img">
+    </div>
+  </section>
+
+  <section class="section" id="certifications">
+    <div class="content">
+      <h2>Chứng chỉ</h2>
+      <ul>
+        <li><i class="fas fa-certificate"></i> Coursera: Hoàn thành một số khóa học liên quan đến trí tuệ nhân tạo và phân tích dữ liệu</li>
+        <li><i class="fas fa-award"></i> NVDA: Đã nhận được chứng chỉ chuyên nghiệp từ NVDA, chứng minh khả năng ứng dụng các công nghệ và kỹ thuật trong AI và Data Analysis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="goals">
+    <div class="content">
+      <h2>Mục tiêu nghề nghiệp</h2>
+      <p>Tôi mong muốn phát triển sự nghiệp trong lĩnh vực AI Engineering và Data Analysis, với mục tiêu trở thành một chuyên gia hàng đầu, có khả năng tạo ra các giải pháp AI hiệu quả và mang lại giá trị cho doanh nghiệp và cộng đồng.</p>
+    </div>
+  </section>
 </div>
 
 <style>
   body, html {
-    height: 100%;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    color: #f0f0f0;
+    background-color: #121212;
   }
 
   .portfolio-header {
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
+    padding: 2rem;
+    background-color: #202020;
     color: #fff;
-    border-radius: 8px;
   }
 
   .portfolio-title {
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .portfolio-subtitle {
     font-size: 1.5rem;
     color: #61dafb;
   }
 
   .portfolio-container {
     width: 100%;
-    height: 90%;
+  }
+
+  .section {
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #2c2c2c;
+    position: relative;
     color: #fff;
     text-align: center;
+    transition: transform 0.5s ease-out;
   }
 
-  .pdf-viewer {
-    width: 100%;
-    height: 80%;
-    overflow: auto;
-    background-color: #fff;
+  .section:nth-child(even) {
+    background-color: #2c2c2c;
+  }
+
+  .section:nth-child(odd) {
+    background-color: #1e1e1e;
+  }
+
+  .content {
+    max-width: 800px;
+    padding: 2rem;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  }
+
+  .active .content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  .profile-img, .project-img {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
-  }
-
-  .pdf-controls {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .pdf-btn {
-    padding: 0.5rem 1rem;
-    background-color: #61dafb;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    color: #000;
-  }
-
-  .pdf-btn:hover {
-    background-color: #21a1f1;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   }
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>
-  const url = '{{ site.baseurl }}/assets/pft/a.pdf';  // Đường dẫn tới file PDF của bạn
-  let pdfDoc = null,
-      pageNum = 1,
-      pageIsRendering = false,
-      pageNumIsPending = null;
+  window.addEventListener('scroll', function() {
+    const sections = document.querySelectorAll('.section');
 
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-  document.getElementById('pdf-viewer').appendChild(canvas);
-
-  const renderPage = (num) => {
-      pageIsRendering = true;
-      pdfDoc.getPage(num).then(page => {
-          const viewport = page.getViewport({ scale: 1 });
-
-          // Tính toán tỷ lệ (scale) để phù hợp với cả PDF ngang và dọc
-          const containerWidth = document.getElementById('pdf-viewer').offsetWidth;
-          const containerHeight = document.getElementById('pdf-viewer').offsetHeight;
-          const scale = Math.min(containerWidth / viewport.width, containerHeight / viewport.height);
-          
-          const scaledViewport = page.getViewport({ scale: scale });
-
-          canvas.height = scaledViewport.height;
-          canvas.width = scaledViewport.width;
-
-          const renderCtx = {
-              canvasContext: ctx,
-              viewport: scaledViewport
-          };
-
-          const renderTask = page.render(renderCtx);
-          renderTask.promise.then(() => {
-              pageIsRendering = false;
-
-              if (pageNumIsPending !== null) {
-                  renderPage(pageNumIsPending);
-                  pageNumIsPending = null;
-              }
-          });
-
-          document.getElementById('page-num').textContent = num;
-      });
-  };
-
-  const queueRenderPage = (num) => {
-      if (pageIsRendering) {
-          pageNumIsPending = num;
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        section.classList.add('active');
       } else {
-          renderPage(num);
+        section.classList.remove('active');
       }
-  };
-
-  const showPrevPage = () => {
-      if (pageNum <= 1) {
-          return;
-      }
-      pageNum--;
-      queueRenderPage(pageNum);
-  };
-
-  const showNextPage = () => {
-      if (pageNum >= pdfDoc.numPages) {
-          return;
-      }
-      pageNum++;
-      queueRenderPage(pageNum);
-  };
-
-  pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
-      pdfDoc = pdfDoc_;
-      document.getElementById('page-count').textContent = pdfDoc.numPages;
-      renderPage(pageNum);
-  });
-
-  document.getElementById('prev-page').addEventListener('click', showPrevPage);
-  document.getElementById('next-page').addEventListener('click', showNextPage);
-
-  window.addEventListener('resize', () => {
-      queueRenderPage(pageNum);
+    });
   });
 </script>
