@@ -1,16 +1,17 @@
 # main links
 main:
   - title: "Posts"
-    url: /year-archive/
-  - title: "Portfolio"
-    url: /portfolio/
-  - title: "About me"
-    url: /about/
+    url: /recent-posts/
+
   # - title: "Categories"
   #   url: /categories/#edge-case
   - title: "Tags"
     url: /tags/
+  - title: "Project"
+    url: /my-project/
   - title: "Images" 
     url: /gallery/
-  - title: "LegalBot"
-    url: /LegalbizAi_chatbot/
+  # - title: "About me"
+  #   url: /about/
+  - title: "Portfolio"
+    url: /portfolio/

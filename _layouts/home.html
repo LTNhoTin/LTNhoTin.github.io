@@ -1,22 +1,20 @@
 ---
 layout: archive
+title: "Welcome to Nho Tin's World"
+author_profile: true
 ---
 
-{{ content }}
+<h1 style="font-size: 2.5rem; margin-bottom: 2rem; color: #22a59c; text-align: center;">Welcome to Nho Tin's World</h1>
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+<div style="font-size: 1.1rem; line-height: 1.8; color: #e0e0e0; background-color: #2c2c2c; padding: 2rem; border-radius: 8px;">
+  <h2 style="font-size: 2rem; margin-bottom: 1.2rem; color: #ffffff;">Who Am I?</h2>
+  <p>Hello! I'm Nho Tin, a dedicated AI Engineering student with a passion for exploring the endless possibilities of technology. Currently studying at FPT University, I’m on a journey to make impactful contributions to the world of AI and software development.</p>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+  <h2 style="font-size: 2rem; margin-top: 1.8rem; margin-bottom: 1.2rem; color: #ffffff;">What You'll Find Here</h2>
+  <p>On this homepage, you can get a glimpse of my work, my thoughts, and my journey in the tech world. Whether it’s insights on AI trends, coding tips, or personal reflections, this space is dedicated to sharing knowledge and fostering a community of learners.</p>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
+  <h2 style="font-size: 2rem; margin-top: 1.8rem; margin-bottom: 1.2rem; color: #ffffff;">Explore and Connect</h2>
+  <p>Feel free to browse through my blog posts, check out my projects, and get in touch if you’re interested in collaboration or just want to chat about tech. I’m always open to new ideas and opportunities.</p>
+
+  <p style="font-size: 1.2rem; color: #f39c12; margin-top: 2rem; text-align: center;">Thank you for stopping by, and I hope you enjoy exploring my site!</p>
 </div>
-
-{% include paginator.html %}

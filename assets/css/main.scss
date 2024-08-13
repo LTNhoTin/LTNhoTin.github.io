@@ -16,3 +16,18 @@
 .page__footer {
     margin-top: 0 !important;
 }
+
+
+  @media (min-width: 80em) {
+    .archive {
+      padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
+      width: calc(100% - 320px) !important; /* 300px là kích thước của sidebar, 20px là khoảng cách thêm */
+    }
+  }
+
+  @media (min-width: 64em) {
+    .archive {
+      padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
+      width: calc(100% - 320px) !important; /* 200px là kích thước của sidebar, 20px là khoảng cách thêm */
+    }
+  }
