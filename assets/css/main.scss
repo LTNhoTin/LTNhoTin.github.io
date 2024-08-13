@@ -17,17 +17,34 @@
     margin-top: 0 !important;
 }
 
-
-  @media (min-width: 80em) {
-    .archive {
-      padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
-      width: calc(100% - 320px) !important; /* 300px là kích thước của sidebar, 20px là khoảng cách thêm */
-    }
+/* Định nghĩa layout khi có sidebar */
+@media (min-width: 64em) {
+  .archive {
+    padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
+    width: calc(100% - 320px) !important; /* 300px là kích thước của sidebar, 20px là khoảng cách thêm */
+    margin: 0 auto; /* Đảm bảo căn giữa khi không có sidebar */
   }
 
-  @media (min-width: 64em) {
-    .archive {
-      padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
-      width: calc(100% - 320px) !important; /* 200px là kích thước của sidebar, 20px là khoảng cách thêm */
-    }
+  /* Căn giữa khi không có sidebar */
+  .archive-no-sidebar {
+    padding-right: 0 !important; /* Loại bỏ khoảng cách bên phải khi không có sidebar */
+    width: 100% !important; /* Đảm bảo nội dung chiếm toàn bộ chiều rộng */
+    margin: 0 auto; /* Căn giữa nội dung */
   }
+}
+
+/* Điều chỉnh cho màn hình lớn hơn */
+@media (min-width: 80em) {
+  .archive {
+    padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
+    width: calc(100% - 320px) !important; /* 300px là kích thước của sidebar, 20px là khoảng cách thêm */
+    margin: 0 auto; /* Đảm bảo căn giữa khi không có sidebar */
+  }
+
+  /* Căn giữa khi không có sidebar */
+  .archive-no-sidebar {
+    padding-right: 0 !important; /* Loại bỏ khoảng cách bên phải khi không có sidebar */
+    width: 100% !important; /* Đảm bảo nội dung chiếm toàn bộ chiều rộng */
+    margin: 0 auto; /* Căn giữa nội dung */
+  }
+}
