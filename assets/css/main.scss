@@ -19,9 +19,13 @@
 
 /* Định nghĩa layout khi có sidebar */
 @media (min-width: 64em) {
+  .sidebar {
+    width: 200px !important; /* Thay đổi chiều rộng của sidebar */
+  }
+
   .archive {
     padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
-    width: calc(100% - 320px) !important; /* 300px là kích thước của sidebar, 20px là khoảng cách thêm */
+    width: calc(100% - 220px) !important; /* Tính lại chiều rộng dựa trên chiều rộng mới của sidebar */
     margin: 0 auto; /* Đảm bảo căn giữa khi không có sidebar */
   }
 
@@ -35,9 +39,13 @@
 
 /* Điều chỉnh cho màn hình lớn hơn */
 @media (min-width: 80em) {
+  .sidebar {
+    width: 200px !important; /* Thay đổi chiều rộng của sidebar */
+  }
+
   .archive {
     padding-right: 20px !important; /* Giữ một ít khoảng cách với sidebar */
-    width: calc(100% - 320px) !important; /* 300px là kích thước của sidebar, 20px là khoảng cách thêm */
+    width: calc(100% - 220px) !important; /* Tính lại chiều rộng dựa trên chiều rộng mới của sidebar */
     margin: 0 auto; /* Đảm bảo căn giữa khi không có sidebar */
   }
 
