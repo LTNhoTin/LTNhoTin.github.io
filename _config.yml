@@ -14,7 +14,7 @@ baseurl                  : "" # nếu site của bạn không có subpath, để
 repository               : "ltnhotin/ltnhotin.github.io"
 teaser                   : "" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/favicon.png"
-masthead_title           : "Nhotin Odyssey"
+masthead_title           : "Home"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 200
 favicon                  : "/assets/images/favicon.png"
