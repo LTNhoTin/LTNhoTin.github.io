@@ -7,9 +7,9 @@ header:
   overlay_image: /assets/images/gallery/my_photos/my5.jpeg
 excerpt: >
   <div class="overlay-box">
-    <h1 class="splash-title">Nhật Ký Hình Ảnh Ấm Cúng ✨📸</h1>
-    <span style="color: #ffffff; font-size: 1.3rem;">**🌸🍂 Chào mừng đến với góc nhỏ của những kỷ niệm!**</span> <br/>
-    <span style="color: #ffe4e1;">**Đây là nơi mình giữ những khoảnh khắc ấm áp trong tim.** 🌟**</span> <br />
+    <h1 class="splash-title">Warm Memories Photo Journal ✨📸</h1>
+    <span style="color: #ffffff; font-size: 1.3rem;">🌸🍂 Welcome to the little corner of memories!</span> <br/>
+    <span style="color: #ffe4e1;">This is where I keep the warm moments close to my heart. 🌟**</span> <br />
     ☕ ✨ 📖 🌼
     <br/>
   </div>
@@ -17,60 +17,60 @@ excerpt: >
 mylove_gallery:
   - url: /assets/images/gallery/mylove/mylove1.jpeg
     image_path: /assets/images/gallery/mylove/mylove1.jpeg
-    alt: "Yêu Thương"
-    title: "🌸 Yêu Thương 🌸"
+    alt: "Love"
+    title: "🌸 Love 🌸"
   - url: /assets/images/gallery/mylove/mylove4.jpeg
     image_path: /assets/images/gallery/mylove/mylove4.jpeg
-    alt: "Yêu Thương"
-    title: "🌸 Yêu Thương 🌸"
+    alt: "Love"
+    title: "🌸 Love 🌸"
   - url: /assets/images/gallery/mylove/mylove3.jpeg
     image_path: /assets/images/gallery/mylove/mylove3.jpeg
-    alt: "Yêu Thương"
-    title: "🌸 Yêu Thương 🌸"
+    alt: "Love"
+    title: "🌸 Love 🌸"
 
 cat_dua_gallery:
   - url: /assets/images/gallery/cat_dua/dua1.jpeg
     image_path: /assets/images/gallery/cat_dua/dua1.jpeg
-    alt: "Dừa Đáng Yêu"
-    title: "🍃 Dừa Đáng Yêu 🍃"
+    alt: "Cute Coconut"
+    title: "🌴 Cute Coconut 🌴"
   - url: /assets/images/gallery/cat_dua/dua2.jpeg
     image_path: /assets/images/gallery/cat_dua/dua2.jpeg
-    alt: "Dừa Đáng Yêu"
-    title: "🍃 Dừa Đáng Yêu 🍃"
+    alt: "Cute Coconut"
+    title: "🌴 Cute Coconut 🌴"
   - url: /assets/images/gallery/cat_dua/dua3.jpeg
     image_path: /assets/images/gallery/cat_dua/dua3.jpeg
-    alt: "Dừa Đáng Yêu"
-    title: "🍃 Dừa Đáng Yêu 🍃"
+    alt: "Cute Coconut"
+    title: "🌴 Cute Coconut 🌴"
 
 cat_bap_gallery:
   - url: /assets/images/gallery/cat_bap/bap1.jpeg
     image_path: /assets/images/gallery/cat_bap/bap1.jpeg
-    alt: "Bắp Xinh Xắn"
-    title: "🌽 Bắp Xinh Xắn 🌽"
+    alt: "Adorable Corn"
+    title: "🌽 Adorable Corn 🌽"
   - url: /assets/images/gallery/cat_bap/bap2.jpeg
     image_path: /assets/images/gallery/cat_bap/bap2.jpeg
-    alt: "Bắp Xinh Xắn"
-    title: "🌽 Bắp Xinh Xắn 🌽"
+    alt: "Adorable Corn"
+    title: "🌽 Adorable Corn 🌽"
   - url: /assets/images/gallery/cat_bap/bap3.jpeg
     image_path: /assets/images/gallery/cat_bap/bap3.jpeg
-    alt: "Bắp Xinh Xắn"
-    title: "🌽 Bắp Xinh Xắn 🌽"
+    alt: "Adorable Corn"
+    title: "🌽 Adorable Corn 🌽"
 ---
 
-## 🌸 Yêu Thương 🌸
+## 🌸 Love 🌸
 
 {% include gallery id="mylove_gallery" %}
 
-## 🍃 Ảnh của Dừa 🍃
+## 🌴 Memories with Coconut 🌴
 
 {% include gallery id="cat_dua_gallery" %}
 
-## 🌽 Ảnh của Bắp 🌽
+## 🌽 Memories with Corn 🌽
 
 {% include gallery id="cat_bap_gallery" %}
 
 <style>
-  /* Thêm nền gradient và khung viền */
+  /* Add gradient background and border */
   .splash-container {
     background: linear-gradient(135deg, #f5a3c7, #ffa07a);
     padding: 2rem;
@@ -78,7 +78,7 @@ cat_bap_gallery:
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
-  /* Hộp nền màu đen mờ phía sau tiêu đề và đoạn trích */
+  /* Background for the title and excerpt */
   .overlay-box {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 15px;
@@ -93,12 +93,12 @@ cat_bap_gallery:
     margin-bottom: 0.5rem;
   }
 
-  /* Ẩn tiêu đề chính của trang */
+  /* Hide main page title */
   .page-title {
     display: none;
   }
 
-  /* Trang trí các phần gallery */
+  /* Style the gallery sections */
   h2 {
     color: #ff69b4;
     font-size: 2rem;
@@ -123,7 +123,7 @@ cat_bap_gallery:
     transform: scale(1.05);
   }
 
-  /* Điều chỉnh các biểu tượng cảm xúc */
+  /* Adjust emoji sizes */
   .excerpt {
     font-size: 1.2rem;
   }

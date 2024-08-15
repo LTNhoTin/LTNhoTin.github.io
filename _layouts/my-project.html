@@ -15,12 +15,70 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
-  {% include sidebar.html %}
-
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}
       <h1 id="page-title" class="page__title">{{ page.title }}</h1>
     {% endunless %}
-    {{ content }}
+    
+    <div class="projects">
+      {% assign projects_dir = "/Users/nhotin/Documents/GitHub/LTNhoTin.github.io/projects/" %}
+      {% for project in site.static_files %}
+        {% if project.path contains projects_dir %}
+          <div class="project-card">
+            <img src="{{ project.image }}" alt="{{ project.title }}">
+            <h2>{{ project.title }}</h2>
+            <p>{{ project.description | truncatewords: 20 }}</p>
+            <a href="{{ project.path }}" class="btn">Xem Chi Tiết</a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 </div>
+
+<style>
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.project-card h2 {
+  font-size: 1.5rem;
+  margin: 16px 0 8px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.project-card .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+</style>
