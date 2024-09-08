@@ -144,22 +144,22 @@ Sau khi có được App ID, bạn có thể cấp quyền cho ứng dụng. Dư
 - **Cấp quyền lịch (Calendar)**:
 
 ```bash
-./tccplus add Calendar com.nho.NotchNook
+./tccplus add Calendar lo.cafe.NotchNook
 ```
 
 - **Cấp quyền microphone**:
 
 ```bash
-./tccplus add Microphone com.nho.NotchNook
+./tccplus add Microphone lo.cafe.NotchNook
 ```
 
 - **Cấp quyền camera**:
 
 ```bash
-./tccplus add Camera com.nho.NotchNook
+./tccplus add Camera lo.cafe.NotchNook
 ```
 
-Bạn chỉ cần thay đổi `"com.nho.NotchNook"` bằng ID của ứng dụng của bạn.
+Bạn chỉ cần thay đổi `"lo.cafe.NotchNook"` bằng ID của ứng dụng của bạn.
 
 ### Bước 5: Kiểm tra và quản lý quyền
 
@@ -168,13 +168,13 @@ Sau khi cấp quyền thành công, bạn có thể kiểm tra hoặc xóa quy�
 - **Kiểm tra quyền của một ứng dụng**:
 
 ```bash
-./tccplus check Calendar com.nho.NotchNook
+./tccplus check Calendar lo.cafe.NotchNook
 ```
 
 - **Xóa quyền của ứng dụng**:
 
 ```bash
-./tccplus remove Calendar com.nho.NotchNook
+./tccplus remove Calendar lo.cafe.NotchNook
 ```
 
 ## Lưu ý
