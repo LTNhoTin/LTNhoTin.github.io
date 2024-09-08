@@ -135,7 +135,7 @@ Mỗi ứng dụng trên macOS đều có một **App ID** duy nhất. Để c�
 osascript -e 'id of app "Tên Ứng Dụng"'
 ```
 
-Kết quả sẽ trả về ID của ứng dụng, ví dụ: `com.nho.NotchNook`.
+Kết quả sẽ trả về ID của ứng dụng, ví dụ: `lo.cafe.NotchNook`.
 
 ### Bước 4: Cấp quyền cho ứng dụng
 
