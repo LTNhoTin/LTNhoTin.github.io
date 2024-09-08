@@ -13,7 +13,7 @@ classes: wide
 toc: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/permission_banner.jpg
+  overlay_image: /assets/images/day.jpg
   caption: "Post created by NhoTin"
 ---
 
