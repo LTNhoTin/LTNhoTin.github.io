@@ -34,12 +34,12 @@ header:
 ### Step 3: Activate SoundSource
 To activate the license, you need to enter the provided **Serial Key**. Follow these steps to activate:
 
-\`\`\`plaintext
+```
 Name: CORE_2021  
 Serial: ZLAT-UVFQ-RDWJ-MPYE-NVAQ-AH2F-K3QZ-2VRE-QCH3
-\`\`\`
+```
 
-4. Click **OK** to complete the activation process. Now, you can use the full version of SoundSource.
+1. Click **OK** to complete the activation process. Now, you can use the full version of SoundSource.
 
 ### Step 4: Configure SoundSource
 1. After successful activation, you can use SoundSource to control volume, adjust output, and manage sound for each app individually.
