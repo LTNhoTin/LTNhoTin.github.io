@@ -25,7 +25,7 @@ def create_blog_post(show_date_var):
     overlay_image = "/assets/images/day.jpg" if 6 <= current_hour < 17 else "/assets/images/night.jpg"
     
     file_name = f"{date_str}-{title.replace(' ', '-').lower()}.md"
-    file_path = os.path.join("/Users/nhotin/Documents/GitHub/LTNhoTin.github.io/_posts", file_name)
+    file_path = os.path.join("/Users/nhotin/Code/GitHub/LTNhoTin.github.io/_posts", file_name)
     
     tags_str = '\n'.join([f"  - {tag}" for tag in tags])
     categories_str = '\n'.join([f"  - {cat}" for cat in categories])
