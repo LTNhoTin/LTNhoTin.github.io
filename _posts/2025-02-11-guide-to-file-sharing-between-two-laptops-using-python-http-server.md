@@ -19,7 +19,7 @@ classes: wide
 toc: true
 header:
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/file-sharing.jpg
+  overlay_image: /assets/images/night.jpg
   caption: "Post created by NhoTin"
 ---
 
