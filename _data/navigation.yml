@@ -7,8 +7,8 @@ main:
   #   url: /categories/#edge-case
   - title: "Tags"
     url: /tags/
-  - title: "Project"
-    url: /my-project/
+  - title: "Projects"
+    url: /projects/
   - title: "Images" 
     url: /gallery/
   # - title: "About me"

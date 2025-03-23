@@ -1,0 +1,289 @@
+---
+layout: default
+---
+
+<div class="minimal-container">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">{{ page.title }}</h1>
+    <p class="hero-subtitle">A collection of my work</p>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="projects-grid">
+    {% for project in site.projects %}
+      <div class="project-card" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 100 }}">
+        <div class="project-card__inner">
+          <div class="project-card__image">
+            {% if project.image %}
+              <img src="{{ project.image }}" alt="{{ project.title }}">
+            {% else %}
+              <div class="project-card__placeholder">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="18" rx="2" ry="2"></rect>
+                  <line x1="8" y1="12" x2="16" y2="12"></line>
+                  <line x1="12" y1="8" x2="12" y2="16"></line>
+                </svg>
+              </div>
+            {% endif %}
+            <div class="project-card__overlay">
+              <div class="project-card__links">
+                {% if project.github %}
+                  <a href="{{ project.github }}" class="button" target="_blank" title="View on GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>Source Code</span>
+                  </a>
+                {% endif %}
+                {% if project.demo %}
+                  <a href="{{ project.demo }}" class="button" target="_blank" title="Live Demo">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Live Demo</span>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="project-card__content">
+            <h2 class="project-card__title">{{ project.title }}</h2>
+            <p class="project-card__excerpt">{{ project.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+            <div class="project-card__tags">
+              {% for tech in project.technologies %}
+                <span class="tag">{{ tech }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ project.url | relative_url }}" class="read-more">
+              Learn More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+:root {
+  --background: #ffffff;
+  --text: #333333;
+  --text-light: #666666;
+  --primary: #007AFF;
+  --border: #e0e0e0;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111111;
+    --text: #ffffff;
+    --text-light: #999999;
+    --border: #333333;
+    --shadow: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.minimal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--background);
+  color: var(--text);
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 4rem 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  height: 100%;
+}
+
+.project-card__inner {
+  height: 100%;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.project-card__inner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.project-card__image {
+  position: relative;
+  padding-top: 56.25%;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.project-card__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-card__placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+}
+
+.project-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-card__overlay {
+  opacity: 1;
+}
+
+.project-card__content {
+  padding: 1.5rem;
+}
+
+.project-card__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.project-card__excerpt {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  background: var(--border);
+  color: var(--text-light);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  transition: var(--transition);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+  margin: 0.5rem;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.read-more:hover {
+  gap: 0.75rem;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .minimal-container {
+    padding: 1rem;
+  }
+}
+</style>
+
+<!-- Add AOS Library for animations -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script> 
